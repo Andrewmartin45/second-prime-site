@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Second Prime — More Life in Every Year</title>
+  <!--
+    SECOND PRIME homepage — premium layout, fully remote positioning.
+    Edit any text directly, or ask Claude. Section markers below.
+    Colors and fonts: top of css/styles.css.
+    [PLACEHOLDER] tags mark content that needs your real data.
+  -->
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="css/styles.css?v=2" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#top" aria-label="Second Prime"></a>
+      <nav class="nav-links">
+        <a href="what-we-do.html">What We Do</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="#results">Results</a>
+        <a href="#memberships">Membership</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-cta" href="#footer-cta">Book a Consult</a>
+        <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="what-we-do.html">What We Do</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="#results">Results</a>
+      <a href="#memberships">Membership</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="reveal in">
+        <span class="hero-tag">Longevity &amp; Performance for Founders &amp; Executives</span>
+        <h1>More life<br />in every year</h1>
+        <p class="hero-sub">We measure what your annual physical can't, catch decline a decade early, and run the plan that keeps you in your prime.</p>
+        <div class="hero-cta-row">
+          <a class="btn btn-teal btn-lg" href="#footer-cta">Book a Consult&ensp;&rarr;</a>
+          <a class="hero-link" href="how-it-works.html">How it works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE GAP (why we're different) ============ -->
+  <section class="gap" id="different">
+    <div class="container">
+      <div class="gap-head center reveal">
+        <span class="eyebrow">Why We're Different</span>
+        <h2>Something's missing</h2>
+        <p class="lead">You feel it, and your annual physical keeps missing it. Standard bloodwork checks fewer than 100 markers against ranges built to catch disease, not decline. "Normal" just means not sick yet. We work in the gap between normal and optimal.</p>
+      </div>
+      <div class="gap-grid">
+        <div class="gap-card gap-them reveal">
+          <h3>The standard approach</h3>
+          <ul>
+            <li>19 to 100 biomarkers, once a year</li>
+            <li>"Normal" ranges designed to detect disease</li>
+            <li>Reactive: nothing happens until something breaks</li>
+            <li>15-minute visits, generic advice</li>
+            <li>Your nutrition, training, and labs never talk to each other</li>
+          </ul>
+        </div>
+        <div class="gap-card gap-us reveal">
+          <h3>The Second Prime way</h3>
+          <ul>
+            <li>1,000+ biomarkers mapped across every major system</li>
+            <li>Graded against optimal, not just normal</li>
+            <li>Decline caught a decade before symptoms</li>
+            <li>A dedicated team builds and runs your protocol</li>
+            <li>Nutrition, sleep, training, supplements, and therapies in one plan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="method" id="method">
+    <div class="container">
+      <div class="method-head center reveal">
+        <span class="eyebrow">Our Method</span>
+        <h2>How it works</h2>
+        <p class="lead">Deep testing, real interpretation, and an actual game plan. All of it done for you, from wherever you are.</p>
+      </div>
+      <div class="method-grid">
+        <div class="method-card reveal">
+          <div class="media"><img src="assets/step-1.jpg" alt="Comprehensive lab testing" /></div>
+          <div class="step-title">1. Assess — 20 days</div>
+          <p>We map 1,000+ markers across your hormones, metabolism, nutrients, gut, cardiovascular system, and inflammation. Draws and scans are coordinated near you; no clinic visits, no waiting rooms.</p>
+        </div>
+        <div class="method-card reveal">
+          <div class="media"><img src="assets/step-2.jpg" alt="Reviewing your performance blueprint" /></div>
+          <div class="step-title">2. Build — 2 weeks</div>
+          <p>Your results become a personalized Performance Blueprint: nutrition, sleep, training, supplementation, and advanced therapies where they're warranted. Explained in plain English.</p>
+        </div>
+        <div class="method-card reveal">
+          <div class="media"><img src="assets/step-3.jpg" alt="Executing your plan" /></div>
+          <div class="step-title">3. Execute — ongoing</div>
+          <p>Your team runs the plan with you. Quarterly cadence: assess, adjust, re-test, adjust again. Nothing is set-and-forget, because your biology isn't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIAL CAROUSEL ============ -->
+  <section class="testimonial center">
+    <div class="container reveal">
+      <span class="eyebrow">From Our Members</span>
+      <div class="quote-carousel" id="quoteCarousel">
+        <div class="quote-slide active">
+          <p class="quote">&ldquo;I've sent three people to Andrew already. I don't do that unless something actually worked.&rdquo;</p>
+          <div class="quote-person">
+            <div class="avatar"></div>
+            <div><div class="quote-name">Mark D.</div><div class="quote-role">Investment Banking, 47 &middot; Case #009</div></div>
+          </div>
+        </div>
+        <div class="quote-slide">
+          <p class="quote">&ldquo;I kept telling myself the brain fog was just stress. It wasn't stress. Three months in and I'm sharper.&rdquo;</p>
+          <div class="quote-person">
+            <div class="avatar"></div>
+            <div><div class="quote-name">David K.</div><div class="quote-role">Partner, Law, 48 &middot; Case #004</div></div>
+          </div>
+        </div>
+        <div class="quote-slide">
+          <p class="quote">&ldquo;My wife actually said something to me about two months in. More present, more patient, actually there.&rdquo;</p>
+          <div class="quote-person">
+            <div class="avatar"></div>
+            <div><div class="quote-name">Brian W.</div><div class="quote-role">Operator, Govt Contracting, 52 &middot; Case #008</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="dots" id="quoteDots"></div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-figure" data-count="1000" data-suffix="+">0</div>
+          <p>Biomarkers measured in your Executive Assessment. A standard physical checks fewer than 100.</p>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-figure" data-count="500" data-suffix="+">0</div>
+          <p>Founders and executives who run their health on Second Prime.</p>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-figure" data-count="12" data-suffix=" yrs">0</div>
+          <p>Average drop in measured biological age in year one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THREE THINGS (dark) ============ -->
+  <section class="pillars">
+    <div class="container">
+      <div class="pillars-head center reveal">
+        <span class="eyebrow" style="color: #65C8D0">What We Actually Do</span>
+        <h2>We do three things</h2>
+        <p class="lead">Every test, protocol, and adjustment in the program serves one of these.</p>
+      </div>
+      <div class="three-grid">
+        <div class="pillar-card reveal">
+          <div class="photo-stage"><img src="assets/images/three-heart.jpg" alt="Anatomical heart" loading="lazy" /></div>
+          <span class="pillar-eyebrow">Reduce Risk</span>
+          <h3>Less disease</h3>
+          <p>Heart disease, cancer, metabolic dysfunction, neurodegeneration. The four that cut lives short. We track 60+ cardiovascular markers alone, ApoB and Lp(a) included, and catch trouble a decade before your physical would.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="photo-stage"><img src="assets/images/three-runner.jpg" alt="Runner" loading="lazy" /></div>
+          <span class="pillar-eyebrow">Improve Performance</span>
+          <h3>Feel young</h3>
+          <p>Energy that holds through a 12-hour day. Body composition that finally moves. Focus you can feel coming back by week three. We rebuild the systems underneath all of it.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <div class="photo-stage"><img src="assets/images/three-golf.jpg" alt="Golfer" loading="lazy" /></div>
+          <span class="pillar-eyebrow">Extend Longevity</span>
+          <h3>More prime years</h3>
+          <p>Lifespan is years. Healthspan is healthy years. Peakspan is years at full power, and it's the one we're after. Your next 20 years should feel like your best 5.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="assessment">
+    <div class="container">
+      <div class="assessment-head center reveal">
+        <span class="eyebrow">The Executive Assessment</span>
+        <h2>The deepest look you've ever had at your own biology</h2>
+        <p class="lead">Everything is coordinated for you: draws near your home or office, kits shipped to your door, results interpreted by people who know what optimal looks like.</p>
+      </div>
+      <div class="assess-grid">
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-13-cardio.jpg" alt="" loading="lazy" /></div><div><strong>Advanced Cardiovascular Panel</strong><span>ApoB, Lp(a), particle counts, hs-CRP. 60+ markers your physical skips.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-14-micronutrients.jpg" alt="" loading="lazy" /></div><div><strong>Micronutrients</strong><span>Vitamins, minerals, and the deficiencies quietly taxing your performance.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-15-inflammation.jpg" alt="" loading="lazy" /></div><div><strong>Inflammation</strong><span>The slow burn underneath brain fog, joint pain, and poor recovery.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-01-blood.jpg" alt="" loading="lazy" /></div><div><strong>Serum Hormones</strong><span>Testosterone, thyroid, cortisol, and everything that regulates them.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-16-metabolic.jpg" alt="" loading="lazy" /></div><div><strong>Metabolic Function</strong><span>Insulin sensitivity and glucose control, well beyond fasting glucose.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-12-brain.jpg" alt="" loading="lazy" /></div><div><strong>Brain Health</strong><span>Homocysteine, omega-3 index, and the measurable inputs of cognitive decline.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-18-organ.jpg" alt="" loading="lazy" /></div><div><strong>Organ Function</strong><span>Liver, kidney, and the filtration systems everything else depends on.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-19-bioage.jpg" alt="" loading="lazy" /></div><div><strong>Biological Age</strong><span>The markers behind your measured age, tracked year over year.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-02-gut.jpg" alt="" loading="lazy" /></div><div><strong>Gut Microbiome Analysis</strong><span>What's living in your gut and what it's doing to inflammation, mood, and absorption.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-03-hormones.jpg" alt="" loading="lazy" /></div><div><strong>Salivary &amp; Urinary Hormone Analysis</strong><span>Cortisol rhythm and hormone metabolism, mapped across your actual day.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-04-food.jpg" alt="" loading="lazy" /></div><div><strong>Food Reactivity</strong><span>The foods quietly working against you, identified and handled.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-05-toxins.jpg" alt="" loading="lazy" /></div><div><strong>Toxic Exposure</strong><span>Heavy metals and environmental toxins taxing your system.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-06-dexa.jpg" alt="" loading="lazy" /></div><div><strong>DEXA Scan</strong><span>Lean mass, fat distribution, bone density. The real body composition numbers.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-07-vo2.jpg" alt="" loading="lazy" /></div><div><strong>VO&#8322; Max</strong><span>The single strongest predictor of longevity, measured properly.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-08-mobility.jpg" alt="" loading="lazy" /></div><div><strong>Mobility Assessment</strong><span>Where your movement is costing you power, posture, or pain.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-09-strength.jpg" alt="" loading="lazy" /></div><div><strong>Strength Testing</strong><span>Baseline strength benchmarked against your age and your goals.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-10-nutrition.jpg" alt="" loading="lazy" /></div><div><strong>Nutritional Analysis</strong><span>What you actually eat, measured against what your biology needs.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-11-lifestyle.jpg" alt="" loading="lazy" /></div><div><strong>Lifestyle Analysis</strong><span>Sleep, stress, training load, and the daily habits driving your numbers.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-17-resilience.jpg" alt="" loading="lazy" /></div><div><strong>Resilience Profile</strong><span>Sleep quality, cognitive function, stress, and recovery capacity in one picture.</span></div></div>
+        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-22-genetics.jpg" alt="" loading="lazy" /></div><div><strong>Genetic Testing</strong><span>Your predispositions, from ApoE to methylation, decoded into the plan.</span></div></div>
+        <div class="assess-item private reveal"><div class="assess-icon"><img src="assets/tiles/tile-20-mri.jpg" alt="" loading="lazy" /></div><div><strong>Full-Body MRI</strong><span>Head-to-pelvis imaging that catches what bloodwork can't see.<em class="p-only">Second Prime Black Exclusive</em></span></div></div>
+        <div class="assess-item private reveal"><div class="assess-icon"><img src="assets/tiles/tile-21-cancer.jpg" alt="" loading="lazy" /></div><div><strong>Early Cancer Screening</strong><span>Multi-cancer early detection, when treatment odds are best.<em class="p-only">Second Prime Black Exclusive</em></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE DIFFERENCE (data -> plan) ============ -->
+  <section class="plan" id="the-difference">
+    <div class="container">
+      <div class="plan-head center reveal">
+        <span class="eyebrow">The Difference</span>
+        <h2>The data is the easy part</h2>
+        <p class="lead">Anyone can hand you a 90-page lab PDF. We turn 1,000+ data points into the few moves that matter most right now, then run them with you.</p>
+      </div>
+      <div class="plan-grid">
+        <div class="funnel reveal">
+          <div class="funnel-title">From everything to what matters</div>
+          <div class="f-row"><span class="f-num">1,000+</span><div class="f-track"><div class="f-bar f-1" style="--w:100%"></div></div><span class="f-label">markers measured</span></div>
+          <div class="f-row"><span class="f-num">134</span><div class="f-track"><div class="f-bar f-2" style="--w:42%"></div></div><span class="f-label">outside optimal</span></div>
+          <div class="f-row"><span class="f-num">23</span><div class="f-track"><div class="f-bar f-3" style="--w:18%"></div></div><span class="f-label">address now</span></div>
+          <div class="f-row"><span class="f-num">7</span><div class="f-track"><div class="f-bar f-4" style="--w:8%"></div></div><span class="f-label">urgent</span></div>
+          <p class="funnel-note">Illustrative first assessment. Your numbers will be your own.</p>
+        </div>
+        <div class="priority-stack reveal">
+          <div class="priority-card">
+            <span class="p-tag">Priority 1</span>
+            <strong>Cardiovascular risk: elevated ApoB</strong>
+            <span>Targeted lipid protocol, blood pressure work, 12-week re-test.</span>
+          </div>
+          <div class="priority-card">
+            <span class="p-tag">Priority 2</span>
+            <strong>Early insulin resistance</strong>
+            <span>16-week nutrition and strength block, glucose re-check.</span>
+          </div>
+          <div class="priority-card">
+            <span class="p-tag">Priority 3</span>
+            <strong>Recovery debt: poor sleep quality</strong>
+            <span>Sleep protocol with wearable tracking, reviewed monthly.</span>
+          </div>
+          <p class="funnel-note">Example of a member's first-quarter plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER STORY ============ -->
+  <section class="founder" id="founder">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-photo reveal">
+          <div class="ph" data-label="Andrew's photo here"></div>
+        </div>
+        <div class="founder-body reveal">
+          <span class="eyebrow">The Founder</span>
+          <h2>Case Study #001</h2>
+          <p>A decade ago, Andrew Martin was a biologist with an autoimmune condition, exhausted and inflamed, while every doctor told him his labs looked fine. So he ran the experiment on himself: deeper testing, real interpretation, a protocol built from the numbers.</p>
+          <p>His hs-CRP fell from 12.4 to 0.4. Free testosterone tripled. His measured biological age dropped from 42 to 29. That experiment became the method, and the method became Second Prime: smart, disciplined people deserve a system built around them.</p>
+          <div class="founder-stats">
+            <div><span class="fs-num">42 &rarr; 29</span><span class="fs-label">his measured biological age</span></div>
+            <div><span class="fs-num">12.4 &rarr; 0.4</span><span class="fs-label">hs-CRP, inflammation resolved</span></div>
+            <div><span class="fs-num">1,000+</span><span class="fs-label">clients since</span></div>
+          </div>
+          <a class="btn btn-dark" href="#footer-cta">Start your own case study</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO IT'S FOR ============ -->
+  <section class="personas">
+    <div class="container">
+      <div class="personas-head center reveal">
+        <span class="eyebrow">Who It's For</span>
+        <h2>Built for people who perform for a living</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <h3>Founders</h3>
+          <p>Brain fog in the afternoons. Stubborn fat that diet alone won't touch. Energy that crashes right when the company needs you most. You've outworked everything except your own biology.</p>
+        </div>
+        <div class="stat-card reveal">
+          <h3>Executives</h3>
+          <p>Sharpness that isn't what it was. Sleep that doesn't restore. A caffeine dependency doing the work your hormones used to do. Decisions feel slower, and you've noticed.</p>
+        </div>
+        <div class="stat-card reveal">
+          <h3>Athletes</h3>
+          <p>Recovery has plateaued and performance has stalled. You're staring at career-extension decisions and want them made on data, not guesswork.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MEMBERSHIPS ============ -->
+  <section class="memberships" id="memberships">
+    <div class="container">
+      <div class="memberships-head center reveal">
+        <span class="eyebrow">Membership</span>
+        <h2>Two ways to work with us</h2>
+        <p class="lead">Both start with the full Executive Assessment. Membership is capped at 50 members for 2026 so the work stays personal.</p>
+      </div>
+      <div class="tier-grid">
+        <div class="tier tier-core reveal">
+          <img class="tier-mark" src="assets/Logomark_black.png" alt="" />
+          <span class="tier-house">Second Prime</span>
+          <h3>Core</h3>
+          <p class="tier-sub">Your complete baseline: deep testing, real interpretation, an actual game plan</p>
+          <a class="btn btn-dark" href="#footer-cta">Apply for Core</a>
+          <div class="tier-list-label">Core includes:</div>
+          <ul class="tier-list">
+            <li>Full Executive Assessment: 1,000+ biomarkers</li>
+            <li>Performance grading against optimal, not normal</li>
+            <li>Personalized Performance Blueprint</li>
+            <li>Nutrition, training, sleep, and supplement protocols</li>
+            <li>Dedicated performance coach</li>
+            <li>Quarterly re-testing and plan adjustments</li>
+            <li>Physician oversight through our medical partner</li>
+            <li>Direct messaging access to your team</li>
+          </ul>
+          <div class="tier-compare"><a href="#faq">Questions? Read the FAQ &rarr;</a></div>
+        </div>
+        <div class="tier tier-black reveal">
+          <img class="tier-mark" src="assets/Logomark_white.png" alt="" />
+          <span class="tier-house">Second Prime</span>
+          <h3>Black</h3>
+          <p class="tier-sub">Done-for-you optimization with year-round oversight, led by Andrew directly</p>
+          <a class="btn btn-light" href="#footer-cta">Apply for Black</a>
+          <div class="tier-list-label">Everything in Core, plus:</div>
+          <ul class="tier-list">
+            <li>Andrew as your personal advisor, year-round</li>
+            <li>All supplements and peptides included</li>
+            <li>Full-body MRI and early cancer screening</li>
+            <li>Expanded testing and clinical review cadence</li>
+            <li>Advanced therapies coordinated where warranted</li>
+            <li>Real-time protocol adjustments, not quarterly waits</li>
+            <li>Priority scheduling for all testing and reviews</li>
+            <li>Travel, deal-sprint, and high-stress period protocols</li>
+            <li>Annual in-depth strategy review</li>
+          </ul>
+          <div class="tier-compare"><a href="#footer-cta">Limited seats. Apply &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS WALL ============ -->
+  <section class="trusted" id="results">
+    <div class="container">
+      <div class="trusted-head center reveal">
+        <span class="eyebrow">Outcomes</span>
+        <h2>Real members. Measured results.</h2>
+      </div>
+      <div class="social-grid">
+        <div class="social-card reveal">
+          <div class="social-top"><div class="avatar"></div><div><div class="social-name">James R.</div><div class="social-handle">Founder, Tech, 44 &middot; Case #002</div></div></div>
+          <p>&ldquo;Honestly I came in pretty skeptical. I'd done bloodwork a dozen times. Andrew found things in week one that nobody had ever flagged.&rdquo;</p>
+          <p class="case-delta">ApoB 124 &rarr; 68 &middot; hs-CRP 3.8 &rarr; 0.6</p>
+        </div>
+        <div class="social-card reveal">
+          <div class="social-top"><div class="avatar"></div><div><div class="social-name">Michael T.</div><div class="social-handle">CEO, Construction, 51 &middot; Case #003</div></div></div>
+          <p>&ldquo;Look, I've spent money on a lot of health stuff. Coaches, programs, supplements from podcasts. This is the first time something actually moved.&rdquo;</p>
+          <p class="case-delta">Free T 310 &rarr; 782 &middot; Fasting insulin 18 &rarr; 5</p>
+        </div>
+        <div class="social-card reveal">
+          <div class="social-top"><div class="avatar"></div><div><div class="social-name">David K.</div><div class="social-handle">Partner, Law, 48 &middot; Case #004</div></div></div>
+          <p>&ldquo;I kept telling myself the brain fog was just stress. It wasn't stress.&rdquo;</p>
+          <p class="case-delta">Homocysteine 14.2 &rarr; 7.1 &middot; B12 218 &rarr; 894</p>
+        </div>
+        <div class="social-card reveal">
+          <div class="social-top"><div class="avatar"></div><div><div class="social-name">Chris M.</div><div class="social-handle">Founder, Landscaping, 53 &middot; Case #005</div></div></div>
+          <p>&ldquo;Down 28 pounds. My doctor ran my labs at my annual physical and called me to ask what I'd been doing.&rdquo;</p>
+          <p class="case-delta">Body fat 28% &rarr; 17% &middot; HbA1c 5.8 &rarr; 5.1</p>
+        </div>
+        <div class="social-card reveal">
+          <div class="social-top"><div class="avatar"></div><div><div class="social-name">Ryan S.</div><div class="social-handle">Executive, Asset Mgmt, 46 &middot; Case #006</div></div></div>
+          <p>&ldquo;I had a cardiologist, a trainer, a nutritionist. None of them talked to each other. I was the one connecting the dots.&rdquo;</p>
+          <p class="case-delta">LDL-P 1840 &rarr; 980 &middot; hs-CRP 2.9 &rarr; 0.5</p>
+        </div>
+        <div class="social-card reveal">
+          <div class="social-top"><div class="avatar"></div><div><div class="social-name">Scott B.</div><div class="social-handle">Founder &amp; CEO, Healthcare, 49 &middot; Case #007</div></div></div>
+          <p>&ldquo;I assumed it was testosterone. It was testosterone plus five other things I didn't even know to look for.&rdquo;</p>
+          <p class="case-delta">Bio age 54 &rarr; 41 &middot; VO&#8322; max 32 &rarr; 48</p>
+        </div>
+        <div class="social-card reveal">
+          <div class="social-top"><div class="avatar"></div><div><div class="social-name">Mark D.</div><div class="social-handle">Investment Banking, 47 &middot; Case #009</div></div></div>
+          <p>&ldquo;I've sent three people to Andrew already. I don't do that unless something actually worked.&rdquo;</p>
+          <p class="case-delta">Free T 298 &rarr; 820 &middot; HbA1c 5.7 &rarr; 5.0</p>
+        </div>
+        <div class="social-card reveal">
+          <div class="social-top"><div class="avatar"></div><div><div class="social-name">Thomas A.</div><div class="social-handle">CEO, Logistics, 52 &middot; Case #010</div></div></div>
+          <p>&ldquo;My cardiologist had been watching my ApoB and Lp(a) for three years. Nothing moved it. Six months here did.&rdquo;</p>
+          <p class="case-delta">ApoB 142 &rarr; 62 &middot; Lp(a) 89 &rarr; 31</p>
+        </div>
+        <div class="social-card reveal">
+          <div class="social-top"><div class="avatar"></div><div><div class="social-name">Richard H.</div><div class="social-handle">President, Software, 47 &middot; Case #011</div></div></div>
+          <p>&ldquo;I run a team of 200 people. The cognitive piece was what I cared most about.&rdquo;</p>
+          <p class="case-delta">Homocysteine 13.8 &rarr; 6.4 &middot; Omega-3 index 3.1 &rarr; 9.2</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA STRIP ============ -->
+  <section class="cta-strip">
+    <div class="container cta-strip-inner reveal">
+      <div>
+        <h3>Seen enough numbers?</h3>
+        <p>A 30-minute conversation tells you if this is a fit. Zero pressure, zero homework.</p>
+      </div>
+      <a class="btn btn-dark" href="#footer-cta">Book a Consult&ensp;&rarr;</a>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-head reveal">
+        <div>
+          <span class="eyebrow">Questions</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <p class="faq-note">Still unsure? <a href="#footer-cta">Book a 30-minute consult. Zero pressure.</a></p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">How is this different from my doctor or a concierge practice? <span class="chev">+</span></button>
+          <div class="faq-a"><p>Your doctor's job is to find disease, and they're good at it. Our job is everything before that: the decade where your labs are "normal" but your energy, body, and sharpness say otherwise. We test 1,000+ markers instead of fewer than 100, grade them against optimal instead of normal, and then actually run the plan with you.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is this all remote? Do I need to travel? <span class="chev">+</span></button>
+          <div class="faq-a"><p>No travel required. Blood draws are coordinated near your home or office, kits ship to your door, scans like DEXA are scheduled at facilities in your area, and every review happens over video with your team.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">I feel fine and get regular checkups. What would this add? <span class="chev">+</span></button>
+          <div class="faq-a"><p>"Fine" is usually the question, not the answer. Most members come in feeling fine and discover hormonal, metabolic, or cardiovascular drift their physical never measured. Catching decline early is the entire advantage.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What happens if my results show something serious? <span class="chev">+</span></button>
+          <div class="faq-a"><p>Anything clinical goes straight to physician review through our medical partner, and we help you get to the right specialist quickly. Then we keep working the plan around it.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How much of my time does this take? <span class="chev">+</span></button>
+          <div class="faq-a"><p>Less than you'd think. The assessment phase takes about 20 days of mostly waiting, not doing. After that, your team handles the logistics; you handle the living. The plan is built to fit a real schedule, not a monk's.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Who leads the work? <span class="chev">+</span></button>
+          <div class="faq-a"><p>Andrew Martin, a biologist who built the method on himself first, leads a team of performance coaches, with physician oversight through our medical partner. Small by design and capped at 50 members for 2026.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER CTA ============ -->
+  <section class="footer-cta" id="footer-cta">
+    <div class="inner reveal">
+      <h1>Your prime isn't in the past</h1>
+      <p class="lead">It's waiting to be engineered. Start with a 30-minute conversation to see if we're a fit. Zero pressure.</p>
+      <a class="btn btn-light" href="#">Book a Consult</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="nav-logo" role="img" aria-label="Second Prime"></span>
+          <p>Precision health for your second prime. Optimal, not normal.</p>
+        </div>
+        <div class="footer-col">
+          <h6>Experience</h6>
+          <ul>
+            <li><a href="what-we-do.html">What We Do</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="#memberships">Membership</a></li>
+            <li><a href="#results">Results</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h6>Explore</h6>
+          <ul>
+            <li><a href="#founder">The Founder</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#footer-cta">Book a Consult</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h6>Connect</h6>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Second Prime. All rights reserved.</span>
+        <span>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+// ============================================================
+// Nav: transparent over hero, solid after scrolling past it
+// ============================================================
+const nav = document.getElementById('nav');
+const heroEl = document.querySelector('.hero, .page-hero');
+const navThreshold = () => (heroEl ? heroEl.offsetHeight : 400) - 80;
+const onScroll = () => {
+  nav.classList.toggle('scrolled', window.scrollY > navThreshold());
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+// ============================================================
+// Mobile menu
+// ============================================================
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    document.body.classList.toggle('menu-open', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    })
+  );
+}
+
+// ============================================================
+// Scroll reveals: plain position checks, engine-proof
+// ============================================================
+const revealEls = [...document.querySelectorAll('.reveal')];
+function runCounter(el) {
+  if (el.dataset.counted) return;
+  el.dataset.counted = '1';
+  const target = +el.dataset.count;
+  const suffix = el.dataset.suffix || '';
+  const dur = 1400;
+  const start = performance.now();
+  const tick = (t) => {
+    const p = Math.min(1, (t - start) / dur);
+    const v = Math.round(target * (1 - Math.pow(1 - p, 3)));
+    el.textContent = v.toLocaleString('en-US') + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+function revealCheck() {
+  const limit = window.innerHeight * 0.92;
+  revealEls.forEach((el) => {
+    if (el.classList.contains('in')) return;
+    if (el.getBoundingClientRect().top < limit) {
+      const siblings = [...el.parentElement.children].filter((c) => c.classList.contains('reveal') && !c.classList.contains('in'));
+      const idx = Math.max(0, siblings.indexOf(el));
+      el.style.transitionDelay = `${Math.min(idx, 5) * 100}ms`;
+      el.classList.add('in');
+      el.querySelectorAll('[data-count]').forEach(runCounter);
+      if (el.matches('[data-count]')) runCounter(el);
+    }
+  });
+}
+window.addEventListener('scroll', revealCheck, { passive: true });
+window.addEventListener('resize', revealCheck, { passive: true });
+window.addEventListener('load', revealCheck);
+revealCheck();
+// Heartbeat: guarantees reveals even if scroll events are missed
+const revealTimer = setInterval(() => {
+  revealCheck();
+  if (revealEls.every((el) => el.classList.contains('in'))) clearInterval(revealTimer);
+}, 350);
+
+// ============================================================
+// Testimonial carousel (dots auto-generated from slides)
+// ============================================================
+const slides = document.querySelectorAll('.quote-slide');
+const dotsWrap = document.getElementById('quoteDots');
+if (slides.length && dotsWrap) {
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', `Testimonial ${i + 1}`);
+    d.addEventListener('click', () => show(i));
+    dotsWrap.appendChild(d);
+  });
+  const dots = dotsWrap.querySelectorAll('.dot');
+  let current = 0;
+  function show(i) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  // Auto-advance every 6s
+  setInterval(() => show((current + 1) % slides.length), 6000);
+}
+
+// ============================================================
+// FAQ accordion
+// ============================================================
+document.querySelectorAll('.faq-item').forEach((item) => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const open = item.classList.toggle('open');
+    a.style.maxHeight = open ? a.scrollHeight + 'px' : '0';
+  });
+});
+
+
+// ============================================================
+// Safety net: never leave content hidden if the observer misses
+// ============================================================
+window.addEventListener('load', () => {
+  setTimeout(revealCheck, 1000);
+});
+
+
+// ============================================================
+// Video orb fallback: some browser setups block direct media
+// requests; after 1.2s of no data, load via fetch -> blob.
+// ============================================================
+document.querySelectorAll('video.orb-video').forEach((v) => {
+  setTimeout(() => {
+    if (v.readyState === 0) {
+      fetch(v.getAttribute('src')).then((r) => r.blob()).then((b) => {
+        v.src = URL.createObjectURL(b);
+        v.play().catch(() => {});
+      }).catch(() => {});
+    }
+  }, 1200);
+});
+</script>
+</body>
+</html>
