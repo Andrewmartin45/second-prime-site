@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What We Do — Immersive Journey</title>
+  <link rel="stylesheet" href="css/styles.css?v=2" />
+  <style>
+    body { background: #08080c; }
+    .intro { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; }
+    .intro p { color: rgba(255,255,255,0.5); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; }
+    .outro { min-height: 50vh; background: #08080c; }
+
+    /* The journey */
+    .journey { position: relative; height: 460vh; }
+    .journey-stage { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+    .scene { position: absolute; inset: 0; opacity: 0; will-change: opacity; }
+    .scene-bg { position: absolute; inset: -6%; background-size: cover; background-position: center; will-change: transform; transform: scale(1.1); }
+    .scene::after { content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(8,8,12,0.55) 0%, rgba(8,8,12,0.25) 45%, rgba(8,8,12,0.85) 100%); }
+
+    /* Copy */
+    .scene-copy { position: absolute; inset: 0; z-index: 5; display: flex; align-items: center; }
+    .scene-copy .container { width: 100%; }
+    .copy { position: absolute; max-width: 600px; opacity: 0; transform: translateY(28px); will-change: opacity, transform; color: #fff; }
+    .copy .j-eyebrow { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 18px; }
+    .copy h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(48px, 7vw, 92px); line-height: 1; margin-bottom: 22px; }
+    .copy p { font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,0.82); max-width: 460px; }
+    .copy.center { left: 50%; transform: translate(-50%, 28px); text-align: center; max-width: 760px; }
+    .copy.center h2 { font-size: clamp(44px, 6vw, 80px); }
+
+    /* Progress rail */
+    .j-rail { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); z-index: 6; display: flex; flex-direction: column; gap: 18px; }
+    .j-dot { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.4); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; justify-content: flex-end; transition: color .4s; }
+    .j-dot i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); transition: all .4s; }
+    .j-dot.on { color: #fff; }
+    .j-dot.on i { background: var(--teal-bright); transform: scale(1.5); }
+    @media (max-width: 809px){ .j-rail { display: none; } }
+  </style>
+</head>
+<body>
+
+  <section class="intro">
+    <p>Scroll to begin &darr;</p>
+  </section>
+
+  <section class="journey" id="journey">
+    <div class="journey-stage">
+      <div class="scene" data-i="0"><div class="scene-bg" style="background-image:url('assets/images/journey-vessel.jpg')"></div></div>
+      <div class="scene" data-i="1"><div class="scene-bg" style="background-image:url('assets/images/journey-beach.jpg')"></div></div>
+      <div class="scene" data-i="2"><div class="scene-bg" style="background-image:url('assets/images/conc-golf.jpg')"></div></div>
+      <div class="scene" data-i="3"><div class="scene-bg" style="background-image:url('assets/images/journey-ski.jpg')"></div></div>
+
+      <div class="scene-copy">
+        <div class="container">
+          <div class="copy" data-i="0"><span class="j-eyebrow">Reduce Risk</span><h2>Less disease</h2><p>We track the four that cut lives short, a decade before symptoms ever show.</p></div>
+          <div class="copy" data-i="1"><span class="j-eyebrow">Improve Performance</span><h2>Feel young</h2><p>Energy, focus, and a body that keeps up with the life you built.</p></div>
+          <div class="copy" data-i="2"><span class="j-eyebrow">Extend Longevity</span><h2>More prime years</h2><p>Peakspan: your next twenty should feel like your best five.</p></div>
+          <div class="copy center" data-i="3"><h2>This is your second prime.</h2></div>
+        </div>
+      </div>
+
+      <div class="j-rail">
+        <div class="j-dot on" data-i="0">Less disease <i></i></div>
+        <div class="j-dot" data-i="1">Feel young <i></i></div>
+        <div class="j-dot" data-i="2">More prime years <i></i></div>
+        <div class="j-dot" data-i="3">Second Prime <i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="outro"></section>
+
+  <script>
+  (function(){
+    var sec = document.getElementById('journey');
+    var scenes = [].slice.call(document.querySelectorAll('.scene'));
+    var copies = [].slice.call(document.querySelectorAll('.copy'));
+    var dots = [].slice.call(document.querySelectorAll('.j-dot'));
+    var N = scenes.length;
+    var ticking = false;
+    function clamp(v,a,b){ return Math.max(a, Math.min(b, v)); }
+    function render(){
+      ticking = false;
+      var rect = sec.getBoundingClientRect();
+      var total = sec.offsetHeight - window.innerHeight;
+      var p = clamp(-rect.top / total, 0, 1);
+      var pos = p * (N - 1);
+      for (var i=0;i<N;i++){
+        var dist = Math.abs(pos - i);
+        var op = clamp(1 - dist, 0, 1);
+        scenes[i].style.opacity = op;
+        var bg = scenes[i].firstElementChild;
+        bg.style.transform = 'scale(' + (1.12 + 0.26 * op) + ')';
+        var cop = clamp(1 - dist*1.6, 0, 1);
+        copies[i].style.opacity = cop;
+        var baseX = copies[i].classList.contains('center') ? '-50%' : '0';
+        copies[i].style.transform = 'translate(' + baseX + ',' + (28 - 28*cop) + 'px)';
+        dots[i].classList.toggle('on', Math.round(pos) === i);
+      }
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(render); } }, {passive:true});
+    window.addEventListener('resize', render);
+    render();
+  })();
+  </script>
+</body>
+</html>
