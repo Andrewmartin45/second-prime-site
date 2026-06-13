@@ -848,3 +848,8 @@ html.js .reveal.in .span-bar { width: var(--w); }
 .assess-private-intro strong { color: var(--ink); }
 .assess-private-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 @media (max-width: 809px) { .assess-private-pair { grid-template-columns: 1fr; } }
+
+/* Assessment: collapsed grid + show-all */
+.assess-hidden { display: none; }
+.assess-grid.show-all .assess-hidden { display: flex; }
+.assess-more-wrap { text-align: center; margin-top: 44px; }
