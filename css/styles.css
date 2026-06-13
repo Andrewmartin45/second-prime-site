@@ -841,3 +841,10 @@ html.js .reveal.in .span-bar { width: var(--w); }
 .cs-after { font-family: var(--font-serif); font-size: 34px; color: var(--teal); }
 .cs-note { font-size: 12px; color: var(--gray); margin-top: 20px; }
 @media (max-width: 809px) { .cs-stats { grid-template-columns: 1fr; } }
+
+/* Assessment private pair below the marquee */
+.assess-private-wrap { max-width: 980px; margin: 56px auto 0; }
+.assess-private-intro { text-align: center; font-size: 14px; color: var(--gray); margin-bottom: 22px; }
+.assess-private-intro strong { color: var(--ink); }
+.assess-private-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 809px) { .assess-private-pair { grid-template-columns: 1fr; } }

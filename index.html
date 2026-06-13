@@ -205,40 +205,48 @@
         <h2>1,000 markers. One clear read on your biology.</h2>
         <p class="lead">Everything is coordinated for you: draws near your home or office, kits shipped to your door, results interpreted by people who know what optimal looks like.</p>
       </div>
-      <div class="assess-grid">
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-13-cardio.jpg" alt="" loading="lazy" /></div><div><strong>Advanced Cardiovascular Panel</strong><span>ApoB, Lp(a), particle counts, hs-CRP. 60+ markers your physical skips.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-14-micronutrients.jpg" alt="" loading="lazy" /></div><div><strong>Micronutrients</strong><span>Vitamins, minerals, and the deficiencies quietly taxing your performance.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-15-inflammation.jpg" alt="" loading="lazy" /></div><div><strong>Inflammation</strong><span>The slow burn underneath brain fog, joint pain, and poor recovery.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-01-blood.jpg" alt="" loading="lazy" /></div><div><strong>Serum Hormones</strong><span>Testosterone, thyroid, cortisol, and everything that regulates them.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-16-metabolic.jpg" alt="" loading="lazy" /></div><div><strong>Metabolic Function</strong><span>Insulin sensitivity and glucose control, well beyond fasting glucose.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-12-brain.jpg" alt="" loading="lazy" /></div><div><strong>Brain Health</strong><span>Homocysteine, omega-3 index, and the measurable inputs of cognitive decline.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-18-organ.jpg" alt="" loading="lazy" /></div><div><strong>Organ Function</strong><span>Liver, kidney, and the filtration systems everything else depends on.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-19-bioage.jpg" alt="" loading="lazy" /></div><div><strong>Biological Age</strong><span>The markers behind your measured age, tracked year over year.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-02-gut.jpg" alt="" loading="lazy" /></div><div><strong>Gut Microbiome Analysis</strong><span>What's living in your gut and what it's doing to inflammation, mood, and absorption.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-03-hormones.jpg" alt="" loading="lazy" /></div><div><strong>Salivary &amp; Urinary Hormone Analysis</strong><span>Cortisol rhythm and hormone metabolism, mapped across your actual day.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-04-food.jpg" alt="" loading="lazy" /></div><div><strong>Food Reactivity</strong><span>The foods quietly working against you, identified and handled.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-05-toxins.jpg" alt="" loading="lazy" /></div><div><strong>Toxic Exposure</strong><span>Heavy metals and environmental toxins taxing your system.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-06-dexa.jpg" alt="" loading="lazy" /></div><div><strong>DEXA Scan</strong><span>Lean mass, fat distribution, bone density. The real body composition numbers.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-07-vo2.jpg" alt="" loading="lazy" /></div><div><strong>VO&#8322; Max</strong><span>The single strongest predictor of longevity, measured properly.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-08-mobility.jpg" alt="" loading="lazy" /></div><div><strong>Mobility Assessment</strong><span>Where your movement is costing you power, posture, or pain.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-09-strength.jpg" alt="" loading="lazy" /></div><div><strong>Strength Testing</strong><span>Baseline strength benchmarked against your age and your goals.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-10-nutrition.jpg" alt="" loading="lazy" /></div><div><strong>Nutritional Analysis</strong><span>What you actually eat, measured against what your biology needs.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-11-lifestyle.jpg" alt="" loading="lazy" /></div><div><strong>Lifestyle Analysis</strong><span>Sleep, stress, training load, and the daily habits driving your numbers.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-17-resilience.jpg" alt="" loading="lazy" /></div><div><strong>Resilience Profile</strong><span>Sleep quality, cognitive function, stress, and recovery capacity in one picture.</span></div></div>
-        <div class="assess-item reveal"><div class="assess-icon"><img src="assets/tiles/tile-22-genetics.jpg" alt="" loading="lazy" /></div><div><strong>Genetic Testing</strong><span>Your predispositions, from ApoE to methylation, decoded into the plan.</span></div></div>
-        <div class="assess-item private reveal"><div class="assess-icon"><img src="assets/tiles/tile-20-mri.jpg" alt="" loading="lazy" /></div><div><strong>Full-Body MRI</strong><span>Head-to-pelvis imaging that catches what bloodwork can't see.<em class="p-only">Second Prime Black Exclusive</em></span></div></div>
-        <div class="assess-item private reveal"><div class="assess-icon"><img src="assets/tiles/tile-21-cancer.jpg" alt="" loading="lazy" /></div><div><strong>Early Cancer Screening</strong><span>Multi-cancer early detection, when treatment odds are best.<em class="p-only">Second Prime Black Exclusive</em></span></div></div>
+      <div class="sys-marquee reveal">
+        <div class="sys-track" id="assessTrack">
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-13-cardio.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Advanced Cardiovascular Panel</strong><span>ApoB, Lp(a), particle counts, hs-CRP. 60+ markers your physical skips.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-14-micronutrients.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Micronutrients</strong><span>Vitamins, minerals, and the deficiencies quietly taxing your performance.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-15-inflammation.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Inflammation</strong><span>The slow burn underneath brain fog, joint pain, and poor recovery.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-01-blood.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Serum Hormones</strong><span>Testosterone, thyroid, cortisol, and everything that regulates them.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-16-metabolic.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Metabolic Function</strong><span>Insulin sensitivity and glucose control, well beyond fasting glucose.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-12-brain.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Brain Health</strong><span>Homocysteine, omega-3 index, and the measurable inputs of cognitive decline.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-18-organ.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Organ Function</strong><span>Liver, kidney, and the filtration systems everything else depends on.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-19-bioage.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Biological Age</strong><span>The markers behind your measured age, tracked year over year.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-02-gut.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Gut Microbiome Analysis</strong><span>What's living in your gut and what it's doing to inflammation, mood, and absorption.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-03-hormones.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Salivary &amp; Urinary Hormones</strong><span>Cortisol rhythm and hormone metabolism, mapped across your actual day.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-04-food.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Food Reactivity</strong><span>The foods quietly working against you, identified and handled.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-05-toxins.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Toxic Exposure</strong><span>Heavy metals and environmental toxins taxing your system.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-06-dexa.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>DEXA Scan</strong><span>Lean mass, fat distribution, bone density. The real body composition numbers.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-07-vo2.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>VO&#8322; Max</strong><span>The single strongest predictor of longevity, measured properly.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-08-mobility.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Mobility Assessment</strong><span>Where your movement is costing you power, posture, or pain.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-09-strength.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Strength Testing</strong><span>Baseline strength benchmarked against your age and your goals.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-10-nutrition.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Nutritional Analysis</strong><span>What you actually eat, measured against what your biology needs.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-11-lifestyle.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Lifestyle Analysis</strong><span>Sleep, stress, training load, and the daily habits driving your numbers.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-17-resilience.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Resilience Profile</strong><span>Sleep quality, cognitive function, stress, and recovery in one picture.</span></div></div>
+          <div class="sys-card"><div class="sys-img"><img src="assets/tiles/tile-22-genetics.jpg" alt="" loading="lazy" /></div><div class="sys-body"><strong>Genetic Testing</strong><span>Your predispositions, from ApoE to methylation, decoded into the plan.</span></div></div>
+        </div>
+      </div>
+      <div class="assess-private-wrap reveal">
+        <p class="assess-private-intro">Two more, exclusive to <strong>Second Prime Black</strong>:</p>
+        <div class="assess-private-pair">
+          <div class="assess-item private"><div class="assess-icon"><img src="assets/tiles/tile-20-mri.jpg" alt="" loading="lazy" /></div><div><strong>Full-Body MRI</strong><span>Head-to-pelvis imaging that catches what bloodwork can't see.<em class="p-only">Second Prime Black Exclusive</em></span></div></div>
+          <div class="assess-item private"><div class="assess-icon"><img src="assets/tiles/tile-21-cancer.jpg" alt="" loading="lazy" /></div><div><strong>Early Cancer Screening</strong><span>Multi-cancer early detection, when treatment odds are best.<em class="p-only">Second Prime Black Exclusive</em></span></div></div>
+        </div>
       </div>
     </div>
   </section>
+  <script>(function(){var t=document.getElementById("assessTrack");if(t){t.innerHTML+=t.innerHTML;}})();</script>
 
   <!-- ============ THE DIFFERENCE (data -> plan) ============ -->
   <section class="plan" id="the-difference">
     <div class="container">
       <div class="plan-head center reveal">
-        <span class="eyebrow">The Difference</span>
-        <h2>The data is the easy part</h2>
-        <p class="lead">Anyone can hand you a 90-page lab PDF. We turn 1,000+ data points into the few moves that matter most right now, then run them with you.</p>
+        <span class="eyebrow">From Data to Plan</span>
+        <h2>We don't hand you a PDF</h2>
+        <p class="lead">The hard part isn't the 1,000 data points. It's knowing which few matter right now, building the plan, and running it with you. That's the whole job.</p>
       </div>
       <div class="plan-grid">
         <div class="funnel reveal">

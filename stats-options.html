@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stats — Options</title>
+  <link rel="stylesheet" href="css/styles.css?v=2" />
+  <style>
+    .opt-label { text-align:center; padding:64px 0 0; font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--teal); }
+    .opt-sub { text-align:center; color:var(--gray); font-size:14px; margin:8px 0 0; }
+    .divider { height:1px; background:var(--border); max-width:1200px; margin:90px auto 0; }
+    .sec-head { text-align:center; max-width:680px; margin:44px auto 56px; }
+    .sec-head h2 { font-family:var(--font-serif); font-weight:400; }
+    .sec-head p { color:var(--gray); margin-top:16px; }
+
+    /* V1 gauges */
+    .gauges { max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:40px; }
+    .gauge-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; }
+    .gauge-name { font-family:var(--font-serif); font-size:22px; }
+    .gauge-sub { font-size:13px; color:var(--gray); letter-spacing:0.04em; text-transform:uppercase; }
+    .gauge-track { position:relative; height:16px; border-radius:99px; background:var(--bg-cool); overflow:hidden; }
+    .gauge-normal { position:absolute; left:0; top:0; bottom:0; width:78%; background:#D8D8DE; }
+    .gauge-optimal { position:absolute; left:0; top:0; bottom:0; width:0; background:var(--teal); border-radius:99px; transition:width 1.2s var(--ease) .3s; }
+    .reveal.in .gauge-optimal { width:28%; }
+    .gauge-you { position:absolute; top:-5px; width:3px; height:26px; background:#101016; border-radius:2px; transform:translateX(-50%); }
+    .gauge-you::after { content:"YOU, TODAY"; position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:10px; font-weight:700; letter-spacing:0.1em; white-space:nowrap; color:#101016; }
+    .gauge-legend { display:flex; gap:24px; margin-top:14px; font-size:12px; color:var(--gray); }
+    .gauge-legend i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-1px; }
+    .lg-opt i { background:var(--teal); } .lg-norm i { background:#D8D8DE; }
+
+    /* V2 stat cards */
+    .v2-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1020px; margin:0 auto; }
+    .v2-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:44px 36px; text-align:center; }
+    .v2-fig { font-family:var(--font-serif); font-weight:400; font-size:64px; line-height:1; letter-spacing:-0.02em;
+      background:linear-gradient(120deg,var(--ink) 25%,var(--teal) 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .v2-card p { font-size:15px; color:var(--gray); margin-top:20px; }
+    .v2-ring { width:54px; height:54px; margin:0 auto 22px; }
+    @media (max-width:809px){ .v2-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+  <!-- VERSION 1 -->
+  <div class="opt-label">Version 1 — "Normal vs Optimal" gauges (the visual thesis)</div>
+  <p class="opt-sub">Shows a marker sitting inside the standard "normal" band while the real target is optimal. Bars fill on scroll.</p>
+  <section style="background:var(--bg-light); padding:0 0 90px; margin-top:40px;">
+    <div class="container">
+      <div class="sec-head reveal"><span class="eyebrow">The Gap We Close</span><h2>"Normal" isn't optimal</h2><p>Standard ranges are built to catch disease. We grade every marker against where you should actually be.</p></div>
+      <div class="gauges">
+        <div class="gauge reveal"><div class="gauge-top"><span class="gauge-name">ApoB</span><span class="gauge-sub">Cardiovascular risk</span></div><div class="gauge-track"><div class="gauge-normal"></div><div class="gauge-optimal"></div><div class="gauge-you" style="left:60%"></div></div><div class="gauge-legend"><span class="lg-opt"><i></i>Optimal</span><span class="lg-norm"><i></i>Standard "normal"</span></div></div>
+        <div class="gauge reveal"><div class="gauge-top"><span class="gauge-name">Free Testosterone</span><span class="gauge-sub">Drive, energy, recovery</span></div><div class="gauge-track"><div class="gauge-normal"></div><div class="gauge-optimal"></div><div class="gauge-you" style="left:52%"></div></div><div class="gauge-legend"><span class="lg-opt"><i></i>Optimal</span><span class="lg-norm"><i></i>Standard "normal"</span></div></div>
+        <div class="gauge reveal"><div class="gauge-top"><span class="gauge-name">VO&#8322; Max</span><span class="gauge-sub">Longevity's strongest predictor</span></div><div class="gauge-track"><div class="gauge-normal"></div><div class="gauge-optimal"></div><div class="gauge-you" style="left:66%"></div></div><div class="gauge-legend"><span class="lg-opt"><i></i>Optimal</span><span class="lg-norm"><i></i>Standard "normal"</span></div></div>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- VERSION 2 -->
+  <div class="opt-label">Version 2 — Punchy, specific stats</div>
+  <p class="opt-sub">Numbers that imply depth, not just scale. Big serif figures.</p>
+  <section style="padding:0 0 90px;">
+    <div class="container">
+      <div class="sec-head reveal"><span class="eyebrow">By the Numbers</span><h2>What the data says</h2></div>
+      <div class="v2-grid">
+        <div class="v2-card reveal"><div class="v2-fig">1,000+</div><p>Biomarkers measured, against fewer than 100 on a standard physical.</p></div>
+        <div class="v2-card reveal"><div class="v2-fig">1 in 3</div><p>Members arrive with a serious marker their annual physical never flagged.</p></div>
+        <div class="v2-card reveal"><div class="v2-fig">12 yrs</div><p>Average drop in measured biological age across members in year one.</p></div>
+      </div>
+    </div>
+  </section>
+  <script>setTimeout(function(){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});},300);</script>
+</body>
+</html>
