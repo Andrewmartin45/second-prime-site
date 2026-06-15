@@ -644,10 +644,10 @@ html.js .reveal.in .f-bar { width: var(--w); }
 .span-row { display: grid; grid-template-columns: 220px 1fr; gap: 24px; align-items: center; }
 .span-label strong { display: block; font-size: 17px; font-weight: 700; }
 .span-label span { font-size: 13px; color: var(--gray); }
-.span-track { height: 14px; border-radius: 99px; background: var(--bg-cool); position: relative; display: flex; align-items: center; }
-.span-bar { height: 100%; border-radius: 99px; width: var(--w); }
+.span-track { height: 16px; border-radius: 99px; background: var(--bg-cool); position: relative; }
+.span-bar { height: 100%; border-radius: 99px; width: var(--end); }
 html.js .span-bar { width: 0; transition: width 1.2s var(--ease) 0.3s; }
-html.js .reveal.in .span-bar { width: var(--w); }
+html.js .reveal.in .span-bar { width: var(--end); }
 .sb-1 { background: #B8B8C0; }
 .sb-2 { background: var(--teal-deep); }
 .sb-3 { background: var(--sand); }
@@ -951,3 +951,45 @@ html.js .reveal.in .span-bar { width: var(--w); }
   transition: max-height .55s var(--ease), opacity .4s var(--ease), margin-top .55s var(--ease); }
 .measure-grid.open { opacity: 1; margin-top: 44px; }
 @media (prefers-reduced-motion: reduce) { .measure-grid, .measure-toggle .mt-caret { transition: none; } }
+
+/* ============================================================
+   PERFORMANCE SYSTEMS — static small-card grid (replaces marquee)
+   ============================================================ */
+.sys-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.sys-grid .sys-card { flex: none; }
+.sys-grid .sys-img { aspect-ratio: 4 / 3; max-height: none; }
+.sys-grid .sys-body { padding: 16px 18px 20px; gap: 4px; }
+.sys-grid .sys-card strong { font-size: 16px; }
+.sys-grid .sys-card span { font-size: 13px; line-height: 1.5; }
+@media (max-width: 1000px) { .sys-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px)  { .sys-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   PEAKSPAN — nested shared age axis
+   ============================================================ */
+.span-age { position: absolute; top: 50%; left: var(--end); transform: translate(8px, -50%);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; font-weight: 700; color: var(--ink);
+  opacity: 0; transition: opacity .5s var(--ease) 0.9s; }
+html.js .reveal.in .span-age { opacity: 1; }
+.span-age-ext { color: var(--teal); }
+.span-ext { position: absolute; top: 0; left: var(--end); width: calc(var(--ext) - var(--end)); height: 100%;
+  border: 1.5px dashed var(--teal); border-left: none; border-radius: 0 99px 99px 0; box-sizing: border-box;
+  opacity: 0; transition: opacity .5s var(--ease) 1s; }
+html.js .reveal.in .span-ext { opacity: 1; }
+.span-axis-row { display: grid; grid-template-columns: 220px 1fr; gap: 24px; margin-top: 2px; }
+.span-axis { position: relative; height: 24px; border-top: 1px solid var(--border); }
+.span-axis > span { position: absolute; top: 7px; transform: translateX(-50%);
+  font-family: ui-monospace, Menlo, monospace; font-size: 11px; color: var(--gray); }
+.span-axis > span::before { content: ""; position: absolute; top: -7px; left: 50%; width: 1px; height: 5px; background: var(--border); }
+.span-axis-cap { position: absolute; right: 0; top: 7px; font-style: normal; font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); }
+.span-legend { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px; color: var(--gray); margin-top: 26px; }
+.span-legend .dash-key { display: inline-block; width: 22px; height: 10px; border: 1.5px dashed var(--teal); border-radius: 99px; }
+@media (prefers-reduced-motion: reduce) { html.js .span-bar, .span-age, .span-ext { transition: none; } }
+@media (max-width: 680px) {
+  .span-axis-row { grid-template-columns: 1fr; }
+  .span-axis-row > div:first-child { display: none; }
+  .span-age-ext { display: none; }
+}
+.span-axis > span:first-child { transform: none; }
+.span-axis > span:last-child { transform: translateX(-100%); }

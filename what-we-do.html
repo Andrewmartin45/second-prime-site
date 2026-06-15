@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What We Do — Second Prime</title>
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="css/styles.css?v=7" />
+  <link rel="stylesheet" href="css/styles.css?v=8" />
 </head>
 <body>
 
@@ -82,40 +82,38 @@
         <h2>Feel it working, in weeks</h2>
         <p class="lead">Risk reduction pays off over decades. Performance pays off this quarter. We grade and rebuild eight systems you use every day.</p>
       </div>
-      <div class="sys-marquee reveal">
-        <div class="sys-track" id="sysTrack">
-          <div class="sys-card">
-            <div class="sys-img"><img src="assets/images/sys-energy.jpg" alt="" loading="lazy" /></div>
-            <div class="sys-body"><strong>Energy</strong><span>Stable output through a 12-hour day, no caffeine scaffolding.</span></div>
-          </div>
-          <div class="sys-card">
-            <div class="sys-img"><img src="assets/images/sys-body.jpg" alt="" loading="lazy" /></div>
-            <div class="sys-body"><strong>Body composition</strong><span>Lean mass up, visceral fat down, measured by DEXA.</span></div>
-          </div>
-          <div class="sys-card">
-            <div class="sys-img"><img src="assets/images/sys-brain.jpg" alt="" loading="lazy" /></div>
-            <div class="sys-body"><strong>Brain function</strong><span>Sharpness, recall, and the end of 3pm fog.</span></div>
-          </div>
-          <div class="sys-card">
-            <div class="sys-img"><img src="assets/images/sys-muscle.jpg" alt="" loading="lazy" /></div>
-            <div class="sys-body"><strong>Muscle &amp; strength</strong><span>The single best insurance policy for your 60s and 70s.</span></div>
-          </div>
-          <div class="sys-card">
-            <div class="sys-img"><img src="assets/images/sys-endurance.jpg" alt="" loading="lazy" /></div>
-            <div class="sys-body"><strong>Endurance</strong><span>VO&#8322; max, the strongest single predictor of longevity.</span></div>
-          </div>
-          <div class="sys-card">
-            <div class="sys-img"><img src="assets/images/sys-sleep.jpg" alt="" loading="lazy" /></div>
-            <div class="sys-body"><strong>Sleep quality</strong><span>Where every other protocol succeeds or fails.</span></div>
-          </div>
-          <div class="sys-card">
-            <div class="sys-img"><img src="assets/images/sys-gut.jpg" alt="" loading="lazy" /></div>
-            <div class="sys-body"><strong>Digestion</strong><span>Gut function drives inflammation, mood, and absorption.</span></div>
-          </div>
-          <div class="sys-card">
-            <div class="sys-img"><img src="assets/images/sys-sexual.jpg" alt="" loading="lazy" /></div>
-            <div class="sys-body"><strong>Sexual function</strong><span>A vital sign. When hormones recover, it recovers.</span></div>
-          </div>
+      <div class="sys-grid">
+        <div class="sys-card reveal">
+          <div class="sys-img"><img src="assets/images/sys-energy.jpg" alt="" loading="lazy" /></div>
+          <div class="sys-body"><strong>Energy</strong><span>Stable output through a 12-hour day, no caffeine scaffolding.</span></div>
+        </div>
+        <div class="sys-card reveal">
+          <div class="sys-img"><img src="assets/images/sys-body.jpg" alt="" loading="lazy" /></div>
+          <div class="sys-body"><strong>Body composition</strong><span>Lean mass up, visceral fat down, measured by DEXA.</span></div>
+        </div>
+        <div class="sys-card reveal">
+          <div class="sys-img"><img src="assets/images/sys-brain.jpg" alt="" loading="lazy" /></div>
+          <div class="sys-body"><strong>Brain function</strong><span>Sharpness, recall, and the end of 3pm fog.</span></div>
+        </div>
+        <div class="sys-card reveal">
+          <div class="sys-img"><img src="assets/images/sys-muscle.jpg" alt="" loading="lazy" /></div>
+          <div class="sys-body"><strong>Muscle &amp; strength</strong><span>The single best insurance policy for your 60s and 70s.</span></div>
+        </div>
+        <div class="sys-card reveal">
+          <div class="sys-img"><img src="assets/images/sys-endurance.jpg" alt="" loading="lazy" /></div>
+          <div class="sys-body"><strong>Endurance</strong><span>VO&#8322; max, the strongest single predictor of longevity.</span></div>
+        </div>
+        <div class="sys-card reveal">
+          <div class="sys-img"><img src="assets/images/sys-sleep.jpg" alt="" loading="lazy" /></div>
+          <div class="sys-body"><strong>Sleep quality</strong><span>Where every other protocol succeeds or fails.</span></div>
+        </div>
+        <div class="sys-card reveal">
+          <div class="sys-img"><img src="assets/images/sys-gut.jpg" alt="" loading="lazy" /></div>
+          <div class="sys-body"><strong>Digestion</strong><span>Gut function drives inflammation, mood, and absorption.</span></div>
+        </div>
+        <div class="sys-card reveal">
+          <div class="sys-img"><img src="assets/images/sys-sexual.jpg" alt="" loading="lazy" /></div>
+          <div class="sys-body"><strong>Sexual function</strong><span>A vital sign. When hormones recover, it recovers.</span></div>
         </div>
       </div>
     </div>
@@ -132,16 +130,21 @@
       <div class="span-bars reveal">
         <div class="span-row">
           <div class="span-label"><strong>Lifespan</strong><span>how long you live</span></div>
-          <div class="span-track"><div class="span-bar sb-1" style="--w:100%"></div></div>
+          <div class="span-track" style="--end:92%"><div class="span-bar sb-1"></div><span class="span-age">85</span></div>
         </div>
         <div class="span-row">
           <div class="span-label"><strong>Healthspan</strong><span>years without disease</span></div>
-          <div class="span-track"><div class="span-bar sb-2" style="--w:78%"></div></div>
+          <div class="span-track" style="--end:58%"><div class="span-bar sb-2"></div><span class="span-age">65</span></div>
         </div>
         <div class="span-row">
           <div class="span-label"><strong>Peakspan</strong><span>years at full power</span></div>
-          <div class="span-track"><div class="span-bar sb-3" style="--w:55%"></div><span class="span-note">&larr; the gap we close</span></div>
+          <div class="span-track" style="--end:33%; --ext:67%"><div class="span-bar sb-3"></div><div class="span-ext"></div><span class="span-age">50</span><span class="span-age span-age-ext">70</span></div>
         </div>
+        <div class="span-axis-row">
+          <div></div>
+          <div class="span-axis"><span style="left:0%">30</span><span style="left:33.33%">50</span><span style="left:66.67%">70</span><span style="left:100%">90</span></div>
+        </div>
+        <p class="span-legend">Solid is a typical timeline today. <span class="dash-key" aria-hidden="true"></span> Dashed is the peak years Second Prime adds back.</p>
       </div>
       <p class="lead center reveal" style="margin: 48px auto 0">Most people's peakspan ends 20+ years before their lifespan does. Closing that gap is the whole point: your next 20 years feeling like your best 5.</p>
     </div>
@@ -305,14 +308,6 @@ document.querySelectorAll('video.orb-video').forEach((v) => {
   }, 1200);
 });
 
-// Performance systems marquee: duplicate track for a seamless loop
-const sysT = document.getElementById('sysTrack');
-if (sysT) {
-  sysT.innerHTML += sysT.innerHTML;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    sysT.style.animation = 'none';
-  }
-}
 </script>
 </body>
 </html>
