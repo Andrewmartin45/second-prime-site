@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog &mdash; Second Prime</title>
+  <meta name="description" content="Deep dives on the markers, time horizons, and decisions that move your healthspan. For founders and executives who want the real version." />
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="stylesheet" href="css/blog.css?v=1" />
+</head>
+<body class="article blog-hub-page">
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="Second Prime"></a>
+      <nav class="nav-links">
+        <a href="what-we-do.html">What We Do</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-cta" href="index.html#footer-cta">Book a Consult</a>
+        <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="what-we-do.html">What We Do</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color:#65C8D0">The Blog</span>
+      <h1>Reading the science,<br />the way we read your labs.</h1>
+      <p class="lead">Deep dives on the markers, the time horizons, and the decisions that actually move your healthspan. Written for founders and executives who want the real version, not the headline.</p>
+    </div>
+  </section>
+  <section class="a-sec white" style="border-bottom:none">
+    <div class="container blog-hub">
+      <div class="post-grid">
+        <a class="post-card reveal" href="blog-cardio-panel.html">
+          <div class="pc-cover"><span class="cover-num">10</span><span class="eyebrow">Cardio-Performance Panel</span></div>
+          <div class="pc-body">
+            <span class="pc-meta">Cardiovascular &middot; 12 min read</span>
+            <h3>The arteries you have at sixty were built by the numbers you ran at forty.</h3>
+            <p>The ten cardiovascular and metabolic markers your annual physical never runs, why the risk window opens decades before the first symptom, and how to read your own numbers against the time horizon that matters.</p>
+            <span class="pc-link">Read the guide &rarr;</span>
+          </div>
+        </a>
+      </div>
+      <p class="blog-soon">More guides on hormones, metabolism, and cognitive performance are on the way.</p>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2026 Second Prime. All rights reserved.</span>
+        <span>
+          <a href="index.html">Home</a>
+          <a href="blog.html">Blog</a>
+          <a href="case-studies.html">Case Studies</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  <script>
+const nav = document.getElementById('nav');
+const heroEl = document.querySelector('.a-hero, .hero, .page-hero');
+const navThreshold = () => (heroEl ? heroEl.offsetHeight : 400) - 80;
+const onScroll = () => { nav.classList.toggle('scrolled', window.scrollY > navThreshold()); };
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+if (burger && mobileMenu) {
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    document.body.classList.toggle('menu-open', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.classList.remove('menu-open'); })
+  );
+}
+
+const revealEls = [...document.querySelectorAll('.reveal')];
+function revealCheck() {
+  const limit = window.innerHeight * 0.92;
+  revealEls.forEach((el) => {
+    if (el.classList.contains('in')) return;
+    if (el.getBoundingClientRect().top < limit) {
+      const siblings = [...el.parentElement.children].filter((c) => c.classList.contains('reveal') && !c.classList.contains('in'));
+      const idx = Math.max(0, siblings.indexOf(el));
+      el.style.transitionDelay = `${Math.min(idx, 5) * 90}ms`;
+      el.classList.add('in');
+    }
+  });
+}
+window.addEventListener('scroll', revealCheck, { passive: true });
+window.addEventListener('resize', revealCheck, { passive: true });
+window.addEventListener('load', revealCheck);
+revealCheck();
+const revealTimer = setInterval(() => { revealCheck(); if (revealEls.every((el) => el.classList.contains('in'))) clearInterval(revealTimer); }, 350);
+
+// Sticky always-visible CTA bar
+const sticky = document.getElementById('stickyCta');
+if (sticky) {
+  const onScroll2 = () => sticky.classList.toggle('show', window.scrollY > 560);
+  window.addEventListener('scroll', onScroll2, { passive: true });
+  onScroll2();
+}
+</script>
+</body>
+</html>
