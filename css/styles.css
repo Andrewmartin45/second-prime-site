@@ -853,3 +853,6 @@ html.js .reveal.in .span-bar { width: var(--w); }
 .assess-hidden { display: none; }
 .assess-grid.show-all .assess-hidden { display: flex; }
 .assess-more-wrap { text-align: center; margin-top: 44px; }
+
+/* Founder portrait */
+.founder-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; border-radius: var(--radius); display: block; }
