@@ -201,7 +201,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
    THE GAP (why we're different)
    ============================================================ */
 .gap { background: var(--bg-light); }
-.gap-head { max-width: 720px; margin: 0 auto 64px; }
+.gap-head { max-width: 720px; margin: 0 auto 32px; }
 .gap-head .lead { margin: 20px auto 0; }
 .gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 980px; margin: 0 auto; }
 .gap-card { border-radius: var(--radius); padding: 40px 36px; }
@@ -867,10 +867,9 @@ html.js .reveal.in .span-bar { width: var(--w); }
 /* Founder portrait */
 .founder-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; border-radius: var(--radius); display: block; }
 
-/* Empathy band */
-.empathy { background: var(--near-black); color: #EDEAE4; text-align: center; }
-.empathy .container { max-width: 760px; }
-.empathy .eyebrow { color: var(--teal-bright); }
-.empathy h2 { color: var(--sand-light); margin-bottom: 30px; }
-.empathy p { font-size: 18px; line-height: 1.78; color: rgba(237,234,228,0.66); margin: 0 auto 20px; max-width: 60ch; }
-.empathy .empathy-turn { color: #EDEAE4; font-size: 19px; }
+
+/* Felt-experience chips (empathy, folded into the gap section) */
+.felt { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 840px; margin: 0 auto; }
+.felt span { font-size: 14.5px; line-height: 1; color: var(--ink); background: var(--white); border: 1px solid var(--border); padding: 12px 20px; border-radius: 999px; transition: transform var(--dur-ui) var(--ease); }
+.felt span:hover { transform: translateY(-2px); }
+.felt-turn { font-family: var(--font-serif); font-size: clamp(20px, 2.4vw, 28px); line-height: 1.35; color: var(--ink); max-width: 640px; margin: 40px auto 60px; }

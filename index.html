@@ -58,8 +58,16 @@
       <div class="gap-head center reveal">
         <span class="eyebrow">Why We're Different</span>
         <h2>Something's missing, and your physical keeps missing it.</h2>
-        <p class="lead">Standard bloodwork checks fewer than 100 markers against ranges built to catch disease, not decline. "Normal" just means not sick yet. We work in the gap between normal and optimal.</p>
+        <p class="lead">You've felt it for a while. Every test says you're fine, and somehow you know you're not.</p>
       </div>
+      <div class="felt reveal" role="list" aria-label="What members describe before they start">
+        <span role="listitem">The 3pm wall</span>
+        <span role="listitem">Sleep that doesn't restore</span>
+        <span role="listitem">Weight that won't move</span>
+        <span role="listitem">Focus a half-step slow</span>
+        <span role="listitem">&ldquo;Your labs look normal&rdquo;</span>
+      </div>
+      <p class="felt-turn center reveal">You're not imagining it. Your body's been keeping score the whole time.</p>
       <div class="gap-grid">
         <div class="gap-card gap-them reveal">
           <h3>The standard approach</h3>
@@ -84,17 +92,6 @@
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ EMPATHY ============ -->
-  <section class="empathy" data-nav="dark">
-    <div class="container reveal">
-      <span class="eyebrow">You're not imagining it</span>
-      <h2>You knew something was off before any test did.</h2>
-      <p>You eat well. You train. You show up sharp because people are counting on you. And still, the afternoons drag. Sleep stopped feeling like sleep. The recall that used to be automatic takes a beat longer than it should.</p>
-      <p>You've mentioned it. You've been told your labs look fine, to get more rest, to come back if it gets worse. So you carry on, quietly wondering if this is just what your 40s are supposed to feel like.</p>
-      <p class="empathy-turn">It isn't. You're not imagining it, and you're not being dramatic. Your body has been keeping score the whole time. We just read the scoreboard.</p>
     </div>
   </section>
 
@@ -492,7 +489,7 @@
 const nav = document.getElementById('nav');
 const navBlocks = [].slice.call(document.body.children).filter((el) =>
   el !== nav && /^(SECTION|HEADER|FOOTER)$/.test(el.tagName));
-const navIsDark = (el) => el.matches('.hero, .empathy, .pillars, .founder, .footer-cta, .footer');
+const navIsDark = (el) => el.matches('.hero, .pillars, .founder, .footer-cta, .footer');
 const onScroll = () => {
   let dark = true;
   for (let i = 0; i < navBlocks.length; i++) {
