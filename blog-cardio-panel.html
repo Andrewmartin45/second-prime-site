@@ -6,8 +6,8 @@
   <title>The Cardio-Performance Panel &mdash; Second Prime</title>
   <meta name="description" content="Ten cardiovascular and metabolic markers, read against the time horizon that actually determines your performance for the decades ahead." />
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="css/styles.css?v=3" />
-  <link rel="stylesheet" href="css/blog.css?v=1" />
+  <link rel="stylesheet" href="css/styles.css?v=4" />
+  <link rel="stylesheet" href="css/blog.css?v=2" />
 </head>
 <body class="article">
   <header class="nav" id="nav">
@@ -31,6 +31,8 @@
       <a href="blog.html">Blog</a>
     </nav>
   </header>
+  <div class="read-progress" id="readProgress"></div>
+  <article>
   <section class="a-hero" id="top">
     <div class="container">
       <div class="a-wrap">
@@ -110,8 +112,8 @@
         <div class="bucket-cell" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
           <p class="k-mono">Two Accelerators</p>
           <div style="display:flex;gap:1.5rem">
-            <p style="font-family:var(--font-sans);font-size:0.85rem;color:var(--ink)"><span class="accent" style="font-weight:700">Inflammatory</span> load</p>
-            <p style="font-family:var(--font-sans);font-size:0.85rem;color:var(--ink)"><span class="accent" style="font-weight:700">Toxic</span> load</p>
+            <p style="font-family:var(--font-sans);font-size:0.85rem;color:var(--ink)"><span style="color:var(--teal-deep);font-weight:700">Inflammatory</span> load</p>
+            <p style="font-family:var(--font-sans);font-size:0.85rem;color:var(--ink)"><span style="color:var(--teal-deep);font-weight:700">Toxic</span> load</p>
           </div>
         </div>
       </div>
@@ -135,7 +137,7 @@
         <div style="display:flex;flex-direction:column;gap:0.6rem;margin-bottom:0.75rem"><div class="fab"><div><p class="fl">Founder A</p><p class="fs">ApoB 75 &middot; hs-CRP 0.4 &middot; GGT 14</p></div><div><p class="fr" style="color:var(--ink)">1.0&times; risk</p><p class="frl" style="color:var(--gray)">baseline trajectory</p></div></div><div class="fab hi danger"><div><p class="fl">Founder B</p><p class="fs">ApoB 75 &middot; hs-CRP 2.8 &middot; GGT 42</p></div><div><p class="fr" style="color:#C2533E">~2.0&times; risk</p><p class="frl" style="color:#C2533E">accelerated trajectory</p></div></div></div>
         <p class="a-p" style="font-size:0.82rem;color:var(--gray);font-style:italic">Same ApoB. Different inflammatory and toxic load. The accelerators multiply the underlying risk both carry.</p>
       </div>
-      <div class="grid two reveal" style="margin-bottom:2rem"><div class="panel"><p class="k-mono" style="color:var(--teal);margin-bottom:0.35rem">Accelerator 01</p><p class="pt">Inflammatory load</p><p class="a-p" style="font-size:0.87rem;margin:0 0 0.75rem">Chronic inflammation turns quiet plaque into the inflamed kind that ruptures. Elevated hs-CRP roughly doubles cardiovascular event risk at any given ApoB level.</p><p class="k-mono">READ BY &middot; hs-CRP (marker 04)</p></div><div class="panel"><p class="k-mono" style="color:var(--teal);margin-bottom:0.35rem">Accelerator 02</p><p class="pt">Toxic load</p><p class="a-p" style="font-size:0.87rem;margin:0 0 0.75rem">Liver-detoxification stress and accumulated toxin burden silently amplify cardiovascular and metabolic dysfunction. Elevated GGT tracks this signal long before standard liver panels flag a problem.</p><p class="k-mono">READ BY &middot; GGT (marker 08)</p></div></div>
+      <div class="grid two reveal" style="margin-bottom:2rem"><div class="panel"><p class="k-mono" style="color:var(--teal-deep);margin-bottom:0.35rem">Accelerator 01</p><p class="pt">Inflammatory load</p><p class="a-p" style="font-size:0.87rem;margin:0 0 0.75rem">Chronic inflammation turns quiet plaque into the inflamed kind that ruptures. Elevated hs-CRP roughly doubles cardiovascular event risk at any given ApoB level.</p><p class="k-mono">READ BY &middot; hs-CRP (marker 04)</p></div><div class="panel"><p class="k-mono" style="color:var(--teal-deep);margin-bottom:0.35rem">Accelerator 02</p><p class="pt">Toxic load</p><p class="a-p" style="font-size:0.87rem;margin:0 0 0.75rem">Liver-detoxification stress and accumulated toxin burden silently amplify cardiovascular and metabolic dysfunction. Elevated GGT tracks this signal long before standard liver panels flag a problem.</p><p class="k-mono">READ BY &middot; GGT (marker 08)</p></div></div>
       <p class="a-quote reveal">The accelerators are the multiplier most standard physicals never measure.</p>
       <div class="mid-cta reveal">
         <p class="a-label">Know where you stand</p>
@@ -160,19 +162,19 @@
         <h2 class="a-h2" style="margin-bottom:0">Four markers that predict the actual event.</h2>
       </div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">01</span><div><span class="marker-name">ApoB</span><span class="marker-sub">&middot; Apolipoprotein B</span></div></div>
+        <div class="marker-head"><span class="marker-num">01</span><h3 class="marker-name">ApoB<span class="marker-sub">&middot; Apolipoprotein B</span></h3></div>
         <div class="marker-body"><p class="a-p">ApoB is a direct count of the particles that drive plaque into your arterial wall, and it is the single best predictor of cardiovascular events we currently have. Standard panels measure the cholesterol cargo those particles carry, while ApoB counts the particles themselves. The two numbers can disagree, and when they do, ApoB is the one that matches what is actually happening inside the artery.</p><span class="a-tag">Target &le; 60 mg/dL &middot; Second Prime target 40 mg/dL</span></div>
       </div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">02</span><div><span class="marker-name">Lp(a)</span><span class="marker-sub">&middot; Lipoprotein little-a</span></div></div>
+        <div class="marker-head"><span class="marker-num">02</span><h3 class="marker-name">Lp(a)<span class="marker-sub">&middot; Lipoprotein little-a</span></h3></div>
         <div class="marker-body"><p class="a-p">Lp(a) is a genetic risk multiplier set at birth that does not respond to diet, exercise, or statins, and roughly one in five adults carries an elevated level without ever knowing. We run it once in your life because the result changes how aggressively we target your ApoB and how we structure the rest of your protocol.</p></div>
       </div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">03</span><div><span class="marker-name">ApoB / ApoA-1 Ratio</span></div></div>
+        <div class="marker-head"><span class="marker-num">03</span><h3 class="marker-name">ApoB / ApoA-1 Ratio</h3></div>
         <div class="marker-body"><p class="a-p">The ratio of ApoB to ApoA-1 is the strongest predictor of ischemic stroke that clinical research has identified, yet most annual physicals never run ApoA-1, so the ratio cannot be calculated from your standard results. We pair these two readings so you see both your risk concentration and your protective capacity in the same view.</p></div>
       </div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">04</span><div><span class="marker-name">hs-CRP</span><span class="marker-sub">&middot; High-sensitivity C-reactive protein</span></div></div>
+        <div class="marker-head"><span class="marker-num">04</span><h3 class="marker-name">hs-CRP<span class="marker-sub">&middot; High-sensitivity C-reactive protein</span></h3></div>
         <div class="marker-body"><p class="a-p">hs-CRP measures the systemic inflammation that turns quiet plaque into the inflamed kind that ruptures, which is the actual mechanism behind most heart attacks. We run it alongside ApoB so we can see both the particles and the fire, because either reading on its own gives an incomplete picture of where your real risk sits today.</p></div>
       </div>
     </div></div>
@@ -207,15 +209,15 @@
       <div class="reveal" style="margin-bottom:2.5rem"><p class="a-label">Metabolic</p>
         <h2 class="a-h2" style="margin-bottom:0">Where cardiovascular risk quietly compounds.</h2></div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">05</span><div><span class="marker-name">Fasting Insulin</span><span class="marker-sub">&middot; with HOMA-IR</span></div></div>
+        <div class="marker-head"><span class="marker-num">05</span><h3 class="marker-name">Fasting Insulin<span class="marker-sub">&middot; with HOMA-IR</span></h3></div>
         <div class="marker-body"><p class="a-p">Fasting insulin is the earliest signal of insulin resistance, often elevated for years before fasting glucose moves a single point. Your annual physical tests glucose almost exclusively, which means the metabolic problem builds quietly in the background while your labs continue to read normal. HOMA-IR combines both readings into a single number we can track over time.</p><span class="a-tag">HOMA-IR target &lt; 1.0</span></div>
       </div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">06</span><div><span class="marker-name">Triglyceride / HDL Ratio</span></div></div>
+        <div class="marker-head"><span class="marker-num">06</span><h3 class="marker-name">Triglyceride / HDL Ratio</h3></div>
         <div class="marker-body"><p class="a-p">The ratio of triglycerides to HDL is one of the strongest predictors of heart disease in the clinical literature, and it doubles as a clear window into how well your metabolism is actually performing. We use it as a fast metabolic health check that supports the more detailed insulin work.</p><span class="a-tag">Target ratio &lt; 2.0</span></div>
       </div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">07</span><div><span class="marker-name">HbA1c</span><span class="marker-sub">&middot; with Fasting Glucose</span></div></div>
+        <div class="marker-head"><span class="marker-num">07</span><h3 class="marker-name">HbA1c<span class="marker-sub">&middot; with Fasting Glucose</span></h3></div>
         <div class="marker-body"><p class="a-p">HbA1c and fasting glucose only tell the full story when read against the insulin context above, because together they reveal how your metabolism is actually performing rather than how it appears on a single-marker readout. Run in isolation they tend to miss the early stages of metabolic drift.</p></div>
       </div>
     </div></div>
@@ -225,15 +227,15 @@
       <div class="reveal" style="margin-bottom:2.5rem"><p class="a-label">Hidden Accelerants</p>
         <h2 class="a-h2" style="margin-bottom:0">The markers that quietly compound everything else.</h2></div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">08</span><div><span class="marker-name">GGT</span><span class="marker-sub">&middot; Gamma-Glutamyl Transferase</span></div></div>
+        <div class="marker-head"><span class="marker-num">08</span><h3 class="marker-name">GGT<span class="marker-sub">&middot; Gamma-Glutamyl Transferase</span></h3></div>
         <div class="marker-body"><p class="a-p">GGT is a sensitive liver-stress marker that standard labs only flag above 65, even though we treat anything above 20 as a signal worth investigating because elevations track closely with inflammation, alcohol load, and metabolic stress.</p></div>
       </div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">09</span><div><span class="marker-name">Homocysteine</span></div></div>
+        <div class="marker-head"><span class="marker-num">09</span><h3 class="marker-name">Homocysteine</h3></div>
         <div class="marker-body"><p class="a-p">Homocysteine is an independent cardiovascular risk factor that roughly doubles in impact when you carry an MTHFR variant, information that no panel can give you unless homocysteine is on it. The test is inexpensive enough that it belongs on any panel claiming to read long-term risk.</p><span class="a-tag">Target &lt; 8 &micro;mol/L</span></div>
       </div>
       <div class="marker reveal">
-        <div class="marker-head"><span class="marker-num">10</span><div><span class="marker-name">Oxidative Stress</span><span class="marker-sub">&middot; with Cellular Age</span></div></div>
+        <div class="marker-head"><span class="marker-num">10</span><h3 class="marker-name">Oxidative Stress<span class="marker-sub">&middot; with Cellular Age</span></h3></div>
         <div class="marker-body"><p class="a-p">Oxidative stress and cellular age measure the gap between your chronological age and how old your biology is actually performing, which gives us the single most reliable signal for whether the other nine markers are moving in the right direction over time.</p></div>
       </div>
     </div></div>
@@ -314,6 +316,7 @@
       </div>
     </div></div>
   </section>
+  </article>
   <div class="sticky-cta" id="stickyCta">
     <p>More life in every year.</p>
     <a class="btn btn-teal" href="index.html#footer-cta">Book a Consult&ensp;&rarr;</a>
@@ -375,6 +378,18 @@ if (sticky) {
   const onScroll2 = () => sticky.classList.toggle('show', window.scrollY > 560);
   window.addEventListener('scroll', onScroll2, { passive: true });
   onScroll2();
+}
+
+// Reading-progress bar (scroll-driven, no animation)
+const rp = document.getElementById('readProgress');
+if (rp) {
+  const updRp = () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    rp.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')';
+  };
+  window.addEventListener('scroll', updRp, { passive: true });
+  window.addEventListener('resize', updRp, { passive: true });
+  updRp();
 }
 </script>
 </body>

@@ -269,3 +269,29 @@
   text-transform: uppercase; color: var(--teal); }
 .post-card .pc-link { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 600; color: var(--ink); }
 .blog-soon { font-family: var(--font-sans); font-size: 0.95rem; color: var(--gray); margin-top: 2.5rem; }
+
+/* ============================================================
+   A11Y / AUDIT FIXES  (cascade overrides — keep at file end)
+   ============================================================ */
+/* 4. Cap reading measure to ~68 chars for body prose (em-based; Satoshi's ch is wide) */
+.a-p { max-width: 35em; }
+.a-p.lg { max-width: 36em; }
+.marker-body .a-p { max-width: 34em; }
+
+/* 1. Small teal labels: darker teal for AA contrast on light (<14px text) */
+.a-label, .a-cite, .a-tag, .situation .num,
+.panel.hi .ph, .panel.hi .pr .key, .bucket-cell .ek.t,
+.cmp th.sp, .ba.after .bh, .post-card .pc-meta { color: var(--teal-deep); }
+.cmp .yes, .ba.after .mk { color: var(--teal-deep); }
+
+/* 7. Nudge the smallest captions up off the floor */
+.a-srcline { font-size: 0.7rem; }
+.chart-foot { font-size: 0.64rem; }
+
+/* 6. h3 marker names sit flush in the flex row */
+h3.marker-name { margin: 0; }
+
+/* 5. Reading-progress bar (scroll-driven, reduced-motion safe) */
+.read-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%;
+  transform: scaleX(0); transform-origin: 0 50%; background: var(--teal);
+  z-index: 95; will-change: transform; }

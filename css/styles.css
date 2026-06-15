@@ -144,8 +144,15 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .nav .btn-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal-bright); color: #101016; font-weight: 600; font-size: 14px; letter-spacing: 0.02em; transition: background var(--dur-ui), transform var(--dur-ui); white-space: nowrap; }
 .nav.scrolled .btn-cta, .nav.light .btn-cta { background: var(--near-black); color: var(--sand-light); }
 .nav .btn-cta:hover { transform: translateY(-1px); }
-.nav-burger { display: none; flex-direction: column; gap: 5px; }
+.nav-burger { display: none; flex-direction: column; align-items: center; justify-content: center;
+  gap: 5px; width: 44px; height: 44px; margin-right: -10px; padding: 0;
+  background: none; border: none; color: inherit; cursor: pointer; }
 .nav-burger span { width: 22px; height: 2px; background: currentColor; }
+
+/* Visible keyboard focus (accessibility) */
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+.btn:focus-visible, .btn-cta:focus-visible, .nav-links a:focus-visible { outline-offset: 4px; }
+:focus:not(:focus-visible) { outline: none; }
 .mobile-menu {
   display: none; position: fixed; top: 82px; left: 16px; right: 16px; z-index: 99;
   background: rgba(247,244,240,0.96);
