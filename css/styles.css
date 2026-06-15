@@ -114,40 +114,47 @@ html.js .reveal.in { opacity: 1; transform: none; }
 /* ============================================================
    NAV
    ============================================================ */
+/* Glass nav — floating, scroll-aware theme (.light = over light sections) */
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  transition: background var(--dur-ui) var(--ease), border-color var(--dur-ui) var(--ease);
-  border-bottom: 1px solid transparent;
-  color: var(--white);
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100;
+  width: min(var(--container), calc(100% - 32px));
+  color: var(--white); border-radius: 14px;
+  background: rgba(20,20,26,0.5);
+  backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.10), 0 18px 44px -22px rgba(0,0,0,0.6);
+  transition: background var(--dur-ui) var(--ease), color var(--dur-ui) var(--ease), box-shadow var(--dur-ui) var(--ease);
 }
-.nav.scrolled { background: var(--white); color: var(--ink); border-color: var(--border); }
+.nav.scrolled, .nav.light { color: var(--ink); background: rgba(247,244,240,0.72);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.07), 0 18px 44px -26px rgba(43,92,96,0.28); }
 .nav-inner {
-  max-width: var(--container); margin: 0 auto; padding: 0 32px;
-  height: 72px; display: flex; align-items: center; justify-content: space-between;
+  width: 100%; padding: 0 14px 0 24px;
+  height: 60px; display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
-  display: block; width: 168px; height: 36px; background: currentColor;
+  display: block; width: 152px; height: 30px; background: currentColor;
   -webkit-mask: url("../assets/logo.svg") no-repeat left center / contain;
           mask: url("../assets/logo.svg") no-repeat left center / contain;
+  transition: background var(--dur-ui) var(--ease);
 }
-.nav-links { display: flex; gap: 32px; font-size: 15px; }
-.nav-links a { opacity: 0.9; transition: opacity var(--dur-ui); }
+.nav-links { display: flex; gap: 30px; font-size: 14px; }
+.nav-links a { color: currentColor; opacity: 0.72; transition: opacity var(--dur-ui); }
 .nav-links a:hover { opacity: 1; }
-.nav-actions { display: flex; align-items: center; gap: 20px; font-size: 15px; }
-.nav .btn-cta { padding: 10px 22px; border-radius: 5px; background: var(--teal-bright); color: #101016; font-weight: 600; font-size: 14px; letter-spacing: 0.03em; transition: background var(--dur-ui); white-space: nowrap; }
-.nav.scrolled .btn-cta { background: var(--near-black); color: var(--sand-light); }
+.nav-actions { display: flex; align-items: center; gap: 16px; font-size: 14px; }
+.nav .btn-cta { padding: 10px 20px; border-radius: 8px; background: var(--teal-bright); color: #101016; font-weight: 600; font-size: 14px; letter-spacing: 0.02em; transition: background var(--dur-ui), transform var(--dur-ui); white-space: nowrap; }
+.nav.scrolled .btn-cta, .nav.light .btn-cta { background: var(--near-black); color: var(--sand-light); }
+.nav .btn-cta:hover { transform: translateY(-1px); }
 .nav-burger { display: none; flex-direction: column; gap: 5px; }
 .nav-burger span { width: 22px; height: 2px; background: currentColor; }
 .mobile-menu {
-  display: none; position: fixed; top: 72px; left: 0; right: 0; z-index: 99;
-  background: var(--white); color: var(--ink);
-  border-bottom: 1px solid var(--border);
-  padding: 16px 20px 24px;
+  display: none; position: fixed; top: 82px; left: 16px; right: 16px; z-index: 99;
+  background: rgba(247,244,240,0.96);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); color: var(--ink);
+  border-radius: 14px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.07), 0 18px 44px -22px rgba(0,0,0,0.25);
+  padding: 8px 22px 16px;
 }
 .mobile-menu.open { display: block; }
 .mobile-menu a { display: block; padding: 14px 0; font-size: 17px; border-bottom: 1px solid var(--border); }
 .mobile-menu a:last-child { border-bottom: none; }
-body.menu-open .nav { background: var(--white); color: var(--ink); border-color: var(--border); }
 
 /* ============================================================
    HERO  (full-bleed dark image, headline bottom-left)
@@ -198,9 +205,11 @@ body.menu-open .nav { background: var(--white); color: var(--ink); border-color:
 .gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 980px; margin: 0 auto; }
 .gap-card { border-radius: var(--radius); padding: 40px 36px; }
 .gap-them { background: var(--white); border: 1px solid var(--border); }
-.gap-them h3 { color: var(--gray); }
+.gap-them h3 { color: var(--ink); }
 .gap-us { background: var(--near-black); color: var(--white); }
-.gap-card h3 { font-size: 20px; margin-bottom: 22px; }
+.gap-card h3 { font-family: var(--font-serif); font-weight: 400; font-size: 24px; margin-bottom: 6px; }
+.gap-tag { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray); margin-bottom: 26px; }
+.gap-us .gap-tag { color: var(--teal-bright); }
 .gap-card li { display: flex; gap: 12px; padding: 9px 0; font-size: 15px; color: var(--gray); }
 .gap-them li::before { content: "\2715"; color: #c2c2cb; font-size: 12px; margin-top: 4px; }
 .gap-us li { color: rgba(255,255,255,0.78); }

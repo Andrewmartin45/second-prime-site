@@ -65,6 +65,7 @@
       <div class="gap-grid">
         <div class="gap-card gap-them reveal">
           <h3>The standard approach</h3>
+          <div class="gap-tag">Reactive</div>
           <ul>
             <li>19 to 100 biomarkers, once a year</li>
             <li>"Normal" ranges designed to detect disease</li>
@@ -75,6 +76,7 @@
         </div>
         <div class="gap-card gap-us reveal">
           <h3>The Second Prime way</h3>
+          <div class="gap-tag">Proactive</div>
           <ul>
             <li>1,000+ biomarkers mapped across every major system</li>
             <li>Graded against optimal, not just normal</li>
@@ -529,15 +531,22 @@
 
   <script>
 // ============================================================
-// Nav: transparent over hero, solid after scrolling past it
+// Glass nav: theme matches the background of the section behind it
 // ============================================================
 const nav = document.getElementById('nav');
-const heroEl = document.querySelector('.hero, .page-hero');
-const navThreshold = () => (heroEl ? heroEl.offsetHeight : 400) - 80;
+const navBlocks = [].slice.call(document.body.children).filter((el) =>
+  el !== nav && /^(SECTION|HEADER|FOOTER)$/.test(el.tagName));
+const navIsDark = (el) => el.matches('.hero, .pillars, .founder, .footer-cta, .footer');
 const onScroll = () => {
-  nav.classList.toggle('scrolled', window.scrollY > navThreshold());
+  let dark = true;
+  for (let i = 0; i < navBlocks.length; i++) {
+    const r = navBlocks[i].getBoundingClientRect();
+    if (r.top <= 54 && r.bottom > 54) { dark = navIsDark(navBlocks[i]); break; }
+  }
+  nav.classList.toggle('light', !dark);
 };
 window.addEventListener('scroll', onScroll, { passive: true });
+window.addEventListener('resize', onScroll);
 onScroll();
 
 // ============================================================
