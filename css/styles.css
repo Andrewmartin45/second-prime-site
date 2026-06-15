@@ -938,3 +938,16 @@ html.js .reveal.in .span-bar { width: var(--w); }
 .felt span { font-size: 14.5px; line-height: 1; color: var(--ink); background: var(--white); border: 1px solid var(--border); padding: 12px 20px; border-radius: 999px; transition: transform var(--dur-ui) var(--ease); }
 .felt span:hover { transform: translateY(-2px); }
 .felt-turn { font-family: var(--font-serif); font-size: clamp(20px, 2.4vw, 28px); line-height: 1.35; color: var(--ink); max-width: 640px; margin: 40px auto 60px; }
+
+/* ============================================================
+   WHAT WE MEASURE — expandable test list (How It Works)
+   ============================================================ */
+.measure { padding: 52px 0 120px; }
+.measure .lead { margin-left: auto; margin-right: auto; }
+.measure-toggle { margin-top: 2px; }
+.measure-toggle .mt-caret { display: inline-block; transition: transform var(--dur-ui) var(--ease); }
+.measure-toggle[aria-expanded="true"] .mt-caret { transform: rotate(180deg); }
+.measure-grid { max-height: 0; overflow: hidden; opacity: 0; margin-top: 0;
+  transition: max-height .55s var(--ease), opacity .4s var(--ease), margin-top .55s var(--ease); }
+.measure-grid.open { opacity: 1; margin-top: 44px; }
+@media (prefers-reduced-motion: reduce) { .measure-grid, .measure-toggle .mt-caret { transition: none; } }
