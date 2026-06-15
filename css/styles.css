@@ -1003,7 +1003,14 @@ html.js .reveal.in .span-ext { opacity: 1; }
 /* ============================================================
    PEAKSPAN — function-over-lifetime line chart
    ============================================================ */
-.fn-chart { max-width: 900px; margin-top: 8px; overflow-x: auto; }
+.fn-chart { max-width: 920px; margin: 8px auto 0; overflow-x: auto;
+  background: linear-gradient(180deg, #FBFAF8 0%, #FFFFFF 72%);
+  border: 1px solid var(--border); border-radius: 18px;
+  padding: 30px 36px 22px; box-shadow: 0 22px 60px -40px rgba(31,31,39,0.35); }
+html.js .fn-fill { opacity: 0; transition: opacity .9s var(--ease) 0.7s; }
+html.js .reveal.in .fn-fill { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { html.js .fn-fill { opacity: 1; transition: none; } }
+@media (max-width: 560px) { .fn-chart { padding: 18px 16px 14px; } }
 .fn-svg { width: 100%; height: auto; display: block; overflow: visible; }
 html.js .fn-line { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.7s var(--ease); }
 html.js .reveal.in .fn-line { stroke-dashoffset: 0; }
