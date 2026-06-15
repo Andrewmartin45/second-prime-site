@@ -866,3 +866,11 @@ html.js .reveal.in .span-bar { width: var(--w); }
 
 /* Founder portrait */
 .founder-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; border-radius: var(--radius); display: block; }
+
+/* Empathy band */
+.empathy { background: var(--near-black); color: #EDEAE4; text-align: center; }
+.empathy .container { max-width: 760px; }
+.empathy .eyebrow { color: var(--teal-bright); }
+.empathy h2 { color: var(--sand-light); margin-bottom: 30px; }
+.empathy p { font-size: 18px; line-height: 1.78; color: rgba(237,234,228,0.66); margin: 0 auto 20px; max-width: 60ch; }
+.empathy .empathy-turn { color: #EDEAE4; font-size: 19px; }

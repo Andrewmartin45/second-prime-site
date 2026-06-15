@@ -23,7 +23,6 @@
         <a href="what-we-do.html">What We Do</a>
         <a href="how-it-works.html">How It Works</a>
         <a href="case-studies.html">Case Studies</a>
-        <a href="#memberships">Membership</a>
       </nav>
       <div class="nav-actions">
         <a class="btn-cta" href="#footer-cta">Book a Consult</a>
@@ -34,7 +33,6 @@
       <a href="what-we-do.html">What We Do</a>
       <a href="how-it-works.html">How It Works</a>
       <a href="case-studies.html">Case Studies</a>
-      <a href="#memberships">Membership</a>
       <a href="#faq">FAQ</a>
     </nav>
   </header>
@@ -89,6 +87,17 @@
     </div>
   </section>
 
+  <!-- ============ EMPATHY ============ -->
+  <section class="empathy" data-nav="dark">
+    <div class="container reveal">
+      <span class="eyebrow">You're not imagining it</span>
+      <h2>You knew something was off before any test did.</h2>
+      <p>You eat well. You train. You show up sharp because people are counting on you. And still, the afternoons drag. Sleep stopped feeling like sleep. The recall that used to be automatic takes a beat longer than it should.</p>
+      <p>You've mentioned it. You've been told your labs look fine, to get more rest, to come back if it gets worse. So you carry on, quietly wondering if this is just what your 40s are supposed to feel like.</p>
+      <p class="empathy-turn">It isn't. You're not imagining it, and you're not being dramatic. Your body has been keeping score the whole time. We just read the scoreboard.</p>
+    </div>
+  </section>
+
   <!-- ============ HOW IT WORKS ============ -->
   <section class="method" id="method">
     <div class="container">
@@ -106,7 +115,7 @@
         <div class="method-card reveal">
           <div class="media"><img src="assets/step-2.jpg" alt="Reviewing your performance blueprint" /></div>
           <div class="step-title">2. Build — 2 weeks</div>
-          <p>Your results become a personalized Performance Blueprint: nutrition, sleep, training, supplementation, and advanced therapies where they're warranted. Explained in plain English.</p>
+          <p>Your results become a personalized Performance Blueprint: nutrition, sleep, training, supplements, peptides, and advanced therapies where they're warranted. Everything is included and shipped to your door.</p>
         </div>
         <div class="method-card reveal">
           <div class="media"><img src="assets/step-3.jpg" alt="Executing your plan" /></div>
@@ -204,7 +213,7 @@
     <div class="container">
       <div class="assessment-head center reveal">
         <span class="eyebrow">The Executive Assessment</span>
-        <h2>1,000 markers. One clear read on your biology.</h2>
+        <h2>The deepest look you've ever had at your own biology</h2>
         <p class="lead">Everything is coordinated for you: draws near your home or office, kits shipped to your door, results interpreted by people who know what optimal looks like.</p>
       </div>
       <div class="assess-grid" id="assessGrid">
@@ -333,58 +342,6 @@
     </div>
   </section>
 
-  <!-- ============ MEMBERSHIPS ============ -->
-  <section class="memberships" id="memberships">
-    <div class="container">
-      <div class="memberships-head center reveal">
-        <span class="eyebrow">Membership</span>
-        <h2>Two ways to work with us</h2>
-        <p class="lead">Both start with the full Executive Assessment. Membership is capped at 50 members for 2026 so the work stays personal.</p>
-      </div>
-      <div class="tier-grid">
-        <div class="tier tier-core reveal">
-          <img class="tier-mark" src="assets/Logomark_black.png" alt="" />
-          <span class="tier-house">Second Prime</span>
-          <h3>Core</h3>
-          <p class="tier-sub">Your complete baseline: deep testing, real interpretation, an actual game plan</p>
-          <a class="btn btn-dark" href="#footer-cta">Apply for Core</a>
-          <div class="tier-list-label">Core includes:</div>
-          <ul class="tier-list">
-            <li>Full Executive Assessment: 1,000+ biomarkers</li>
-            <li>Performance grading against optimal, not normal</li>
-            <li>Personalized Performance Blueprint</li>
-            <li>Nutrition, training, sleep, and supplement protocols</li>
-            <li>Dedicated performance coach</li>
-            <li>Quarterly re-testing and plan adjustments</li>
-            <li>Physician oversight through our medical partner</li>
-            <li>Direct messaging access to your team</li>
-          </ul>
-          <div class="tier-compare"><a href="#faq">Questions? Read the FAQ &rarr;</a></div>
-        </div>
-        <div class="tier tier-black reveal">
-          <img class="tier-mark" src="assets/Logomark_white.png" alt="" />
-          <span class="tier-house">Second Prime</span>
-          <h3>Black</h3>
-          <p class="tier-sub">Done-for-you optimization with year-round oversight, led by Andrew directly</p>
-          <a class="btn btn-light" href="#footer-cta">Apply for Black</a>
-          <div class="tier-list-label">Everything in Core, plus:</div>
-          <ul class="tier-list">
-            <li>Andrew as your personal advisor, year-round</li>
-            <li>All supplements and peptides included</li>
-            <li>Full-body MRI and early cancer screening</li>
-            <li>Expanded testing and clinical review cadence</li>
-            <li>Advanced therapies coordinated where warranted</li>
-            <li>Real-time protocol adjustments, not quarterly waits</li>
-            <li>Priority scheduling for all testing and reviews</li>
-            <li>Travel, deal-sprint, and high-stress period protocols</li>
-            <li>Annual in-depth strategy review</li>
-          </ul>
-          <div class="tier-compare"><a href="#footer-cta">Limited seats. Apply &rarr;</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ CASE STUDIES (featured) ============ -->
   <section class="trusted" id="results">
     <div class="container">
@@ -498,7 +455,6 @@
           <ul>
             <li><a href="what-we-do.html">What We Do</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="#memberships">Membership</a></li>
             <li><a href="case-studies.html">Case Studies</a></li>
           </ul>
         </div>
@@ -536,7 +492,7 @@
 const nav = document.getElementById('nav');
 const navBlocks = [].slice.call(document.body.children).filter((el) =>
   el !== nav && /^(SECTION|HEADER|FOOTER)$/.test(el.tagName));
-const navIsDark = (el) => el.matches('.hero, .pillars, .founder, .footer-cta, .footer');
+const navIsDark = (el) => el.matches('.hero, .empathy, .pillars, .founder, .footer-cta, .footer');
 const onScroll = () => {
   let dark = true;
   for (let i = 0; i < navBlocks.length; i++) {
