@@ -625,7 +625,13 @@ html.js .reveal.in .f-bar { width: var(--w); }
 .wwd-head { max-width: 680px; margin-bottom: 64px; }
 .wwd-head .lead { margin-top: 20px; }
 
-.disease-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.disease-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.disease-grid .pillar-card { padding: 20px; }
+.disease-grid .disease-img { aspect-ratio: 4 / 3; margin-bottom: 16px; }
+.disease-grid .pillar-card h3 { font-size: 21px; line-height: 1.2; margin-bottom: 8px; }
+.disease-grid .pillar-card p { font-size: 14px; line-height: 1.55; }
+@media (max-width: 980px) { .disease-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .disease-grid { grid-template-columns: 1fr; } }
 .pillar-card.light { background: var(--bg-light); border-color: var(--border); }
 .pillar-card.light h3 { color: var(--ink); }
 .pillar-card.light p { color: var(--gray); }
