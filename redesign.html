@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Second Prime — Redesign Preview</title>
   <meta name="description" content="Data-driven health optimization for founders and executives who refuse to decline." />
-  <!-- reuse brand tokens + @font-face (Satoshi / Zodiak) -->
   <link rel="stylesheet" href="css/styles.css?v=2" />
   <style>
     :root { --rd-bg: #0E0E12; --rd-panel: #15151B; --rd-line: rgba(255,255,255,0.10); }
@@ -23,17 +22,22 @@
     .grain { position: fixed; inset: 0; z-index: 9000; pointer-events: none; opacity: 0.05; mix-blend-mode: overlay;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
-    /* Glass nav */
+    /* Glass nav — scroll-aware theme */
     .rd-nav { position: fixed; top: 18px; left: 50%; transform: translateX(-50%); z-index: 9100; width: min(1320px, calc(100% - 36px));
       display: flex; align-items: center; justify-content: space-between; padding: 12px 14px 12px 24px;
+      color: #EDEAE4; border-radius: 14px;
       background: rgba(20,20,26,0.55); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2);
-      border-radius: 14px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 20px 50px -24px rgba(0,0,0,0.7); }
-    .rd-logo { width: 150px; height: 30px; background: #EDEAE4; -webkit-mask: url("assets/logo.svg") no-repeat left center/contain; mask: url("assets/logo.svg") no-repeat left center/contain; }
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.10), 0 20px 50px -24px rgba(0,0,0,0.7);
+      transition: background .5s ease, color .5s ease, box-shadow .5s ease; }
+    .rd-nav.light { color: #1F1F27; background: rgba(247,244,240,0.72);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.07), 0 20px 50px -28px rgba(43,92,96,0.3); }
+    .rd-logo { width: 150px; height: 30px; background: currentColor; -webkit-mask: url("assets/logo.svg") no-repeat left center/contain; mask: url("assets/logo.svg") no-repeat left center/contain; transition: background .5s ease; }
     .rd-links { display: flex; gap: 30px; font-size: 14px; }
-    .rd-links a { color: rgba(237,234,228,0.78); transition: color .25s; }
-    .rd-links a:hover { color: #fff; }
+    .rd-links a { color: currentColor; opacity: 0.72; transition: opacity .25s; }
+    .rd-links a:hover { opacity: 1; }
     .rd-cta { padding: 11px 22px; border-radius: 8px; background: var(--teal-bright); color: #0E0E12; font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
-      transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s; }
+      transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s, background .5s ease, color .5s ease; }
+    .rd-nav.light .rd-cta { background: var(--ink); color: #EDEAE4; }
     .rd-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(101,200,208,0.5); }
     .rd-cta:active { transform: translateY(0) scale(.985); }
     @media (max-width: 880px){ .rd-links { display: none; } }
@@ -52,15 +56,15 @@
     .rd-btn { padding: 15px 30px; border-radius: 8px; background: #EDEAE4; color: #0E0E12; font-weight: 600; font-size: 15px; letter-spacing: 0.02em;
       transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s; }
     .rd-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -16px rgba(0,0,0,0.6); }
+    .rd-btn.teal { background: var(--teal-bright); }
     .rd-link { font-size: 15px; color: rgba(237,234,228,0.7); border-bottom: 1px solid rgba(237,234,228,0.3); padding-bottom: 3px; transition: border-color .25s, color .25s; }
     .rd-link:hover { color: #fff; border-color: #fff; }
     .rd-hero-r { position: relative; overflow: hidden; }
     .rd-hero-r img { width: 100%; height: 100%; object-fit: cover; }
     .rd-hero-r::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--rd-bg) 0%, transparent 22%), linear-gradient(0deg, rgba(14,14,18,0.5), transparent 50%); }
     .rd-hero-meta { position: absolute; left: 8vw; bottom: 46px; display: flex; gap: 44px; }
-    .rd-hero-meta div span { display: block; }
-    .rd-hero-meta .n { font-family: var(--font-serif); font-size: 34px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-    .rd-hero-meta .l { font-size: 12px; color: rgba(237,234,228,0.5); letter-spacing: 0.04em; margin-top: 4px; }
+    .rd-hero-meta .n { font-family: var(--font-serif); font-size: 34px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; display: block; }
+    .rd-hero-meta .l { font-size: 12px; color: rgba(237,234,228,0.5); letter-spacing: 0.04em; margin-top: 4px; display: block; }
     @media (max-width: 980px){ .rd-hero { grid-template-columns: 1fr; }
       .rd-hero-l { padding: 130px 28px 60px; order: 2; } .rd-hero-l::after { display: none; }
       .rd-hero-r { order: 1; min-height: 46vh; } .rd-hero-meta { position: static; padding: 28px; } }
@@ -73,36 +77,29 @@
     .rd-head p { font-size: 18px; line-height: 1.6; color: var(--gray); max-width: 60ch; margin: 22px 0 0; }
     .sand .rd-head p { color: #5d5d6b; }
 
-    /* GAP comparison — editorial */
-    .rd-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 18px; overflow: hidden;
-      box-shadow: 0 40px 80px -40px rgba(43,92,96,0.28); }
-    .rd-col { background: #fff; padding: 44px 40px; }
-    .rd-col.them { background: #FBFAF8; }
-    .rd-col.us { background: var(--rd-panel); color: #EDEAE4; }
-    .rd-col h3 { font-family: var(--font-serif); font-weight: 400; font-size: 24px; margin: 0 0 8px; }
-    .rd-col .tagline { font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gray); margin-bottom: 28px; }
+    /* GAP comparison — original card treatment, X / check marks */
+    .rd-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1000px; }
+    .rd-col { border-radius: 16px; padding: 40px 38px; }
+    .rd-col.them { background: #fff; border: 1px solid var(--border); }
+    .rd-col.us { background: var(--near-black); color: #EDEAE4; }
+    .rd-col h3 { font-family: var(--font-serif); font-weight: 400; font-size: 24px; margin: 0 0 6px; }
+    .rd-col .tagline { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray); margin-bottom: 26px; }
     .rd-col.us .tagline { color: var(--teal-bright); }
     .rd-col ul { list-style: none; margin: 0; padding: 0; }
-    .rd-col li { display: flex; gap: 14px; padding: 13px 0; font-size: 15.5px; line-height: 1.5; border-top: 1px solid rgba(0,0,0,0.06); }
-    .rd-col.us li { border-color: rgba(255,255,255,0.08); color: rgba(237,234,228,0.82); }
-    .rd-col li::before { content: ""; flex: 0 0 18px; height: 18px; margin-top: 1px; border-radius: 50%; }
-    .rd-col.them li::before { background: #E6E3DE; }
-    .rd-col.us li::before { background: var(--teal); box-shadow: 0 0 0 4px rgba(69,141,147,0.18); }
+    .rd-col li { display: flex; gap: 12px; padding: 11px 0; font-size: 15px; line-height: 1.5; color: var(--gray); }
+    .rd-col.us li { color: rgba(237,234,228,0.8); }
+    .rd-col li::before { font-size: 13px; font-weight: 700; margin-top: 1px; }
+    .rd-col.them li::before { content: "\2715"; color: #C7C4BD; }
+    .rd-col.us li::before { content: "\2713"; color: var(--teal-bright); }
     @media (max-width: 820px){ .rd-compare { grid-template-columns: 1fr; } }
 
-    /* THREE THINGS — full-width editorial bands */
-    .rd-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 78vh; }
-    .rd-band .img { overflow: hidden; position: relative; }
-    .rd-band .img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s cubic-bezier(.2,.8,.2,1); }
-    .rd-band:hover .img img { transform: scale(1.05); }
-    .rd-band .txt { display: flex; flex-direction: column; justify-content: center; padding: 6vw 7vw; background: var(--rd-panel); }
-    .rd-band.light .txt { background: var(--bg-light); color: var(--ink); }
-    .rd-band.rev .img { order: 2; }
-    .rd-band .idx { font-family: var(--font-serif); font-size: 15px; color: var(--teal-bright); letter-spacing: 0.1em; }
-    .rd-band .txt h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(40px, 5vw, 72px); line-height: 1; letter-spacing: -0.02em; margin: 18px 0 20px; }
-    .rd-band .txt p { font-size: 17px; line-height: 1.65; color: rgba(237,234,228,0.72); max-width: 42ch; margin: 0; }
-    .rd-band.light .txt p { color: #5d5d6b; }
-    @media (max-width: 980px){ .rd-band { grid-template-columns: 1fr; min-height: 0; } .rd-band .img { min-height: 50vh; } .rd-band.rev .img { order: 0; } }
+    /* THREE THINGS — minimal, whitespace-forward */
+    .rd-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(32px, 5vw, 80px); margin-top: 12px; }
+    .rd-t .ri { font-family: var(--font-serif); font-size: 17px; color: var(--teal); letter-spacing: 0.08em; }
+    .rd-t .rule { width: 40px; height: 2px; background: var(--teal); margin: 20px 0 22px; }
+    .rd-t h3 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(30px, 3vw, 42px); line-height: 1.04; letter-spacing: -0.01em; margin: 0 0 16px; }
+    .rd-t p { font-size: 16px; line-height: 1.65; color: #5d5d6b; max-width: 32ch; margin: 0; }
+    @media (max-width: 820px){ .rd-three { grid-template-columns: 1fr; gap: 48px; } }
 
     /* STATS */
     .rd-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rd-line); }
@@ -124,13 +121,15 @@
     .rd-fstats .l { font-size: 12.5px; color: rgba(237,234,228,0.5); margin-top: 4px; }
     @media (max-width: 880px){ .rd-founder { grid-template-columns: 1fr; gap: 40px; } }
 
-    /* CTA */
-    .rd-final { position: relative; min-height: 76vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+    /* FINAL CTA — bigger, punchier */
+    .rd-final { position: relative; min-height: 88vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
     .rd-final img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .rd-final::after { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 70% at 50% 50%, rgba(14,14,18,0.45), rgba(14,14,18,0.86)); }
-    .rd-final .inner { position: relative; z-index: 2; padding: 0 28px; }
-    .rd-final h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(40px, 6vw, 88px); line-height: 1; letter-spacing: -0.025em; margin: 0 0 22px; text-wrap: balance; }
-    .rd-final p { font-size: 18px; color: rgba(237,234,228,0.78); margin: 0 0 36px; }
+    .rd-final::after { content: ""; position: absolute; inset: 0; background: radial-gradient(75% 65% at 50% 48%, rgba(14,14,18,0.55), rgba(14,14,18,0.9)); }
+    .rd-final .inner { position: relative; z-index: 2; padding: 0 24px; }
+    .rd-final .eyebrow2 { display: block; margin-bottom: 26px; }
+    .rd-final h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(56px, 9vw, 138px); line-height: 0.94; letter-spacing: -0.03em; margin: 0 0 30px; text-wrap: balance; text-shadow: 0 4px 50px rgba(0,0,0,0.55); }
+    .rd-final h2 em { font-style: italic; color: var(--teal-bright); }
+    .rd-final p { font-size: 19px; color: rgba(237,234,228,0.85); margin: 0 0 40px; }
     .rd-foot { padding: 50px 0; border-top: 1px solid var(--rd-line); display: flex; justify-content: space-between; font-size: 13px; color: rgba(237,234,228,0.45); flex-wrap: wrap; gap: 14px; }
     .rd-foot a { margin-left: 22px; }
 
@@ -143,7 +142,7 @@
 <body>
   <div class="grain" aria-hidden="true"></div>
 
-  <nav class="rd-nav">
+  <nav class="rd-nav" id="rdNav">
     <a class="rd-logo" href="index.html" aria-label="Second Prime home"></a>
     <div class="rd-links">
       <a href="what-we-do.html">What We Do</a>
@@ -155,7 +154,7 @@
   </nav>
 
   <!-- HERO -->
-  <header class="rd-hero">
+  <header class="rd-hero" data-nav="dark">
     <div class="rd-hero-l">
       <div class="rd-hero-tag"><i></i><span>Longevity &amp; performance for founders &amp; executives</span></div>
       <h1>More life in <em>every</em> year</h1>
@@ -175,7 +174,7 @@
   </header>
 
   <!-- SOMETHING'S MISSING -->
-  <section class="rd-sec sand">
+  <section class="rd-sec sand" data-nav="light">
     <div class="rd-wrap">
       <div class="rd-head ent">
         <span class="eyebrow2" style="color: var(--teal)">Why we're different</span>
@@ -209,24 +208,23 @@
     </div>
   </section>
 
-  <!-- THREE THINGS — editorial bands -->
-  <section>
-    <div class="rd-band">
-      <div class="img"><img src="assets/images/conc-heart.jpg" alt="A human heart and blood cells" /></div>
-      <div class="txt"><span class="idx">01 / Reduce Risk</span><h3 class="serif">Less disease</h3><p>The four that cut lives short: heart disease, cancer, metabolic dysfunction, neurodegeneration. We track 60+ cardiovascular markers alone, and catch trouble a decade before your physical would.</p></div>
-    </div>
-    <div class="rd-band rev light">
-      <div class="img"><img src="assets/images/conc-sprint.jpg" alt="A man sprinting" /></div>
-      <div class="txt"><span class="idx" style="color: var(--teal)">02 / Improve Performance</span><h3 class="serif">Feel young</h3><p>Energy that holds through a 12-hour day. Body composition that finally moves. Focus you can feel coming back by week three. We rebuild the systems underneath all of it.</p></div>
-    </div>
-    <div class="rd-band">
-      <div class="img"><img src="assets/images/conc-golf.jpg" alt="A man golfing at golden hour" /></div>
-      <div class="txt"><span class="idx">03 / Extend Longevity</span><h3 class="serif">More prime years</h3><p>Lifespan is years. Healthspan is healthy years. Peakspan is years at full power, and it's the one we're after. Your next 20 years should feel like your best 5.</p></div>
+  <!-- THREE THINGS — minimal -->
+  <section class="rd-sec sand" data-nav="light">
+    <div class="rd-wrap">
+      <div class="rd-head ent">
+        <span class="eyebrow2" style="color: var(--teal)">What we do</span>
+        <h2>Three jobs. One system.</h2>
+      </div>
+      <div class="rd-three">
+        <div class="rd-t ent"><span class="ri">01</span><div class="rule"></div><h3 class="serif">Less disease</h3><p>The four that cut lives short, caught a decade before symptoms.</p></div>
+        <div class="rd-t ent"><span class="ri">02</span><div class="rule"></div><h3 class="serif">Feel young</h3><p>Energy, focus, and a body that keeps up with the life you built.</p></div>
+        <div class="rd-t ent"><span class="ri">03</span><div class="rule"></div><h3 class="serif">More prime years</h3><p>Your next twenty years, engineered to feel like your best five.</p></div>
+      </div>
     </div>
   </section>
 
   <!-- STATS -->
-  <section class="rd-sec">
+  <section class="rd-sec" data-nav="dark">
     <div class="rd-wrap">
       <div class="rd-head ent"><span class="eyebrow2">By the numbers</span></div>
       <div class="rd-stats ent">
@@ -238,7 +236,7 @@
   </section>
 
   <!-- FOUNDER -->
-  <section class="rd-sec" style="background: var(--rd-panel);">
+  <section class="rd-sec" data-nav="dark" style="background: var(--rd-panel);">
     <div class="rd-wrap">
       <div class="rd-founder ent">
         <div class="frame">
@@ -261,12 +259,13 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section class="rd-final">
+  <section class="rd-final" data-nav="dark">
     <img src="assets/images/journey-ski.jpg" alt="A man skiing down a sunlit slope" />
     <div class="inner">
-      <h2>This is your second prime.</h2>
+      <span class="eyebrow2">Your second prime starts here</span>
+      <h2>This is your <em>second prime</em>.</h2>
       <p>A 30-minute conversation to see where you actually stand. Zero pressure.</p>
-      <a class="rd-btn" href="index.html#footer-cta">Book a Consult</a>
+      <a class="rd-btn teal" href="index.html#footer-cta">Book a Consult</a>
     </div>
   </section>
 
@@ -278,10 +277,23 @@
   </footer>
 
   <script>
+    // reveal on scroll
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.ent').forEach(function(el){ io.observe(el); });
+
+    // scroll-aware nav theme: match the section behind the bar
+    var nav = document.getElementById('rdNav');
+    var secs = [].slice.call(document.querySelectorAll('[data-nav]'));
+    function navTheme(){
+      var y = 46, theme = 'dark';
+      for (var i=0;i<secs.length;i++){ var r = secs[i].getBoundingClientRect(); if (r.top <= y && r.bottom > y){ theme = secs[i].getAttribute('data-nav'); break; } }
+      nav.classList.toggle('light', theme === 'light');
+    }
+    window.addEventListener('scroll', navTheme, { passive:true });
+    window.addEventListener('resize', navTheme);
+    navTheme();
   </script>
 </body>
 </html>
