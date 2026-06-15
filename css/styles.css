@@ -60,8 +60,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 section { padding: var(--section-pad) 0; }
 
 /* Typography */
-h1 { font-family: var(--font-serif); font-size: clamp(44px, 6vw, 78px); font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; }
-h2 { font-family: var(--font-serif); font-size: clamp(34px, 4vw, 54px); font-weight: 400; line-height: 1.12; letter-spacing: -0.01em; }
+h1 { font-family: var(--font-serif); font-size: clamp(44px, 6vw, 78px); font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-family: var(--font-serif); font-size: clamp(34px, 4vw, 54px); font-weight: 400; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance; }
 h3 { font-size: 24px; font-weight: 500; line-height: 1.25; }
 .eyebrow {
   display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
@@ -264,7 +264,7 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
    THE GAP (why we're different)
    ============================================================ */
 .gap { background: var(--bg-light); }
-.gap-head { max-width: 720px; margin: 0 auto 32px; }
+.gap-head { max-width: 860px; margin: 0 auto 32px; }
 .gap-head .lead { margin: 20px auto 0; }
 .gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 980px; margin: 0 auto; }
 .gap-card { border-radius: var(--radius); padding: 40px 36px; }
@@ -283,7 +283,7 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
    THE DIFFERENCE (data -> plan funnel)
    ============================================================ */
 .plan { background: var(--bg-light); }
-.plan-head { max-width: 680px; margin: 0 auto 64px; }
+.plan-head { max-width: 820px; margin: 0 auto 64px; }
 .plan-head .lead { margin: 20px auto 0; }
 .plan-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; max-width: 1020px; margin: 0 auto; align-items: stretch; }
 .funnel {
@@ -354,7 +354,7 @@ html.js .reveal.in .f-bar { width: var(--w); }
 /* ============================================================
    HOW IT WORKS
    ============================================================ */
-.method-head { max-width: 720px; margin: 0 auto 72px; }
+.method-head { max-width: 820px; margin: 0 auto 72px; }
 .method-head .lead { margin: 20px auto 32px; }
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .method-card .ph, .method-card .media { aspect-ratio: 4 / 5; margin-bottom: 28px; }
@@ -403,7 +403,7 @@ html.js .reveal.in .f-bar { width: var(--w); }
    PILLARS (dark carousel with animated orb cards)
    ============================================================ */
 .pillars { background: linear-gradient(180deg, #050608 0%, var(--near-black) 40%, #1d1e23 100%); color: var(--white); overflow: hidden; }
-.pillars-head { max-width: 640px; margin: 0 auto 64px; }
+.pillars-head { max-width: 780px; margin: 0 auto 64px; }
 .pillars-head .lead { color: rgba(255,255,255,0.6); margin: 20px auto 32px; }
 .three-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .pillar-card {
@@ -466,9 +466,10 @@ html.js .reveal.in .f-bar { width: var(--w); }
 }
 .float-thumb:nth-child(odd) { animation-delay: -3s; }
 @keyframes drift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-.assessment-head { position: relative; max-width: 640px; margin: 0 auto 72px; }
+.assessment-head { position: relative; max-width: 860px; margin: 0 auto 72px; }
 .assessment-head .lead { margin: 20px auto 0; }
-.assess-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; max-width: 980px; margin: 0 auto 48px; }
+.assess-grid { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 18px; max-width: 1160px; margin: 0 auto 48px; }
+@media (max-width: 1040px) { .assess-grid { grid-template-columns: 1fr 1fr; } }
 .assess-item {
   display: flex; gap: 16px; align-items: flex-start;
   background: var(--bg-light); border-radius: 12px; padding: 18px 20px;
