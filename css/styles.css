@@ -161,12 +161,27 @@ html.js .reveal.in { opacity: 1; transform: none; }
    HERO  (full-bleed dark image, headline bottom-left)
    ============================================================ */
 .hero {
-  position: relative; min-height: 100vh; padding: 0;
+  position: relative; min-height: 100dvh; padding: 0; overflow: hidden;
   display: flex; align-items: center; color: var(--white);
+  background: #101016;
+}
+.hero::before {
+  content: ""; position: absolute; inset: -2.5%; z-index: 0;
+  background: url("../assets/hero.jpg") center / cover no-repeat;
+  transform: scale(1.06);
+}
+html.js .hero::before {
+  animation: heroKen 28s ease-in-out infinite alternate;
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
     linear-gradient(90deg, rgba(10,10,14,0.62) 0%, rgba(10,10,14,0.25) 55%, rgba(10,10,14,0.15) 100%),
-    linear-gradient(180deg, rgba(10,10,14,0.3) 0%, rgba(10,10,14,0.1) 40%, rgba(10,10,14,0.55) 100%),
-    url("../assets/hero.jpg") center / cover no-repeat #101016;
+    linear-gradient(180deg, rgba(10,10,14,0.3) 0%, rgba(10,10,14,0.1) 40%, rgba(10,10,14,0.55) 100%);
+}
+@keyframes heroKen {
+  from { transform: scale(1.06) translate3d(0, 0, 0); }
+  to   { transform: scale(1.14) translate3d(-1.6%, -1.4%, 0); }
 }
 
 .hero-inner {
@@ -196,6 +211,47 @@ html.js .reveal.in { opacity: 1; transform: none; }
   transition: border-color var(--dur-ui);
 }
 .hero-link:hover { border-color: var(--white); }
+
+/* ---- Hero entrance choreography + clinical accent line ---- */
+.hero-rule { display: block; width: 0; height: 2px; border-radius: 2px;
+  background: var(--teal-bright); margin-bottom: 20px; }
+html.js .hero-rule { animation: lineGrow 1s cubic-bezier(.16,1,.3,1) 0.2s forwards; }
+@keyframes lineGrow { from { width: 0; } to { width: 42px; } }
+
+html.js .hero-tag,
+html.js .hero h1,
+html.js .hero-sub,
+html.js .hero-cta-row { opacity: 0; animation: heroRise 0.95s cubic-bezier(.16,1,.3,1) forwards; }
+html.js .hero-tag    { animation-delay: 0.18s; }
+html.js .hero h1     { animation-delay: 0.34s; }
+html.js .hero-sub    { animation-delay: 0.50s; }
+html.js .hero-cta-row { animation-delay: 0.64s; }
+@keyframes heroRise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+/* ---- Felt chips cascade in one at a time ---- */
+html.js .felt span { opacity: 0; }
+html.js .felt.in span { animation: chipIn 0.6s cubic-bezier(.16,1,.3,1) both; }
+html.js .felt.in span:nth-child(1) { animation-delay: 0.05s; }
+html.js .felt.in span:nth-child(2) { animation-delay: 0.15s; }
+html.js .felt.in span:nth-child(3) { animation-delay: 0.25s; }
+html.js .felt.in span:nth-child(4) { animation-delay: 0.35s; }
+html.js .felt.in span:nth-child(5) { animation-delay: 0.45s; }
+@keyframes chipIn { from { opacity: 0; translate: 0 14px; scale: 0.97; } to { opacity: 1; translate: 0 0; scale: 1; } }
+.felt span:hover { border-color: var(--teal-bright); }
+
+/* ---- Comparison cards slide in from opposite sides ---- */
+html.js .gap-them.reveal { transform: translateY(28px) translateX(-26px); }
+html.js .gap-us.reveal   { transform: translateY(28px) translateX(26px); }
+html.js .gap-them.in, html.js .gap-us.in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .hero::before { animation: none; }
+  html.js .hero-rule { width: 42px; animation: none; }
+  html.js .hero-tag, html.js .hero h1, html.js .hero-sub, html.js .hero-cta-row { opacity: 1; animation: none; }
+  html.js .felt span { opacity: 1; }
+  html.js .felt.in span { animation: none; }
+  html.js .gap-them.reveal, html.js .gap-us.reveal { transform: translateY(28px); }
+}
 
 /* ============================================================
    THE GAP (why we're different)
