@@ -550,8 +550,9 @@ html.js .reveal.in .f-bar { width: var(--w); }
   display: flex; align-items: center; justify-content: center; text-align: center;
   color: var(--white);
   background:
-    linear-gradient(180deg, rgba(10,10,14,0.25), rgba(10,10,14,0.55)),
-    url("../assets/footer-cta.jpg") center / cover no-repeat #14141c;
+    radial-gradient(ellipse 72% 62% at 48% 46%, rgba(10,10,14,0.46), rgba(10,10,14,0) 72%),
+    linear-gradient(180deg, rgba(10,10,14,0.30), rgba(10,10,14,0.52)),
+    url("../assets/footer-cta-golf.jpg") center / cover no-repeat #14141c;
 }
 .footer-cta .inner { position: relative; z-index: 2; max-width: 640px; padding: 0 32px; }
 .footer-cta .lead { color: rgba(255,255,255,0.75); margin: 20px auto 32px; }
