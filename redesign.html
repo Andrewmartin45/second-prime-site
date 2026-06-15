@@ -134,13 +134,28 @@
     .rd-foot a { margin-left: 22px; }
 
     /* reveal */
-    .ent { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }
+    .ent { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
     .ent.in { opacity: 1; transform: none; }
     :focus-visible { outline: 2px solid var(--teal-bright); outline-offset: 3px; border-radius: 4px; }
+
+    /* ---- motion layer ---- */
+    .rd-hero-l > *:not(.rd-hero-canvas){ position: relative; z-index: 1; }
+    .rd-hero-canvas { position: absolute; inset: 0; z-index: 0; opacity: .55; pointer-events: none; }
+    .rd-spot { position: fixed; z-index: 8000; pointer-events: none; width: 540px; height: 540px; left: 0; top: 0; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle, rgba(101,200,208,0.12), transparent 62%); opacity: 0; transition: opacity .4s ease; mix-blend-mode: screen; }
+    .kb { animation: kb 20s ease-in-out infinite alternate; }
+    @keyframes kb { from { transform: scale(1.02); } to { transform: scale(1.13); } }
+    [data-tilt] { transition: transform .3s cubic-bezier(.2,.8,.2,1); will-change: transform; }
+    @media (prefers-reduced-motion: reduce){
+      .ent { transition: none; opacity: 1 !important; transform: none !important; }
+      .kb { animation: none; }
+      .rd-spot { display: none; }
+      .rd-nav, [data-tilt] { transition: none; }
+    }
   </style>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
+  <div class="rd-spot" aria-hidden="true"></div>
 
   <nav class="rd-nav" id="rdNav">
     <a class="rd-logo" href="index.html" aria-label="Second Prime home"></a>
@@ -156,6 +171,7 @@
   <!-- HERO -->
   <header class="rd-hero" data-nav="dark">
     <div class="rd-hero-l">
+      <canvas class="rd-hero-canvas" aria-hidden="true"></canvas>
       <div class="rd-hero-tag"><i></i><span>Longevity &amp; performance for founders &amp; executives</span></div>
       <h1>More life in <em>every</em> year</h1>
       <p class="rd-hero-sub">We measure what your annual physical can't, catch decline a decade early, and run the plan that keeps you in your prime.</p>
@@ -165,10 +181,10 @@
       </div>
     </div>
     <div class="rd-hero-r">
-      <img src="assets/hero.jpg" alt="A father running with his children at golden hour" />
+      <img class="kb" src="assets/hero.jpg" alt="A father running with his children at golden hour" />
       <div class="rd-hero-meta">
-        <div><span class="n">1,000+</span><span class="l">markers measured</span></div>
-        <div><span class="n">500+</span><span class="l">members</span></div>
+        <div><span class="n" data-count="1000" data-suffix="+">0</span><span class="l">markers measured</span></div>
+        <div><span class="n" data-count="500" data-suffix="+">0</span><span class="l">members</span></div>
       </div>
     </div>
   </header>
@@ -182,7 +198,7 @@
         <p>Standard bloodwork checks fewer than 100 markers against ranges built to catch disease, not decline. "Normal" just means not sick yet. We work in the gap between normal and optimal.</p>
       </div>
       <div class="rd-compare ent">
-        <div class="rd-col them">
+        <div class="rd-col them" data-tilt>
           <h3>The standard approach</h3>
           <div class="tagline">Reactive</div>
           <ul>
@@ -193,7 +209,7 @@
             <li>Nutrition, training, and labs never talk</li>
           </ul>
         </div>
-        <div class="rd-col us">
+        <div class="rd-col us" data-tilt>
           <h3>The Second Prime way</h3>
           <div class="tagline">Proactive</div>
           <ul>
@@ -228,9 +244,9 @@
     <div class="rd-wrap">
       <div class="rd-head ent"><span class="eyebrow2">By the numbers</span></div>
       <div class="rd-stats ent">
-        <div class="rd-stat"><div class="fig">1,000+</div><p>Biomarkers measured in your Executive Assessment, against fewer than 100 on a standard physical.</p></div>
+        <div class="rd-stat"><div class="fig" data-count="1000" data-suffix="+">0</div><p>Biomarkers measured in your Executive Assessment, against fewer than 100 on a standard physical.</p></div>
         <div class="rd-stat"><div class="fig">1 in 3</div><p>Members arrive with a serious marker their annual physical never flagged.</p></div>
-        <div class="rd-stat"><div class="fig">12 yrs</div><p>Average drop in measured biological age across members in year one.</p></div>
+        <div class="rd-stat"><div class="fig" data-count="12" data-suffix=" yrs">0</div><p>Average drop in measured biological age across members in year one.</p></div>
       </div>
     </div>
   </section>
@@ -239,7 +255,7 @@
   <section class="rd-sec" data-nav="dark" style="background: var(--rd-panel);">
     <div class="rd-wrap">
       <div class="rd-founder ent">
-        <div class="frame">
+        <div class="frame" data-tilt>
           <img src="assets/andrew.jpg" alt="Andrew Martin, founder of Second Prime" />
           <span class="badge">Case Study 001</span>
         </div>
@@ -260,7 +276,7 @@
 
   <!-- FINAL CTA -->
   <section class="rd-final" data-nav="dark">
-    <img src="assets/images/journey-ski.jpg" alt="A man skiing down a sunlit slope" />
+    <img class="kb" src="assets/images/journey-ski.jpg" alt="A man skiing down a sunlit slope" />
     <div class="inner">
       <span class="eyebrow2">Your second prime starts here</span>
       <h2>This is your <em>second prime</em>.</h2>
@@ -277,23 +293,68 @@
   </footer>
 
   <script>
-    // reveal on scroll
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var fine = window.matchMedia('(pointer: fine)').matches;
+
+    // staggered spring reveals
     var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      es.forEach(function(e){ if(!e.isIntersecting) return; var el=e.target;
+        var sibs=[].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('ent');});
+        var idx=Math.max(0, sibs.indexOf(el)); el.style.transitionDelay=(Math.min(idx,6)*0.09)+'s';
+        el.classList.add('in'); io.unobserve(el); });
     }, { threshold: 0.12 });
     document.querySelectorAll('.ent').forEach(function(el){ io.observe(el); });
 
-    // scroll-aware nav theme: match the section behind the bar
-    var nav = document.getElementById('rdNav');
-    var secs = [].slice.call(document.querySelectorAll('[data-nav]'));
-    function navTheme(){
-      var y = 46, theme = 'dark';
-      for (var i=0;i<secs.length;i++){ var r = secs[i].getBoundingClientRect(); if (r.top <= y && r.bottom > y){ theme = secs[i].getAttribute('data-nav'); break; } }
-      nav.classList.toggle('light', theme === 'light');
-    }
+    // count-ups
+    function fmt(v){ return v.toLocaleString('en-US'); }
+    function countUp(el){ var target=parseFloat(el.getAttribute('data-count')), suf=el.getAttribute('data-suffix')||'', dur=1500, t0=performance.now();
+      function step(t){ var k=Math.min(1,(t-t0)/dur), v=Math.round(target*(1-Math.pow(1-k,3))); el.textContent=fmt(v)+suf; if(k<1) requestAnimationFrame(step); } requestAnimationFrame(step); }
+    var cio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; var el=e.target;
+      if(reduce){ el.textContent=fmt(parseFloat(el.getAttribute('data-count')))+(el.getAttribute('data-suffix')||''); } else countUp(el); cio.unobserve(el); }); }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(function(el){ cio.observe(el); });
+
+    // scroll-aware nav theme
+    var nav=document.getElementById('rdNav');
+    var secs=[].slice.call(document.querySelectorAll('[data-nav]'));
+    function navTheme(){ var y=46, theme='dark';
+      for(var i=0;i<secs.length;i++){ var r=secs[i].getBoundingClientRect(); if(r.top<=y && r.bottom>y){ theme=secs[i].getAttribute('data-nav'); break; } }
+      nav.classList.toggle('light', theme==='light'); }
     window.addEventListener('scroll', navTheme, { passive:true });
-    window.addEventListener('resize', navTheme);
-    navTheme();
+    window.addEventListener('resize', navTheme); navTheme();
+
+    if(reduce) return;
+
+    // cursor spotlight
+    var spot=document.querySelector('.rd-spot');
+    if(spot && fine){ window.addEventListener('mousemove', function(e){ spot.style.left=e.clientX+'px'; spot.style.top=e.clientY+'px'; spot.style.opacity='1'; }); }
+
+    // 3D tilt
+    if(fine){ document.querySelectorAll('[data-tilt]').forEach(function(el){
+      el.addEventListener('mousemove', function(e){ var r=el.getBoundingClientRect(), px=(e.clientX-r.left)/r.width-0.5, py=(e.clientY-r.top)/r.height-0.5;
+        el.style.transform='perspective(900px) rotateY('+(px*5).toFixed(2)+'deg) rotateX('+(-py*5).toFixed(2)+'deg)'; });
+      el.addEventListener('mouseleave', function(){ el.style.transform='perspective(900px) rotateY(0deg) rotateX(0deg)'; }); }); }
+
+    // hero particle field (living biomarker network)
+    var canvas=document.querySelector('.rd-hero-canvas');
+    if(canvas){ var ctx=canvas.getContext('2d'), DPR=Math.min(window.devicePixelRatio||1,2), W,H,N=60,pts=[],mx=-9999,my=-9999, host=canvas.parentElement;
+      function resize(){ var r=host.getBoundingClientRect(); W=canvas.width=Math.max(1,r.width*DPR); H=canvas.height=Math.max(1,r.height*DPR); canvas.style.width=r.width+'px'; canvas.style.height=r.height+'px'; }
+      resize(); window.addEventListener('resize', resize);
+      for(var i=0;i<N;i++){ pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-0.5)*0.12*DPR,vy:(Math.random()-0.5)*0.12*DPR,z:Math.random()}); }
+      host.addEventListener('mousemove', function(e){ var r=canvas.getBoundingClientRect(); mx=(e.clientX-r.left)*DPR; my=(e.clientY-r.top)*DPR; });
+      host.addEventListener('mouseleave', function(){ mx=my=-9999; });
+      function tick(){ ctx.clearRect(0,0,W,H);
+        for(var i=0;i<N;i++){ var p=pts[i]; p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
+          ctx.beginPath(); ctx.arc(p.x,p.y,(0.6+p.z*1.7)*DPR,0,6.2832); ctx.fillStyle='rgba(101,200,208,'+(0.14+p.z*0.34)+')'; ctx.fill(); }
+        var maxD=120*DPR;
+        for(var i=0;i<N;i++){ for(var j=i+1;j<N;j++){ var a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+          if(d<maxD){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.strokeStyle='rgba(101,200,208,'+(0.10*(1-d/maxD))+')'; ctx.lineWidth=DPR*0.6; ctx.stroke(); } } }
+        if(mx>-9000){ var mD=170*DPR; for(var i=0;i<N;i++){ var p=pts[i],dx=p.x-mx,dy=p.y-my,d=Math.sqrt(dx*dx+dy*dy);
+          if(d<mD){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mx,my); ctx.strokeStyle='rgba(101,200,208,'+(0.20*(1-d/mD))+')'; ctx.lineWidth=DPR*0.6; ctx.stroke(); } } }
+        requestAnimationFrame(tick); }
+      tick();
+    }
+  })();
   </script>
 </body>
 </html>
