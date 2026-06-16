@@ -449,7 +449,6 @@ html.js .reveal.in .f-bar { width: var(--w); }
 }
 @keyframes glow-breathe { 0%,100% { opacity: 0.16; } 50% { opacity: 0.3; } }
 .orb-red    { color: #ff6a5e; background: radial-gradient(circle at 35% 35%, #ff6a5e, #b3160e 70%, #4a0500); }
-.orb-purple { color: #b98aff; background: radial-gradient(circle at 35% 35%, #b98aff, #5b21b6 70%, #1e0a4a); }
 .orb-orange { color: #ffb36a; background: radial-gradient(circle at 35% 35%, #ffb36a, #c2410c 70%, #4a1d00); }
 .orb-blue   { color: #6ac8ff; background: radial-gradient(circle at 35% 35%, #6ac8ff, #0e63b3 70%, #00254a); }
 
