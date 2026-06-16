@@ -1093,3 +1093,11 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 @media (max-width: 768px) {
   html.js .gap-them.reveal, html.js .gap-us.reveal { transform: translateY(28px); }
 }
+
+/* ---- Glow effect on the comparison cards (teal, ported from glow component) ---- */
+.gap-card { transition: box-shadow .5s var(--ease), transform var(--dur-ui) var(--ease); }
+/* The Second Prime card: soft teal glow always on, brighter on hover */
+.gap-us { box-shadow: 0 28px 60px -34px rgba(16,16,22,0.5), 0 0 64px -10px rgba(101,200,208,0.30); }
+.gap-us:hover { transform: translateY(-4px); box-shadow: 0 34px 72px -30px rgba(16,16,22,0.55), 0 0 104px -2px rgba(101,200,208,0.52); }
+/* The standard card: subtle teal glow that blooms on hover */
+.gap-them:hover { transform: translateY(-4px); box-shadow: 0 22px 54px -34px rgba(31,31,39,0.16), 0 0 72px -12px rgba(69,141,147,0.26); }
