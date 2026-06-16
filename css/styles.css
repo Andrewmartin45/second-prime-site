@@ -1143,13 +1143,13 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
    ASSESSMENT ARC — floating test icons orbiting the headline
    ============================================================ */
 .assessment .container { position: relative; }
-.assess-stage { position: relative; padding-top: 210px; }
+.assess-stage { position: relative; padding-top: 250px; }
 .assessment-head { position: relative; z-index: 2; }
 .assess-arc { position: absolute; left: 50%; top: 6px; transform: translateX(-50%);
-  width: 1600px; height: 208px; pointer-events: none; z-index: 1; }
+  width: 1600px; height: 250px; pointer-events: none; z-index: 1; }
 .aa-icon { position: absolute; top: 0; left: 0; width: 60px; height: 60px; border-radius: 15px; overflow: hidden;
   box-shadow: 0 18px 34px -16px rgba(16,16,22,0.4), 0 0 0 1px rgba(16,16,22,0.04);
-  offset-path: path("M 90 208 Q 800 4 1510 208"); offset-rotate: 0deg; offset-distance: 0%;
+  offset-path: path("M 90 250 Q 800 -55 1510 250"); offset-rotate: 0deg; offset-distance: 0%;
   animation: aaFlow 32s linear infinite; will-change: offset-distance, opacity; }
 .aa-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 @keyframes aaFlow {
@@ -1168,3 +1168,18 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .aa-icon:nth-child(8) { animation-delay: -28s; }
 @media (prefers-reduced-motion: reduce) { .aa-icon { animation: none; opacity: 0; } }
 @media (max-width: 760px) { .assess-arc { display: none; } }
+
+/* Case gallery: clean default image, detail reveals on hover/tap */
+.gc-overlay { background: linear-gradient(to bottom, rgba(16,16,22,0) 44%, rgba(16,16,22,0.26) 72%, rgba(16,16,22,0.72) 100%); }
+.gallery-card::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(16,16,22,0) 26%, rgba(16,16,22,0.5) 62%, rgba(16,16,22,0.93) 100%);
+  opacity: 0; transition: opacity .45s var(--ease); }
+.gallery-card:hover::after, .gallery-card:focus-visible::after { opacity: 1; }
+.gc-body { z-index: 2; }
+.gc-title { margin-bottom: 0; }
+.gc-reveal { max-height: 0; opacity: 0; overflow: hidden; transition: max-height .5s var(--ease), opacity .4s var(--ease); }
+.gallery-card:hover .gc-reveal, .gallery-card:focus-visible .gc-reveal { max-height: 130px; opacity: 1; }
+.gc-reveal .gc-desc { margin: 14px 0 0; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px;
+  letter-spacing: 0.01em; color: rgba(255,255,255,0.86); -webkit-line-clamp: none; }
+.gc-reveal .gc-more { margin-top: 16px; }
+@media (hover: none) { .gallery-card::after { opacity: 1; } .gc-reveal { max-height: 130px; opacity: 1; } }
