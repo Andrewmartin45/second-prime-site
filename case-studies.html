@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Case Studies &mdash; Second Prime</title>
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="css/styles.css?v=18" />
+  <link rel="stylesheet" href="css/styles.css?v=19" />
 </head>
 <body>
   <header class="nav" id="nav">
@@ -38,34 +38,29 @@
   </section>
   <section class="wwd">
     <div class="container">
-      <div class="case-feature-grid">
-        <a class="case-feature reveal" href="case-study-founder.html">
-          <div class="cf-img"><img src="assets/images/persona-founder.jpg" alt="" loading="lazy" /></div>
-          <div class="cf-body">
-            <span class="cf-tag">Founder, Tech &middot; 44</span>
-            <p class="cf-quote">&ldquo;Honestly, I came in skeptical. I'd done bloodwork a dozen times.&hellip;&rdquo;</p>
-            <p class="case-delta">ApoB 124 &rarr; 68 &middot; hs-CRP 3.8 &rarr; 0.6</p>
-            <span class="cf-link">Read his story &rarr;</span>
-          </div>
-        </a>
-        <a class="case-feature reveal" href="case-study-executive.html">
-          <div class="cf-img"><img src="assets/images/persona-executive.jpg" alt="" loading="lazy" /></div>
-          <div class="cf-body">
-            <span class="cf-tag">CEO, Logistics &middot; 52</span>
-            <p class="cf-quote">&ldquo;My cardiologist had been watching my ApoB and Lp(a) for three&hellip;&rdquo;</p>
-            <p class="case-delta">ApoB 142 &rarr; 62 &middot; Lp(a) 89 &rarr; 31</p>
-            <span class="cf-link">Read his story &rarr;</span>
-          </div>
-        </a>
-        <a class="case-feature reveal" href="case-study-operator.html">
-          <div class="cf-img"><img src="assets/images/persona-athlete.jpg" alt="" loading="lazy" /></div>
-          <div class="cf-body">
-            <span class="cf-tag">Executive, Asset Mgmt &middot; 46</span>
-            <p class="cf-quote">&ldquo;I had a cardiologist, a trainer, a nutritionist. None of them&hellip;&rdquo;</p>
-            <p class="case-delta">LDL-P 1840 &rarr; 980 &middot; hs-CRP 2.9 &rarr; 0.5</p>
-            <span class="cf-link">Read his story &rarr;</span>
-          </div>
-        </a>
+      <div class="gallery">
+        <div class="gallery-nav">
+          <button class="g-arrow" data-g="prev" aria-label="Previous case studies" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+          <button class="g-arrow" data-g="next" aria-label="Next case studies"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
+        <div class="gallery-track">
+          <a class="gallery-card reveal" href="case-study-founder.html">
+            <img src="assets/images/persona-founder.jpg" alt="" loading="lazy" />
+            <div class="gc-overlay"></div>
+            <div class="gc-body"><span class="gc-tag">Founder, Tech &middot; 44</span><div class="gc-title">He&rsquo;d done bloodwork a dozen times. We found it in week one.</div><p class="gc-desc">ApoB 124 &rarr; 68, hs-CRP 3.8 &rarr; 0.6. The decade his physical never looked at.</p><span class="gc-more">Read his story <svg class="gc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+          </a>
+          <a class="gallery-card reveal" href="case-study-executive.html">
+            <img src="assets/images/persona-executive.jpg" alt="" loading="lazy" />
+            <div class="gc-overlay"></div>
+            <div class="gc-body"><span class="gc-tag">CEO, Logistics &middot; 52</span><div class="gc-title">His cardiologist watched for three years. We moved it in six months.</div><p class="gc-desc">ApoB 142 &rarr; 62, Lp(a) 89 &rarr; 31. Action, not another wait-and-see.</p><span class="gc-more">Read his story <svg class="gc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+          </a>
+          <a class="gallery-card reveal" href="case-study-operator.html">
+            <img src="assets/images/persona-athlete.jpg" alt="" loading="lazy" />
+            <div class="gc-overlay"></div>
+            <div class="gc-body"><span class="gc-tag">Executive, Asset Mgmt &middot; 46</span><div class="gc-title">Four specialists, none of them talking to each other.</div><p class="gc-desc">LDL-P 1840 &rarr; 980, hs-CRP 2.9 &rarr; 0.5. One plan, run by a team that talks.</p><span class="gc-more">Read his story <svg class="gc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+          </a>
+        </div>
+        <div class="gallery-dots"></div>
       </div>
     </div>
   </section>
@@ -222,6 +217,37 @@ document.querySelectorAll('video.orb-video').forEach((v) => {
     }
   }, 1200);
 });
+
+// Case-study gallery carousel
+document.querySelectorAll('.gallery').forEach((g) => {
+  const track = g.querySelector('.gallery-track');
+  const cards = [...track.children];
+  const dotsWrap = g.querySelector('.gallery-dots');
+  const prev = g.querySelector('[data-g="prev"]');
+  const next = g.querySelector('[data-g="next"]');
+  cards.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'g-dot';
+    d.setAttribute('aria-label', 'Go to case ' + (i + 1));
+    d.addEventListener('click', () => track.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: 'smooth' }));
+    dotsWrap.appendChild(d);
+  });
+  const dots = [...dotsWrap.children];
+  const stepBy = () => cards[0].offsetWidth + 20;
+  prev.addEventListener('click', () => track.scrollBy({ left: -stepBy(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: stepBy(), behavior: 'smooth' }));
+  const update = () => {
+    const sl = track.scrollLeft, max = track.scrollWidth - track.clientWidth;
+    prev.disabled = sl <= 2; next.disabled = sl >= max - 2;
+    let idx = 0, best = Infinity;
+    cards.forEach((c, i) => { const d = Math.abs((c.offsetLeft - cards[0].offsetLeft) - sl); if (d < best) { best = d; idx = i; } });
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  };
+  track.addEventListener('scroll', () => window.requestAnimationFrame(update), { passive: true });
+  window.addEventListener('resize', update);
+  update();
+});
+
 </script>
 </body>
 </html>
