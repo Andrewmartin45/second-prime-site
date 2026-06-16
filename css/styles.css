@@ -1097,10 +1097,10 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 /* ---- Glow effect on the comparison cards (teal, ported from glow component) ---- */
 .gap-card { transition: box-shadow .5s var(--ease), transform var(--dur-ui) var(--ease); }
 /* The Second Prime card: soft teal glow always on, brighter on hover */
-.gap-us { box-shadow: 0 28px 60px -34px rgba(16,16,22,0.5), 0 0 64px -10px rgba(101,200,208,0.30); }
-.gap-us:hover { transform: translateY(-4px); box-shadow: 0 34px 72px -30px rgba(16,16,22,0.55), 0 0 104px -2px rgba(101,200,208,0.52); }
+.gap-us { box-shadow: 0 26px 70px -38px rgba(16,16,22,0.6); }
+.gap-us:hover { transform: translateY(-4px); box-shadow: 0 34px 84px -34px rgba(16,16,22,0.66); }
 /* The standard card: subtle teal glow that blooms on hover */
-.gap-them:hover { transform: translateY(-4px); box-shadow: 0 22px 54px -34px rgba(31,31,39,0.16), 0 0 72px -12px rgba(69,141,147,0.26); }
+.gap-them:hover { transform: translateY(-4px); box-shadow: 0 22px 54px -34px rgba(31,31,39,0.14); }
 
 /* ============================================================
    CASE STUDY GALLERY — full-bleed image-card carousel
@@ -1123,10 +1123,10 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   transition: transform .6s var(--ease); }
 .gallery-card:hover img { transform: scale(1.05); }
 .gc-overlay { position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(16,16,22,0) 28%, rgba(16,16,22,0.55) 66%, rgba(16,16,22,0.92) 100%); }
-.gc-body { position: absolute; inset: auto 0 0 0; padding: 28px 28px 30px; }
+  background: linear-gradient(to bottom, rgba(16,16,22,0) 14%, rgba(16,16,22,0.5) 50%, rgba(16,16,22,0.95) 100%); }
+.gc-body { position: absolute; inset: auto 0 0 0; padding: 28px 28px 30px; text-shadow: 0 1px 18px rgba(0,0,0,0.4); }
 .gc-tag { display: block; font-family: var(--font-sans); font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--teal-bright); margin-bottom: 12px; }
+  text-transform: uppercase; color: rgba(255,255,255,0.88); margin-bottom: 12px; }
 .gc-title { font-family: var(--font-serif); font-weight: 400; font-size: 23px; line-height: 1.22; margin-bottom: 12px; }
 .gc-desc { font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.82); margin-bottom: 18px;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
