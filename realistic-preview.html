@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Realistic Test Icons — Direction</title>
+  <link rel="stylesheet" href="css/styles.css?v=25" />
+  <style>
+    body { background: #fff; }
+    .rp { max-width: 1040px; margin: 0 auto; padding: 80px 32px; }
+    .rp h2 { font-size: 30px; margin: 0 0 8px; }
+    .rp > p { color: #5b5b66; max-width: 640px; line-height: 1.6; margin: 0 0 30px; }
+    .pairs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-bottom: 56px; }
+    .pair h3 { font-size: 14px; margin: 0 0 10px; color: #16161c; }
+    .pair .two { display: flex; gap: 12px; align-items: center; }
+    .pair figure { margin: 0; text-align: center; flex: 1; }
+    .pair img { width: 100%; border-radius: 13px; aspect-ratio: 1; object-fit: cover; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); }
+    .pair figcaption { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; margin-top: 6px; color: #9a9aa3; }
+    .pair .new figcaption { color: #2f7d7a; }
+    .plan { border-top: 1px solid #eee; padding-top: 36px; }
+    .plan h3 { font-size: 18px; margin: 0 0 16px; }
+    .plan table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .plan td { padding: 8px 12px; border-bottom: 1px solid #f0f0ee; vertical-align: top; }
+    .plan td:first-child { font-weight: 600; color: #16161c; width: 34%; }
+    .badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 6px; }
+    .b-real { background: #e3f0ef; color: #1f6b67; }
+    .b-macro { background: #fdeede; color: #9a6418; }
+    .b-abs { background: #ece8f5; color: #5b4b8a; }
+    @media (max-width: 760px) { .pairs { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="rp">
+    <h2>Realistic test icons — the Biograph approach</h2>
+    <p>I studied Biograph's real icons: they're tight, vivid photos of the actual test — a body scan, a person applying a glucose sensor, a real blood macro. Specific, not generic orbs. Here are 6 of yours redone that way (new on the left, current orb on the right). Below is the plan for all 22.</p>
+
+    <div class="pairs">
+      <div class="pair"><h3>Full-Body MRI</h3><div class="two"><figure class="new"><img src="assets/real-samples/mri.jpg" alt=""><figcaption>New</figcaption></figure><figure><img src="assets/tiles/tile-20-mri.jpg?v=2" alt=""><figcaption>Current</figcaption></figure></div></div>
+      <div class="pair"><h3>DEXA Scan</h3><div class="two"><figure class="new"><img src="assets/real-samples/dexa.jpg" alt=""><figcaption>New</figcaption></figure><figure><img src="assets/tiles/tile-06-dexa.jpg?v=2" alt=""><figcaption>Current</figcaption></figure></div></div>
+      <div class="pair"><h3>VO&#8322; Max</h3><div class="two"><figure class="new"><img src="assets/real-samples/vo2.jpg" alt=""><figcaption>New</figcaption></figure><figure><img src="assets/tiles/tile-07-vo2.jpg?v=2" alt=""><figcaption>Current</figcaption></figure></div></div>
+      <div class="pair"><h3>Mobility Assessment</h3><div class="two"><figure class="new"><img src="assets/real-samples/mobility.jpg" alt=""><figcaption>New</figcaption></figure><figure><img src="assets/tiles/tile-08-mobility.jpg?v=2" alt=""><figcaption>Current</figcaption></figure></div></div>
+      <div class="pair"><h3>Strength Testing</h3><div class="two"><figure class="new"><img src="assets/real-samples/strength.jpg" alt=""><figcaption>New</figcaption></figure><figure><img src="assets/tiles/tile-09-strength.jpg?v=2" alt=""><figcaption>Current</figcaption></figure></div></div>
+      <div class="pair"><h3>Brain Health</h3><div class="two"><figure class="new"><img src="assets/real-samples/brain.jpg" alt=""><figcaption>New</figcaption></figure><figure><img src="assets/tiles/tile-12-brain.jpg?v=2" alt=""><figcaption>Current</figcaption></figure></div></div>
+    </div>
+
+    <div class="plan">
+      <h3>Plan for all 22</h3>
+      <p style="color:#5b5b66;font-size:14px;margin:0 0 18px;max-width:640px;">Most go realistic. A few biological ones become tight vivid macros. The 3 pure-concept ones stay as colorful abstract icons (there's no real-world thing to photograph).</p>
+      <table>
+        <tr><td>MRI, DEXA, VO&#8322; Max, Mobility, Strength, Brain Health, Lifestyle/Sleep, Metabolic (glucose sensor)</td><td><span class="badge b-real">Realistic</span> real test, equipment, or person doing it</td></tr>
+        <tr><td>Advanced Cardiovascular, Serum Hormones, Salivary/Urinary Hormones, Cancer Screening, Food Reactivity, Nutritional Analysis</td><td><span class="badge b-real">Realistic</span> blood draw / sample / food macro</td></tr>
+        <tr><td>Inflammation, Micronutrients, Genetic Testing, Organ Function, Gut Microbiome</td><td><span class="badge b-macro">Vivid macro</span> tight real close-up (cells, DNA, vitamins, microbiome)</td></tr>
+        <tr><td>Biological Age, Resilience Profile, Toxic Exposure</td><td><span class="badge b-abs">Keep abstract</span> no real subject to photograph</td></tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
