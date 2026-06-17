@@ -11,7 +11,8 @@
     [PLACEHOLDER] tags mark content that needs your real data.
   -->
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="css/styles.css?v=25" />
+  <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/styles.css?v=26" />
 </head>
 <body>
 
@@ -306,24 +307,33 @@
         <h2>We do three things</h2>
         <p class="lead">Every test, protocol, and adjustment in the program serves one of these.</p>
       </div>
-      <div class="three-grid">
-        <div class="pillar-card reveal">
-          <div class="photo-stage"><img src="assets/images/three2-shoulders.jpg" alt="Anatomical heart" loading="lazy" /></div>
-          <span class="pillar-eyebrow">Reduce Risk</span>
-          <h3>Less disease</h3>
-          <p>Heart disease, cancer, metabolic dysfunction, neurodegeneration. The four that cut lives short. We track 60+ cardiovascular markers alone, ApoB and Lp(a) included, and catch trouble a decade before your physical would.</p>
+      <div class="tt-carousel reveal">
+        <div class="swiper tt-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide tt-slide"><article class="tt-card">
+              <img class="tt-ic" src="assets/tiles/tile-13-cardio.jpg?v=3" alt="" loading="lazy" />
+              <span class="tt-eyebrow">Reduce Risk</span>
+              <h3>Less disease</h3>
+              <p>Heart disease, cancer, metabolic dysfunction, neurodegeneration. The four that cut lives short. We track 60+ cardiovascular markers alone, ApoB and Lp(a) included, and catch trouble a decade before your physical would.</p>
+            </article></div>
+            <div class="swiper-slide tt-slide"><article class="tt-card">
+              <img class="tt-ic" src="assets/tiles/tile-07-vo2.jpg?v=3" alt="" loading="lazy" />
+              <span class="tt-eyebrow">Improve Performance</span>
+              <h3>Feel young</h3>
+              <p>Energy that holds through a 12-hour day. Body composition that finally moves. Focus you can feel coming back by week three. We rebuild the systems underneath all of it.</p>
+            </article></div>
+            <div class="swiper-slide tt-slide"><article class="tt-card">
+              <img class="tt-ic" src="assets/tiles/tile-19-bioage.jpg?v=3" alt="" loading="lazy" />
+              <span class="tt-eyebrow">Extend Longevity</span>
+              <h3>More prime years</h3>
+              <p>Lifespan is years. Healthspan is healthy years. Peakspan is years at full power, and it's the one we're after. Your next 20 years should feel like your best 5.</p>
+            </article></div>
+          </div>
+          <div class="swiper-pagination tt-dots"></div>
         </div>
-        <div class="pillar-card reveal">
-          <div class="photo-stage"><img src="assets/images/three2-trail.jpg" alt="Runner" loading="lazy" /></div>
-          <span class="pillar-eyebrow">Improve Performance</span>
-          <h3>Feel young</h3>
-          <p>Energy that holds through a 12-hour day. Body composition that finally moves. Focus you can feel coming back by week three. We rebuild the systems underneath all of it.</p>
-        </div>
-        <div class="pillar-card reveal">
-          <div class="photo-stage"><img src="assets/images/three2-beach.jpg" alt="Golfer" loading="lazy" /></div>
-          <span class="pillar-eyebrow">Extend Longevity</span>
-          <h3>More prime years</h3>
-          <p>Lifespan is years. Healthspan is healthy years. Peakspan is years at full power, and it's the one we're after. Your next 20 years should feel like your best 5.</p>
+        <div class="tt-controls">
+          <button class="tt-prev" aria-label="Previous pillar">&larr;</button>
+          <button class="tt-next" aria-label="Next pillar">&rarr;</button>
         </div>
       </div>
     </div>
@@ -810,6 +820,28 @@ document.querySelectorAll('.gallery').forEach((g) => {
   update();
 });
 
+</script>
+<script src="assets/vendor/swiper-bundle.min.js"></script>
+<script>
+(function(){
+  if (typeof Swiper === "undefined") return;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  new Swiper(".tt-swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 28,
+    loop: true,
+    loopAdditionalSlides: 2,
+    coverflowEffect: { rotate: 0, stretch: 0, depth: 120, modifier: 2.2, slideShadows: false },
+    autoplay: reduce ? false : { delay: 4200, disableOnInteraction: false, pauseOnMouseEnter: true },
+    speed: 650,
+    pagination: { el: ".tt-dots", clickable: true },
+    navigation: { nextEl: ".tt-next", prevEl: ".tt-prev" },
+    keyboard: { enabled: true }
+  });
+})();
 </script>
 </body>
 </html>
