@@ -1183,3 +1183,7 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   letter-spacing: 0.01em; color: rgba(255,255,255,0.86); -webkit-line-clamp: none; }
 .gc-reveal .gc-more { margin-top: 16px; }
 @media (hover: none) { .gallery-card::after { opacity: 1; } .gc-reveal { max-height: 130px; opacity: 1; } }
+
+/* ---- Hero background video (montage) ---- */
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; background: #14141c; }
+@media (prefers-reduced-motion: reduce) { .hero-video { display: none; } }
