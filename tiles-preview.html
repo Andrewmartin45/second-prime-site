@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Icons — Colorful vs Current</title>
+  <link rel="stylesheet" href="css/styles.css?v=25" />
+  <style>
+    body { background: #fff; }
+    .tp-wrap { max-width: 1100px; margin: 0 auto; padding: 80px 32px; }
+    .tp-wrap h2 { font-size: 30px; margin: 0 0 8px; }
+    .tp-wrap > p { color: #5b5b66; max-width: 620px; line-height: 1.6; margin: 0 0 8px; }
+    .tp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+    .tp-col h3 { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: #8a8a96; margin: 0 0 18px; }
+    .tp-col.now h3 { color: #b04a4a; }
+    .tp-col.new h3 { color: #2f7d7a; }
+    .row { display: flex; align-items: center; gap: 16px; padding: 12px; border-radius: 14px;
+      background: #f6f6f4; margin-bottom: 12px; }
+    .row .ic { width: 56px; height: 56px; border-radius: 13px; object-fit: cover; flex: 0 0 56px; background:#fff; }
+    .row strong { display: block; font-size: 15px; color: #16161c; }
+    .row span { font-size: 13px; color: #6a6a74; }
+    @media (max-width: 760px) { .tp-cols { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="tp-wrap">
+    <h2>Test icons — colorful direction vs current</h2>
+    <p>Modeling Biograph: each test gets a distinct, vivid 3D icon on a light background, so the grid reads colorful and varied instead of uniformly dark. These 6 are samples. If you like it, I'll do all 22 in this style and swap the whole section (the floating arc at the top too).</p>
+    <div class="tp-cols">
+      <div class="tp-col new">
+        <h3>New — colorful, diverse</h3>
+        <div class="row"><img class="ic" src="assets/tiles-new/blood.png" alt=""><div><strong>Advanced Blood Panel</strong><span>ApoB, Lp(a), hs-CRP, 60+ more.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles-new/mri.png" alt=""><div><strong>Full-Body MRI</strong><span>Catches what bloodwork can't.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles-new/brain.png" alt=""><div><strong>Brain Health</strong><span>Homocysteine, omega-3, cognition.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles-new/vo2.png" alt=""><div><strong>VO&#8322; Max</strong><span>The strongest longevity predictor.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles-new/metabolic.png" alt=""><div><strong>Metabolic Function</strong><span>Insulin and glucose, in depth.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles-new/genetics.png" alt=""><div><strong>Genetic Testing</strong><span>ApoE to methylation, decoded.</span></div></div>
+      </div>
+      <div class="tp-col now">
+        <h3>Current — all dark</h3>
+        <div class="row"><img class="ic" src="assets/tiles/tile-01-blood.jpg" alt=""><div><strong>Advanced Blood Panel</strong><span>ApoB, Lp(a), hs-CRP, 60+ more.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles/tile-20-mri.jpg" alt=""><div><strong>Full-Body MRI</strong><span>Catches what bloodwork can't.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles/tile-12-brain.jpg" alt=""><div><strong>Brain Health</strong><span>Homocysteine, omega-3, cognition.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles/tile-07-vo2.jpg" alt=""><div><strong>VO&#8322; Max</strong><span>The strongest longevity predictor.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles/tile-16-metabolic.jpg" alt=""><div><strong>Metabolic Function</strong><span>Insulin and glucose, in depth.</span></div></div>
+        <div class="row"><img class="ic" src="assets/tiles/tile-22-genetics.jpg" alt=""><div><strong>Genetic Testing</strong><span>ApoE to methylation, decoded.</span></div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
