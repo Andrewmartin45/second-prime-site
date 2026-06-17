@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Three Things — Emotional Redesign Options</title>
+  <link rel="stylesheet" href="css/styles.css?v=26" />
+  <style>
+    body { margin: 0; background: #0b0b0e; }
+    .lbl { max-width: 1200px; margin: 0 auto; padding: 54px 40px 0; }
+    .lbl h4 { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: #65C8D0; margin: 0 0 4px; }
+    .lbl p { color: rgba(255,255,255,0.5); font-size: 14px; margin: 0; max-width: 680px; line-height: 1.6; }
+    .mk { padding: 70px 0 96px; background: linear-gradient(180deg, #050608, #16171c); color: #fff; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .serif { font-family: "Zodiak", Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+    .eyebrow.tb { color: #65C8D0; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; display: block; }
+    .sec-head { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+    .sec-head h2 { font-size: 48px; line-height: 1.02; margin: 12px 0 14px; }
+    .sec-head p { color: rgba(255,255,255,0.55); font-size: 17px; margin: 0; }
+
+    /* ===== OPTION A — cinematic full-bleed chapters ===== */
+    .fa-chapter { position: relative; min-height: 74vh; display: flex; align-items: flex-end; border-radius: 24px; overflow: hidden; margin-bottom: 18px; }
+    .fa-chapter img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .fa-chapter::after { content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(6,7,9,0.92) 0%, rgba(6,7,9,0.6) 42%, rgba(6,7,9,0.08) 78%),
+                  linear-gradient(0deg, rgba(6,7,9,0.78) 0%, rgba(6,7,9,0.05) 46%); }
+    .fa-body { position: relative; z-index: 2; padding: 56px; max-width: 600px; }
+    .fa-idx { font-family: "Zodiak", serif; font-size: 16px; color: rgba(255,255,255,0.5); display: block; margin-bottom: 18px; letter-spacing: .1em; }
+    .fa-body h3 { font-size: 54px; line-height: 1.0; margin: 12px 0 18px; }
+    .fa-body p { color: rgba(255,255,255,0.82); font-size: 18px; line-height: 1.6; max-width: 50ch; margin: 0 0 24px; }
+    .fa-chip { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 700; color: #fff;
+      background: rgba(101,200,208,0.14); border: 1px solid rgba(101,200,208,0.3); padding: 9px 16px; border-radius: 999px; }
+    .fa-chip::before { content: ""; width: 7px; height: 7px; border-radius: 999px; background: #65C8D0; }
+
+    /* ===== OPTION B — editorial alternating split ===== */
+    .fb-row { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; margin-bottom: 72px; }
+    .fb-row:last-child { margin-bottom: 0; }
+    .fb-media { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 4/3; }
+    .fb-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .fb-media .tag { position: absolute; top: 18px; left: 18px; z-index: 2; font-size: 12px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase; color: #fff; background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px); padding: 7px 13px; border-radius: 999px; }
+    .fb-row.rev .fb-media { order: 2; }
+    .fb-idx { font-family: "Zodiak", serif; font-size: 50px; color: rgba(255,255,255,0.16); line-height: 1; display: block; margin-bottom: 14px; }
+    .fb-text h3 { font-size: 42px; line-height: 1.04; margin: 8px 0 18px; }
+    .fb-text p { color: rgba(255,255,255,0.7); font-size: 17px; line-height: 1.65; margin: 0 0 22px; max-width: 46ch; }
+    .fb-chip { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 700; color: #65C8D0; }
+    .fb-chip::before { content: ""; width: 7px; height: 7px; border-radius: 999px; background: #65C8D0; }
+
+    @media (max-width: 760px) {
+      .fb-row { grid-template-columns: 1fr; gap: 24px; }
+      .fb-row.rev .fb-media { order: 0; }
+      .fa-body h3 { font-size: 36px; } .fa-body { padding: 32px; }
+      .sec-head h2 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== OPTION A ===================== -->
+  <div class="lbl"><h4>Option A — Cinematic chapters</h4><p>Each pillar is a near-full-height image band with the message over it. Image carries the emotion, text lands the substance. Reveals on scroll. This is the "scroll-told story" the design analysis recommends — premium and image-forward.</p></div>
+  <section class="mk">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow tb">What We Actually Do</span>
+        <h2 class="serif">We do three things</h2>
+        <p>Every test, protocol, and adjustment in the program serves one of these.</p>
+      </div>
+
+      <div class="fa-chapter">
+        <img src="assets/images/pillar-family.jpg" alt="Father lifting his daughter" />
+        <div class="fa-body">
+          <span class="fa-idx">01 — Reduce Risk</span>
+          <h3 class="serif">Less disease</h3>
+          <p>Heart disease, cancer, metabolic dysfunction, neurodegeneration. The four that cut lives short. We track 60+ cardiovascular markers alone, ApoB and Lp(a) included.</p>
+          <span class="fa-chip">Caught a decade before your physical would</span>
+        </div>
+      </div>
+
+      <div class="fa-chapter">
+        <img src="assets/images/pillar-run.jpg" alt="Man running on a coastal trail" />
+        <div class="fa-body">
+          <span class="fa-idx">02 — Improve Performance</span>
+          <h3 class="serif">Feel young</h3>
+          <p>Energy that holds through a 12-hour day. Body composition that finally moves. Focus you can feel coming back by week three. We rebuild the systems underneath all of it.</p>
+          <span class="fa-chip">Results you feel by week three</span>
+        </div>
+      </div>
+
+      <div class="fa-chapter">
+        <img src="assets/images/pillar-couple.jpg" alt="Couple walking on the beach at sunset" />
+        <div class="fa-body">
+          <span class="fa-idx">03 — Extend Longevity</span>
+          <h3 class="serif">More prime years</h3>
+          <p>Lifespan is years. Healthspan is healthy years. Peakspan is years at full power, and it's the one we're after.</p>
+          <span class="fa-chip">Your next 20 years should feel like your best 5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPTION B ===================== -->
+  <div class="lbl"><h4>Option B — Editorial alternating</h4><p>Large image on one side, message on the other, alternating down the page. Image-led but the copy gets room to breathe. More restrained, very premium-editorial.</p></div>
+  <section class="mk">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow tb">What We Actually Do</span>
+        <h2 class="serif">We do three things</h2>
+        <p>Every test, protocol, and adjustment in the program serves one of these.</p>
+      </div>
+
+      <div class="fb-row">
+        <div class="fb-media"><span class="tag">Reduce Risk</span><img src="assets/images/pillar-family.jpg" alt="Father lifting his daughter" /></div>
+        <div class="fb-text"><span class="fb-idx serif">01</span><h3 class="serif">Less disease</h3><p>Heart disease, cancer, metabolic dysfunction, neurodegeneration. The four that cut lives short. We track 60+ cardiovascular markers alone, ApoB and Lp(a) included, and catch trouble a decade before your physical would.</p><span class="fb-chip">Caught a decade early</span></div>
+      </div>
+
+      <div class="fb-row rev">
+        <div class="fb-media"><span class="tag">Improve Performance</span><img src="assets/images/pillar-run.jpg" alt="Man running on a coastal trail" /></div>
+        <div class="fb-text"><span class="fb-idx serif">02</span><h3 class="serif">Feel young</h3><p>Energy that holds through a 12-hour day. Body composition that finally moves. Focus you can feel coming back by week three. We rebuild the systems underneath all of it.</p><span class="fb-chip">Felt by week three</span></div>
+      </div>
+
+      <div class="fb-row">
+        <div class="fb-media"><span class="tag">Extend Longevity</span><img src="assets/images/pillar-couple.jpg" alt="Couple walking on the beach at sunset" /></div>
+        <div class="fb-text"><span class="fb-idx serif">03</span><h3 class="serif">More prime years</h3><p>Lifespan is years. Healthspan is healthy years. Peakspan is years at full power, and it's the one we're after. Your next 20 years should feel like your best 5.</p><span class="fb-chip">Your best 5, for 20 years</span></div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
