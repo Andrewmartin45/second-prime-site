@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Video — Pick an Option</title>
+  <link rel="stylesheet" href="css/styles.css?v=25" />
+  <style>
+    body { background: #0d0d12; }
+    .pv-head { max-width: 1136px; margin: 0 auto; padding: 90px 32px 10px; color: #fff; }
+    .pv-head h2 { font-size: 30px; margin: 0 0 10px; }
+    .pv-head p { color: rgba(255,255,255,0.6); max-width: 620px; font-size: 16px; line-height: 1.6; }
+    .pv-note { display: inline-block; margin-top: 14px; font-size: 13px; color: #d9c9a8;
+      border: 1px solid rgba(217,201,168,0.35); border-radius: 999px; padding: 6px 14px; }
+
+    .pv-block { max-width: 1136px; margin: 28px auto; padding: 0 32px; }
+    .pv-label { display: flex; align-items: baseline; gap: 14px; color: #fff; margin: 0 0 14px; }
+    .pv-label .tag { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      background: var(--teal, #2f7d7a); color: #fff; padding: 5px 11px; border-radius: 6px; }
+    .pv-label h3 { font-size: 21px; margin: 0; }
+    .pv-label span.seq { color: rgba(255,255,255,0.5); font-size: 14px; }
+
+    .pv-stage { position: relative; border-radius: 16px; overflow: hidden;
+      aspect-ratio: 16 / 7.2; background: #14141c; box-shadow: 0 30px 70px -40px rgba(0,0,0,0.8); }
+    .pv-stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .pv-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(90deg, rgba(10,10,14,0.86) 0%, rgba(10,10,14,0.6) 28%, rgba(10,10,14,0.25) 58%, rgba(10,10,14,0.02) 100%),
+                  linear-gradient(180deg, rgba(10,10,14,0.2) 0%, rgba(10,10,14,0.05) 45%, rgba(10,10,14,0.5) 100%); }
+    .pv-copy { position: absolute; z-index: 2; left: 6%; top: 50%; transform: translateY(-50%);
+      max-width: 540px; color: #fff; pointer-events: none; }
+    .pv-copy .tag { display: block; font-size: 12px; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 16px; }
+    .pv-copy h1 { font-size: clamp(34px, 5vw, 62px); line-height: 1.02; margin: 0 0 18px; letter-spacing: -0.02em; }
+    .pv-copy .sub { font-size: clamp(15px, 1.6vw, 19px); color: rgba(255,255,255,0.85); margin: 0; max-width: 460px; }
+    .pv-play { position: absolute; z-index: 3; right: 18px; bottom: 16px; pointer-events: auto;
+      background: rgba(255,255,255,0.92); color: #14141c; border: none; cursor: pointer;
+      font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px; }
+    .pv-play:hover { background: #fff; }
+
+    .pv-scenes { max-width: 1136px; margin: 70px auto 30px; padding: 0 32px; }
+    .pv-scenes h4 { color: #fff; font-size: 16px; margin: 0 0 16px; }
+    .pv-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .pv-grid figure { margin: 0; }
+    .pv-grid img { width: 100%; border-radius: 9px; display: block; aspect-ratio: 16/9; object-fit: cover; }
+    .pv-grid figcaption { color: rgba(255,255,255,0.55); font-size: 12px; margin-top: 7px; text-align: center; }
+    @media (max-width: 760px) { .pv-grid { grid-template-columns: repeat(2, 1fr); } .pv-copy h1 { font-size: 30px; } }
+  </style>
+</head>
+<body>
+  <div class="pv-head">
+    <h2>Hero video — two options</h2>
+    <p>Same headline and subheadline you approved, now over a moving montage instead of the static photo. Both use the same six scenes in a different order. Pick the order that feels right and I'll wire it into the live homepage.</p>
+    <span class="pv-note">Heads up: your Chrome blocks video autoplay, so hit the “Play” button on each one to watch it.</span>
+  </div>
+
+  <!-- OPTION A -->
+  <div class="pv-block">
+    <div class="pv-label">
+      <span class="tag">Option A</span>
+      <h3>Life first</h3>
+      <span class="seq">kids → beach → golf → ski → handshake → blood draw</span>
+    </div>
+    <div class="pv-stage">
+      <video id="va" muted loop playsinline preload="metadata" poster="assets/hero/poster-a.jpg">
+        <source src="assets/hero/hero-loop-a.mp4" type="video/mp4" />
+      </video>
+      <div class="pv-overlay"></div>
+      <div class="pv-copy">
+        <span class="tag">Longevity &amp; Performance for Founders &amp; Executives</span>
+        <h1>More life<br>in every year</h1>
+        <p class="sub">Advanced testing, proactive care, and science-backed strategies to stay in your prime, longer.</p>
+      </div>
+      <button class="pv-play" data-target="va">► Play</button>
+    </div>
+  </div>
+
+  <!-- OPTION B -->
+  <div class="pv-block">
+    <div class="pv-label">
+      <span class="tag">Option B</span>
+      <h3>Performance first</h3>
+      <span class="seq">ski → golf → handshake → blood draw → kids → beach</span>
+    </div>
+    <div class="pv-stage">
+      <video id="vb" muted loop playsinline preload="metadata" poster="assets/hero/poster-b.jpg">
+        <source src="assets/hero/hero-loop-b.mp4" type="video/mp4" />
+      </video>
+      <div class="pv-overlay"></div>
+      <div class="pv-copy">
+        <span class="tag">Longevity &amp; Performance for Founders &amp; Executives</span>
+        <h1>More life<br>in every year</h1>
+        <p class="sub">Advanced testing, proactive care, and science-backed strategies to stay in your prime, longer.</p>
+      </div>
+      <button class="pv-play" data-target="vb">► Play</button>
+    </div>
+  </div>
+
+  <div class="pv-scenes">
+    <h4>The six scenes</h4>
+    <div class="pv-grid">
+      <figure><img src="assets/hero/thumb-kids.jpg" alt="Father playing with kids"><figcaption>Time with kids</figcaption></figure>
+      <figure><img src="assets/hero/thumb-beach.jpg" alt="Couple on beach"><figcaption>Beach with spouse</figcaption></figure>
+      <figure><img src="assets/hero/thumb-golf.jpg" alt="Golf swing"><figcaption>Golf</figcaption></figure>
+      <figure><img src="assets/hero/thumb-skiing.jpg" alt="Skiing"><figcaption>Skiing</figcaption></figure>
+      <figure><img src="assets/hero/thumb-handshake.jpg" alt="Business handshake"><figcaption>Closing a deal</figcaption></figure>
+      <figure><img src="assets/hero/thumb-blooddraw.jpg" alt="Blood draw in clinic"><figcaption>Advanced testing</figcaption></figure>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.pv-play').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var v = document.getElementById(btn.dataset.target);
+        if (v.paused) { v.play(); btn.textContent = '❚❚ Pause'; }
+        else { v.pause(); btn.textContent = '► Play'; }
+      });
+    });
+    // try autoplay anyway for browsers that allow muted autoplay
+    ['va','vb'].forEach(function(id){ var v=document.getElementById(id); var p=v.play(); if(p&&p.catch){p.catch(function(){});} });
+  </script>
+</body>
+</html>
