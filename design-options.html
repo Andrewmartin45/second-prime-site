@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Three Things — Orb Cards (Biograph-style)</title>
+  <title>Three Things — Living Cards</title>
   <link rel="stylesheet" href="css/styles.css?v=26" />
   <style>
     body { margin: 0; background: #0b0b0e; }
@@ -23,15 +23,16 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
       border: 1px solid rgba(255,255,255,0.08); padding: 30px;
       display: flex; flex-direction: column;
-      transition: border-color .5s var(--ease), transform .5s var(--ease); }
-    /* color glow that blooms on hover */
+      transition: border-color .45s var(--ease), transform .45s var(--ease), box-shadow .45s var(--ease); }
+    /* background tint blooms on hover — NEUTRAL border, no colored edge */
     .bp-card::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0;
-      background: radial-gradient(70% 60% at 50% 40%, rgba(var(--glow), 0.6), rgba(var(--glow), 0.16) 48%, transparent 74%);
+      background: radial-gradient(72% 60% at 50% 40%, rgba(var(--glow), 0.5), rgba(var(--glow), 0.13) 50%, transparent 76%);
       transition: opacity .55s var(--ease); }
-    .bp-card:hover { border-color: rgba(var(--glow), 0.5); transform: translateY(-4px); }
+    .bp-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.16);
+      box-shadow: 0 44px 90px -44px rgba(0,0,0,0.85); }
     .bp-card:hover::before { opacity: 1; }
 
-    .bp-top { position: relative; z-index: 2; height: 64px; }
+    .bp-top { position: relative; z-index: 2; height: 70px; }
     .bp-i { width: 30px; height: 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25);
       display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); font-size: 13px;
       font-style: italic; font-family: "Zodiak", serif; transition: opacity .35s ease; }
@@ -39,34 +40,37 @@
     .bp-stat { position: absolute; inset: 0; display: flex; align-items: flex-start; gap: 16px;
       opacity: 0; transform: translateY(-8px); transition: opacity .45s var(--ease) .05s, transform .45s var(--ease) .05s; }
     .bp-card:hover .bp-stat { opacity: 1; transform: translateY(0); }
-    .bp-stat .num { font-family: "Zodiak", serif; font-size: 30px; line-height: 1; color: #fff; white-space: nowrap; }
-    .bp-stat .txt { font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.78); max-width: 230px; }
+    .bp-stat .num { font-family: "Zodiak", serif; font-size: 32px; line-height: 1; color: #fff; white-space: nowrap; }
+    .bp-stat .txt { font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,0.78); max-width: 235px; }
+    .bp-stat .src { display: block; color: rgba(255,255,255,0.45); margin-top: 3px; font-size: 11px; }
 
     .bp-orbwrap { position: relative; z-index: 1; flex: 1; display: flex; align-items: center; justify-content: center;
       transition: transform .35s cubic-bezier(.22,.61,.36,1); }
-    .bp-orb { width: 240px; height: 240px; object-fit: cover; mix-blend-mode: screen;
-      -webkit-mask: radial-gradient(circle at 50% 50%, #000 56%, transparent 74%);
-              mask: radial-gradient(circle at 50% 50%, #000 56%, transparent 74%);
-      animation: bpFloat 7s ease-in-out infinite; filter: saturate(1.1) contrast(1.06);
-      transition: transform .45s var(--ease); }
-    .bp-card:hover .bp-orb { transform: scale(1.08); }
-    @keyframes bpFloat { 0%,100% { transform: translateY(-8px); } 50% { transform: translateY(8px); } }
+    .bp-media { width: 280px; height: 280px; object-fit: contain; mix-blend-mode: screen;
+      -webkit-mask: radial-gradient(circle at 50% 50%, #000 56%, transparent 84%);
+              mask: radial-gradient(circle at 50% 50%, #000 56%, transparent 84%);
+      animation: bpFloat 7s ease-in-out infinite; filter: saturate(1.08) contrast(1.06); }
+    .bp-media.dna { height: 322px;
+      -webkit-mask: radial-gradient(ellipse 44% 88% at 50% 50%, #000 78%, transparent 99%);
+              mask: radial-gradient(ellipse 44% 88% at 50% 50%, #000 78%, transparent 99%); }
+    .bp-card:hover .bp-media { animation-play-state: paused; }
+    @keyframes bpFloat { 0%,100% { transform: translateY(-7px); } 50% { transform: translateY(7px); } }
 
     .bp-body { position: relative; z-index: 2; }
     .bp-headline { font-size: 26px; margin: 0 0 12px; color: #fff; }
     .bp-desc { color: rgba(255,255,255,0.68); font-size: 15px; line-height: 1.6; margin: 0; }
 
-    .bp-controls { display: none; }
     @media (max-width: 860px) {
       .bp-grid { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 80%;
         overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -40px; padding: 0 40px 8px; }
       .bp-card { scroll-snap-align: center; min-height: 480px; }
       .sec-head h2 { font-size: 34px; }
     }
+    @media (prefers-reduced-motion: reduce) { .bp-media { animation: none; } }
   </style>
 </head>
 <body>
-  <div class="lbl"><h4>Three Things · Orb cards (Biograph-style)</h4><p>Three cards, all on the page (scrolls on mobile). Hover a card: the orb drifts toward your cursor, the card glows its color, and a stat pops in. Headlines: Reduce Risk · Improve Function · Extend Longevity.</p></div>
+  <div class="lbl"><h4>Three Things · Living cards</h4><p>Beating heart, pulsing cell, rotating DNA. Hover: the orb drifts toward your cursor, the card background tints (no colored border now), and a real stat pops in.</p></div>
 
   <section class="mk">
     <div class="wrap">
@@ -78,24 +82,24 @@
 
       <div class="bp-grid" id="bpGrid">
 
-        <article class="bp-card" style="--glow: 219,72,60">
+        <article class="bp-card" style="--glow: 214,68,58">
           <div class="bp-top">
             <div class="bp-i">i</div>
-            <div class="bp-stat"><span class="num">60+</span><span class="txt">cardiovascular markers we track. A standard physical checks about five.</span></div>
+            <div class="bp-stat"><span class="num">49%</span><span class="txt">of people with no traditional risk factors still had plaque in their arteries.<span class="src">Miami Heart Study, 2022</span></span></div>
           </div>
-          <div class="bp-orbwrap"><img class="bp-orb" src="assets/images/orbs/orb-red.jpg" alt="" /></div>
+          <div class="bp-orbwrap"><video class="bp-media" autoplay muted loop playsinline poster="assets/videos/sub-heart.png"><source src="assets/videos/sub-heart.mp4" type="video/mp4" /></video></div>
           <div class="bp-body">
             <h3 class="bp-headline serif">Reduce Risk</h3>
             <p class="bp-desc">Heart disease, cancer, metabolic decline, and dementia build silently for years. We catch them early, while they're still reversible.</p>
           </div>
         </article>
 
-        <article class="bp-card" style="--glow: 232,132,48">
+        <article class="bp-card" style="--glow: 78,178,190">
           <div class="bp-top">
             <div class="bp-i">i</div>
-            <div class="bp-stat"><span class="num">Week 3</span><span class="txt">when most members say the change in energy and focus becomes obvious.</span></div>
+            <div class="bp-stat"><span class="num">5&times;</span><span class="txt">Low cardiorespiratory fitness predicts early death more strongly than smoking.<span class="src">JAMA Network Open, 2018</span></span></div>
           </div>
-          <div class="bp-orbwrap"><img class="bp-orb" src="assets/images/orbs/orb-orange.jpg" alt="" /></div>
+          <div class="bp-orbwrap"><video class="bp-media" autoplay muted loop playsinline poster="assets/videos/sub-cell.png"><source src="assets/videos/sub-cell.mp4" type="video/mp4" /></video></div>
           <div class="bp-body">
             <h3 class="bp-headline serif">Improve Function</h3>
             <p class="bp-desc">Energy, strength, focus, body composition. We rebuild the systems that decide how you feel and perform day to day.</p>
@@ -105,9 +109,9 @@
         <article class="bp-card" style="--glow: 150,104,222">
           <div class="bp-top">
             <div class="bp-i">i</div>
-            <div class="bp-stat"><span class="num">12 yrs</span><span class="txt">average drop in measured biological age across a member's first year.</span></div>
+            <div class="bp-stat"><span class="num">12 yrs</span><span class="txt">average drop in measured biological age across a member's first year.<span class="src">Second Prime members</span></span></div>
           </div>
-          <div class="bp-orbwrap"><img class="bp-orb" src="assets/images/orbs/orb-purple.jpg" alt="" /></div>
+          <div class="bp-orbwrap"><video class="bp-media dna" autoplay muted loop playsinline poster="assets/videos/sub-dna.png"><source src="assets/videos/sub-dna.mp4" type="video/mp4" /></video></div>
           <div class="bp-body">
             <h3 class="bp-headline serif">Extend Longevity</h3>
             <p class="bp-desc">Lock in the gains for the decades ahead, so your 60s and 70s look a lot more like your 40s.</p>
@@ -127,7 +131,7 @@
         var r = card.getBoundingClientRect();
         var dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
         var dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
-        orb.style.transform = "translate(" + (dx*22).toFixed(1) + "px," + (dy*18).toFixed(1) + "px)";
+        orb.style.transform = "translate(" + (dx*22).toFixed(1) + "px," + (dy*18).toFixed(1) + "px) scale(1.06)";
       });
       card.addEventListener("mouseleave", function(){ orb.style.transform = "translate(0,0)"; });
     });
