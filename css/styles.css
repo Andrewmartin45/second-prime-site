@@ -407,44 +407,53 @@ html.js .reveal.in .f-bar { width: var(--w); }
 .pillars-head .lead { color: rgba(255,255,255,0.6); margin: 20px auto 32px; }
 .three-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
-/* ===== Three Things — coverflow carousel (Swiper) ===== */
-.tt-carousel { position: relative; }
-.tt-swiper { width: 100%; padding-bottom: 18px; }
-.tt-slide { width: 380px; height: auto; }
-.tt-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.09); border-radius: 22px;
-  padding: 36px; min-height: 348px;
-  transition: border-color .4s var(--ease), box-shadow .4s var(--ease);
-}
-.tt-ic { width: 60px; height: 60px; border-radius: 15px; object-fit: cover; display: block;
-  margin-bottom: 24px; box-shadow: 0 14px 30px -14px rgba(0,0,0,0.7); }
-.tt-eyebrow { display: block; color: var(--teal-bright); font-size: 12px; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
-.tt-card h3 { font-family: var(--font-serif); font-weight: 400; font-size: 32px; line-height: 1.05;
-  margin: 0 0 16px; color: var(--white); }
-.tt-card p { color: rgba(255,255,255,0.7); font-size: 16px; line-height: 1.62; margin: 0; }
-/* focus the centered slide, recede the rest */
-.tt-swiper .swiper-slide { opacity: 0.32; transition: opacity .45s var(--ease); }
-.tt-swiper .swiper-slide-prev, .tt-swiper .swiper-slide-next { opacity: 0.62; }
-.tt-swiper .swiper-slide-active { opacity: 1; }
-.tt-swiper .swiper-slide-active .tt-card { border-color: rgba(101,200,208,0.28);
-  box-shadow: 0 30px 70px -40px rgba(0,0,0,0.85); }
-/* pagination */
-.tt-dots { position: static; margin-top: 26px; }
-.tt-swiper .swiper-pagination-bullet { background: rgba(255,255,255,0.3); opacity: 1;
-  width: 8px; height: 8px; transition: width .3s, background .3s; }
-.tt-swiper .swiper-pagination-bullet-active { background: var(--teal-bright); width: 24px; border-radius: 4px; }
-/* arrows */
-.tt-controls { display: flex; justify-content: center; gap: 12px; margin-top: 22px; }
-.tt-prev, .tt-next { width: 48px; height: 48px; border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.2); color: var(--white); font-size: 18px;
-  display: flex; align-items: center; justify-content: center; transition: all .25s var(--ease); }
-.tt-prev:hover, .tt-next:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
-.tt-prev:active, .tt-next:active { transform: scale(0.94); }
-@media (max-width: 640px) {
-  .tt-slide { width: 82vw; max-width: 360px; }
-  .tt-card { min-height: 320px; padding: 30px; }
+/* ===== Three Things — living cards (heart / cell / DNA) ===== */
+.bp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.bp-card { position: relative; border-radius: 22px; overflow: hidden; min-height: 540px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+  border: 1px solid rgba(255,255,255,0.08); padding: 30px;
+  display: flex; flex-direction: column;
+  transition: border-color .45s var(--ease), transform .45s var(--ease), box-shadow .45s var(--ease); }
+/* background tint blooms on hover — neutral border, no colored edge */
+.bp-card::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(72% 60% at 50% 40%, rgba(var(--glow), 0.5), rgba(var(--glow), 0.13) 50%, transparent 76%);
+  transition: opacity .55s var(--ease); }
+.bp-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.16);
+  box-shadow: 0 44px 90px -44px rgba(0,0,0,0.85); }
+.bp-card:hover::before { opacity: 1; }
+.bp-top { position: relative; z-index: 2; height: 70px; }
+.bp-i { width: 30px; height: 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25);
+  display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); font-size: 13px;
+  font-style: italic; font-family: var(--font-serif); transition: opacity .35s ease; }
+.bp-card:hover .bp-i { opacity: 0; }
+.bp-stat { position: absolute; inset: 0; display: flex; align-items: flex-start; gap: 16px;
+  opacity: 0; transform: translateY(-8px); transition: opacity .45s var(--ease) .05s, transform .45s var(--ease) .05s; }
+.bp-card:hover .bp-stat { opacity: 1; transform: translateY(0); }
+.bp-stat .num { font-family: var(--font-serif); font-size: 32px; line-height: 1; color: var(--white); white-space: nowrap; }
+.bp-stat .txt { font-size: 12.5px; line-height: 1.45; color: rgba(255,255,255,0.78); max-width: 235px; }
+.bp-stat .src { display: block; color: rgba(255,255,255,0.45); margin-top: 3px; font-size: 11px; }
+.bp-orbwrap { position: relative; z-index: 1; flex: 1; display: flex; align-items: center; justify-content: center;
+  transition: transform .35s cubic-bezier(.22,.61,.36,1); }
+.bp-float { display: flex; align-items: center; justify-content: center; perspective: 900px;
+  animation: bpFloat 7s ease-in-out infinite; }
+.bp-media { width: 196px; height: 196px; object-fit: contain; }
+.bp-media.dna { width: 196px; height: 248px; }
+.bp-media.heart { animation: beat 1.6s ease-in-out infinite; transform-origin: center; }
+.bp-media.cell  { animation: cellpulse 3.6s ease-in-out infinite; }
+.bp-media.dna   { animation: dnaturn 7s ease-in-out infinite; }
+@keyframes bpFloat { 0%,100% { transform: translateY(-8px); } 50% { transform: translateY(8px); } }
+@keyframes beat { 0%,100%{transform:scale(1)} 9%{transform:scale(1.07)} 18%{transform:scale(1)} 28%{transform:scale(1.035)} 40%{transform:scale(1)} }
+@keyframes cellpulse { 0%,100%{transform:scale(0.98);opacity:.92} 50%{transform:scale(1.05);opacity:1} }
+@keyframes dnaturn { 0%{transform:rotateY(-26deg)} 50%{transform:rotateY(26deg)} 100%{transform:rotateY(-26deg)} }
+.bp-body { position: relative; z-index: 2; margin-top: 18px; }
+.bp-headline { font-family: var(--font-serif); font-weight: 400; font-size: 26px; line-height: 1.05;
+  margin: 0 0 12px; color: var(--white); min-height: 1.1em; }
+.bp-desc { color: rgba(255,255,255,0.68); font-size: 15px; line-height: 1.6; margin: 0; min-height: 4.8em; }
+@media (prefers-reduced-motion: reduce){ .bp-float,.bp-media.heart,.bp-media.cell,.bp-media.dna{animation:none} }
+@media (max-width: 860px) {
+  .bp-grid { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 80%;
+    overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -32px; padding: 0 32px 8px; }
+  .bp-card { scroll-snap-align: center; }
 }
 .pillar-card {
   background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);

@@ -11,8 +11,7 @@
     [PLACEHOLDER] tags mark content that needs your real data.
   -->
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/styles.css?v=26" />
+  <link rel="stylesheet" href="css/styles.css?v=27" />
 </head>
 <body>
 
@@ -307,34 +306,40 @@
         <h2>We do three things</h2>
         <p class="lead">Every test, protocol, and adjustment in the program serves one of these.</p>
       </div>
-      <div class="tt-carousel reveal">
-        <div class="swiper tt-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide tt-slide"><article class="tt-card">
-              <img class="tt-ic" src="assets/tiles/tile-13-cardio.jpg?v=3" alt="" loading="lazy" />
-              <span class="tt-eyebrow">Reduce Risk</span>
-              <h3>Less disease</h3>
-              <p>Heart disease, cancer, metabolic dysfunction, neurodegeneration. The four that cut lives short. We track 60+ cardiovascular markers alone, ApoB and Lp(a) included, and catch trouble a decade before your physical would.</p>
-            </article></div>
-            <div class="swiper-slide tt-slide"><article class="tt-card">
-              <img class="tt-ic" src="assets/tiles/tile-07-vo2.jpg?v=3" alt="" loading="lazy" />
-              <span class="tt-eyebrow">Improve Performance</span>
-              <h3>Feel young</h3>
-              <p>Energy that holds through a 12-hour day. Body composition that finally moves. Focus you can feel coming back by week three. We rebuild the systems underneath all of it.</p>
-            </article></div>
-            <div class="swiper-slide tt-slide"><article class="tt-card">
-              <img class="tt-ic" src="assets/tiles/tile-19-bioage.jpg?v=3" alt="" loading="lazy" />
-              <span class="tt-eyebrow">Extend Longevity</span>
-              <h3>More prime years</h3>
-              <p>Lifespan is years. Healthspan is healthy years. Peakspan is years at full power, and it's the one we're after. Your next 20 years should feel like your best 5.</p>
-            </article></div>
+      <div class="bp-grid reveal" id="bpGrid">
+        <article class="bp-card" style="--glow: 214,68,58">
+          <div class="bp-top">
+            <div class="bp-i">i</div>
+            <div class="bp-stat"><span class="num">49%</span><span class="txt">of people with no traditional risk factors still had plaque in their arteries.<span class="src">Miami Heart Study, 2022</span></span></div>
           </div>
-          <div class="swiper-pagination tt-dots"></div>
-        </div>
-        <div class="tt-controls">
-          <button class="tt-prev" aria-label="Previous pillar">&larr;</button>
-          <button class="tt-next" aria-label="Next pillar">&rarr;</button>
-        </div>
+          <div class="bp-orbwrap"><div class="bp-float"><img class="bp-media heart" src="assets/videos/sub-heart.png" alt="" loading="lazy" /></div></div>
+          <div class="bp-body">
+            <h3 class="bp-headline">Reduce Risk</h3>
+            <p class="bp-desc">Heart disease, cancer, and metabolic decline build silently for years. We catch them early.</p>
+          </div>
+        </article>
+        <article class="bp-card" style="--glow: 78,178,190">
+          <div class="bp-top">
+            <div class="bp-i">i</div>
+            <div class="bp-stat"><span class="num">5&times;</span><span class="txt">Low cardiorespiratory fitness predicts early death more strongly than smoking.<span class="src">JAMA Network Open, 2018</span></span></div>
+          </div>
+          <div class="bp-orbwrap"><div class="bp-float"><img class="bp-media cell" src="assets/videos/sub-cell.png" alt="" loading="lazy" /></div></div>
+          <div class="bp-body">
+            <h3 class="bp-headline">Improve Function</h3>
+            <p class="bp-desc">Energy, strength, focus, and body composition. We rebuild the systems underneath.</p>
+          </div>
+        </article>
+        <article class="bp-card" style="--glow: 150,104,222">
+          <div class="bp-top">
+            <div class="bp-i">i</div>
+            <div class="bp-stat"><span class="num">12 yrs</span><span class="txt">average drop in measured biological age across a member's first year.<span class="src">Second Prime members</span></span></div>
+          </div>
+          <div class="bp-orbwrap"><div class="bp-float"><img class="bp-media dna" src="assets/videos/sub-dna.png" alt="" loading="lazy" /></div></div>
+          <div class="bp-body">
+            <h3 class="bp-headline">Extend Longevity</h3>
+            <p class="bp-desc">Lock in the gains for decades, so your 60s and 70s feel a lot more like your 40s.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -821,25 +826,19 @@ document.querySelectorAll('.gallery').forEach((g) => {
 });
 
 </script>
-<script src="assets/vendor/swiper-bundle.min.js"></script>
 <script>
 (function(){
-  if (typeof Swiper === "undefined") return;
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  new Swiper(".tt-swiper", {
-    effect: "coverflow",
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: "auto",
-    spaceBetween: 28,
-    loop: true,
-    loopAdditionalSlides: 2,
-    coverflowEffect: { rotate: 0, stretch: 0, depth: 120, modifier: 2.2, slideShadows: false },
-    autoplay: reduce ? false : { delay: 4200, disableOnInteraction: false, pauseOnMouseEnter: true },
-    speed: 650,
-    pagination: { el: ".tt-dots", clickable: true },
-    navigation: { nextEl: ".tt-next", prevEl: ".tt-prev" },
-    keyboard: { enabled: true }
+  var cards = document.querySelectorAll(".bp-card");
+  cards.forEach(function(card){
+    var orb = card.querySelector(".bp-orbwrap");
+    if (!orb) return;
+    card.addEventListener("mousemove", function(e){
+      var r = card.getBoundingClientRect();
+      var dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
+      var dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
+      orb.style.transform = "translate(" + (dx*20).toFixed(1) + "px," + (dy*16).toFixed(1) + "px) scale(1.05)";
+    });
+    card.addEventListener("mouseleave", function(){ orb.style.transform = "translate(0,0)"; });
   });
 })();
 </script>
