@@ -781,6 +781,26 @@ html.js .reveal.in .span-bar { width: var(--end); }
 .phase-photo { margin-top: 28px; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; }
 .phase-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* ===== Inside Your Gameplan — levers converge to one plan ===== */
+.gameplan { margin-top: 72px; }
+.gameplan-head { text-align: center; max-width: 620px; margin: 0 auto 18px; }
+.gameplan-head h3 { font-family: var(--font-serif); font-weight: 400; font-size: 26px; line-height: 1.12; margin: 8px 0 0; color: var(--ink); }
+.gameplan-graph { max-width: 940px; margin: 0 auto; }
+.gameplan-graph svg { width: 100%; height: auto; display: block; }
+.gp-link { fill: none; stroke: var(--teal); stroke-width: 1.6; opacity: 0.5;
+  stroke-dasharray: 5 9; animation: gpFlow 2.6s linear infinite; }
+@keyframes gpFlow { to { stroke-dashoffset: -140; } }
+.gp-pill { fill: #fff; stroke: var(--border); stroke-width: 1; }
+.gp-label { font-family: var(--font-sans); font-size: 17px; fill: var(--ink); font-weight: 600; }
+.gp-node-glow { fill: var(--teal); opacity: 0.14; }
+.gp-node { fill: var(--teal); }
+.gp-node-ring { fill: none; stroke: rgba(255,255,255,0.42); stroke-width: 1.5; }
+.gp-mono { font-family: var(--font-serif); font-size: 36px; fill: #fff; text-anchor: middle; }
+.gp-nodelabel { font-family: var(--font-sans); font-size: 13px; fill: var(--teal-deep); letter-spacing: 0.16em; text-anchor: middle; font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .gp-link { animation: none; } }
+@media (max-width: 680px) { .gameplan-graph { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .gameplan-graph svg { min-width: 560px; } }
+
 /* numbered teal dots + connector line on steps */
 .phase-steps { position: relative; }
 .phase-steps::before {
