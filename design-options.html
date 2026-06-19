@@ -48,8 +48,8 @@
       transition: transform .35s cubic-bezier(.22,.61,.36,1); }
     .bp-float { display: flex; align-items: center; justify-content: center; perspective: 900px;
       animation: bpFloat 7s ease-in-out infinite; }
-    .bp-media { width: 340px; height: 340px; object-fit: contain; }
-    .bp-media.dna { width: 340px; height: 430px; }
+    .bp-media { width: 250px; height: 250px; object-fit: contain; }
+    .bp-media.dna { width: 250px; height: 300px; }
     .bp-media.heart { animation: beat 1.6s ease-in-out infinite; transform-origin: center; }
     .bp-media.cell  { animation: cellpulse 3.6s ease-in-out infinite; }
     .bp-media.dna   { animation: dnaturn 7s ease-in-out infinite; }
@@ -59,9 +59,9 @@
     @keyframes dnaturn { 0%{transform:rotateY(-26deg)} 50%{transform:rotateY(26deg)} 100%{transform:rotateY(-26deg)} }
     @media (prefers-reduced-motion: reduce){ .bp-float,.bp-media.heart,.bp-media.cell,.bp-media.dna{animation:none} }
 
-    .bp-body { position: relative; z-index: 2; }
+    .bp-body { position: relative; z-index: 2; margin-top: 18px; }
     .bp-headline { font-size: 26px; margin: 0 0 12px; color: #fff; }
-    .bp-desc { color: rgba(255,255,255,0.68); font-size: 15px; line-height: 1.6; margin: 0; }
+    .bp-desc { color: rgba(255,255,255,0.68); font-size: 15px; line-height: 1.6; margin: 0; min-height: 3.2em; }
 
     @media (max-width: 860px) {
       .bp-grid { grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 80%;
@@ -93,7 +93,7 @@
           <div class="bp-orbwrap"><div class="bp-float"><img class="bp-media heart" src="assets/videos/sub-heart.png" alt="" /></div></div>
           <div class="bp-body">
             <h3 class="bp-headline serif">Reduce Risk</h3>
-            <p class="bp-desc">Heart disease, cancer, metabolic decline, and dementia build silently for years. We catch them early, while they're still reversible.</p>
+            <p class="bp-desc">Heart disease, cancer, and metabolic decline build silently for years. We catch them early.</p>
           </div>
         </article>
 
@@ -105,7 +105,7 @@
           <div class="bp-orbwrap"><div class="bp-float"><img class="bp-media cell" src="assets/videos/sub-cell.png" alt="" /></div></div>
           <div class="bp-body">
             <h3 class="bp-headline serif">Improve Function</h3>
-            <p class="bp-desc">Energy, strength, focus, body composition. We rebuild the systems that decide how you feel and perform day to day.</p>
+            <p class="bp-desc">Energy, strength, focus, and body composition. We rebuild the systems underneath.</p>
           </div>
         </article>
 
@@ -117,7 +117,7 @@
           <div class="bp-orbwrap"><div class="bp-float"><img class="bp-media dna" src="assets/videos/sub-dna.png" alt="" /></div></div>
           <div class="bp-body">
             <h3 class="bp-headline serif">Extend Longevity</h3>
-            <p class="bp-desc">Lock in the gains for the decades ahead, so your 60s and 70s look a lot more like your 40s.</p>
+            <p class="bp-desc">Lock in the gains for decades, so your 60s and 70s feel a lot more like your 40s.</p>
           </div>
         </article>
 
