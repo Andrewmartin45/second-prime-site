@@ -1409,3 +1409,15 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 @keyframes tcspin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .tc-status.pending { animation: none; } }
 @media (hover: none) { .exec-pop, .orbit-center, .orbit-tile { opacity: 1; } .method-card:hover .exec-media > img { filter: none; transform: none; } }
+
+/* ============================================================
+   Gameplan card: photo resting state -> funnel reveal on hover
+   ============================================================ */
+.gp-media { position: relative; cursor: pointer; }
+.gp-media > img { transition: filter .45s var(--ease), transform .6s var(--ease); }
+.method-card:hover .gp-media > img, .gp-media:focus-within > img { filter: blur(3px) brightness(0.46); transform: scale(1.05); }
+.gp-pop { position: absolute; inset: 0; opacity: 0; transform: scale(0.96);
+  transition: opacity .45s var(--ease), transform .55s cubic-bezier(.2,.8,.2,1); }
+.method-card:hover .gp-pop, .gp-media:focus-within .gp-pop { opacity: 1; transform: none; }
+.gp-pop svg { width: 100%; height: 100%; display: block; }
+@media (hover: none) { .gp-pop { opacity: 1; transform: none; } .method-card:hover .gp-media > img { filter: none; transform: none; } }
