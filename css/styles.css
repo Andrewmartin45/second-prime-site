@@ -1337,3 +1337,30 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .method-card:hover .ap-chip,
 .assess-media:focus-within .ap-chip { opacity: 1; transform: translateY(0) scale(1); }
 @media (hover: none) { .method-card:hover .assess-media > img { filter: none; transform: none; } .ap-chip { display: none; } }
+
+/* ============================================================
+   Hover affordances: make interactive cards obviously interactive
+   ============================================================ */
+.bp-card { cursor: pointer; }
+.bp-i { width: auto; height: auto; padding: 7px 13px 7px 11px; gap: 7px; display: inline-flex;
+  align-items: center; font: 600 11px/1 var(--font-sans); letter-spacing: 0.03em;
+  color: rgba(255,255,255,0.82); white-space: nowrap; }
+.bp-i svg { flex-shrink: 0; opacity: 0.8; }
+.bp-card:hover .bp-i { opacity: 0; }
+
+.assess-media { cursor: pointer; }
+.hover-cue { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 4;
+  display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border-radius: 999px;
+  background: rgba(18,18,24,0.46); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.24); font: 600 11px/1 var(--font-sans); letter-spacing: 0.05em;
+  text-transform: uppercase; color: #fff; pointer-events: none;
+  transition: opacity .3s var(--ease); animation: cuePulse 2.6s ease-in-out infinite; }
+.method-card:hover .hover-cue { opacity: 0; }
+@keyframes cuePulse { 0%, 100% { opacity: 0.72; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .hover-cue { animation: none; } }
+@media (hover: none) { .hover-cue { display: none; } }
+
+/* Quote-band initials avatar (anonymized, on-brand) */
+.quote-avatar { display: flex; align-items: center; justify-content: center; color: #fff;
+  font: 600 16px/1 var(--font-sans); letter-spacing: 0.02em;
+  background: linear-gradient(135deg, var(--teal), var(--teal-deep)); }
