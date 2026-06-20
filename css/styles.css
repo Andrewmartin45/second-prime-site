@@ -1267,7 +1267,11 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .aa-icon:nth-child(7) { animation-delay: -24s; }
 .aa-icon:nth-child(8) { animation-delay: -28s; }
 @media (prefers-reduced-motion: reduce) { .aa-icon { animation: none; opacity: 0; } }
-@media (max-width: 760px) { .assess-arc { display: none; } }
+@media (max-width: 760px) {
+  .assess-arc { display: block; width: 320px; height: 118px; }
+  .aa-icon { width: 40px; height: 40px; border-radius: 11px; box-shadow: 0 10px 20px -10px rgba(16,16,22,0.4); offset-path: path("M 20 108 Q 160 14 300 108"); }
+  .assess-stage { padding-top: 138px; }
+}
 
 /* Case gallery: clean default image, detail reveals on hover/tap */
 .gc-overlay { background: linear-gradient(to bottom, rgba(16,16,22,0) 44%, rgba(16,16,22,0.26) 72%, rgba(16,16,22,0.72) 100%); }
@@ -1430,3 +1434,27 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   transition: opacity .4s var(--ease) var(--d), transform .48s cubic-bezier(.2,.8,.2,1) var(--d); }
 .method-card:hover .cat-pill, .gp-media:focus-within .cat-pill { opacity: 1; transform: none; }
 .method-card .media .cat-pill img { width: 28px; height: 28px; border-radius: 7px; object-fit: cover; flex-shrink: 0; }
+
+/* ============================================================
+   Mobile: hero framing, How-It-Works carousel, carousel arrows
+   ============================================================ */
+@media (max-width: 760px) {
+  .hero::before { background-position: 73% center; }
+}
+@media (max-width: 860px) {
+  .method-grid { display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 80%;
+    gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -32px; padding: 0 32px 8px;
+    scrollbar-width: none; -ms-overflow-style: none; }
+  .method-grid::-webkit-scrollbar { display: none; }
+  .method-card { scroll-snap-align: center; }
+}
+.carousel-nav { display: none; }
+@media (max-width: 860px) {
+  .carousel-nav { display: flex; gap: 14px; justify-content: center; margin-top: 26px; }
+}
+.cr-arrow { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border); background: var(--white); color: var(--ink); cursor: pointer;
+  transition: background .2s var(--ease), border-color .2s var(--ease), transform .12s var(--ease); }
+.cr-arrow svg { width: 19px; height: 19px; }
+.cr-arrow:active { transform: scale(0.94); }
+.pillars .cr-arrow { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.26); color: #fff; }

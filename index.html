@@ -11,7 +11,7 @@
     [PLACEHOLDER] tags mark content that needs your real data.
   -->
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="stylesheet" href="css/styles.css?v=41" />
+  <link rel="stylesheet" href="css/styles.css?v=42" />
 </head>
 <body>
 
@@ -177,6 +177,10 @@
           <div class="step-title">3. Execute</div>
           <p>Your team runs the plan with you. Quarterly cadence: assess, adjust, re-test, adjust again. Nothing is set-and-forget, because your biology isn't.</p>
         </div>
+      </div>
+      <div class="carousel-nav" aria-hidden="true">
+        <button class="cr-arrow" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+        <button class="cr-arrow" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
       <div class="section-cta reveal" style="text-align:center;margin-top:52px"><a class="btn btn-dark" href="how-it-works.html">See the full process &rarr;</a></div>
     </div>
@@ -376,6 +380,10 @@
             <p class="bp-desc">Lock in the gains for decades, so your 60s and 70s feel a lot more like your 40s.</p>
           </div>
         </article>
+      </div>
+      <div class="carousel-nav" aria-hidden="true">
+        <button class="cr-arrow" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+        <button class="cr-arrow" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
       <div class="section-cta reveal" style="text-align:center;margin-top:52px"><a class="btn btn-teal" href="what-we-do.html">Explore what we do &rarr;</a></div>
     </div>
@@ -879,6 +887,22 @@ document.querySelectorAll('.gallery').forEach((g) => {
 })();
 </script>
 <script>
+// Carousel arrows: scroll the section's card carousel one card at a time
+(function(){
+  document.querySelectorAll('.carousel-nav').forEach(function(nav){
+    var sec = nav.closest('section');
+    var grid = sec && sec.querySelector('.method-grid, .bp-grid');
+    if (!grid) return;
+    nav.querySelectorAll('.cr-arrow').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var first = grid.children[0];
+        var step = first ? first.getBoundingClientRect().width + 18 : grid.clientWidth * 0.85;
+        grid.scrollBy({ left: (parseInt(btn.dataset.dir, 10)) * step, behavior: 'smooth' });
+      });
+    });
+  });
+})();
+
 // Method cards: tap-to-reveal on touch devices (no hover)
 (function(){
   if (!window.matchMedia || !window.matchMedia('(hover: none)').matches) return;
