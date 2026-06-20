@@ -1276,3 +1276,16 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 /* ---- Hero background video (montage) ---- */
 .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; background: #14141c; }
 @media (prefers-reduced-motion: reduce) { .hero-video { display: none; } }
+
+/* ============================================================
+   Premium sand sections (treatment F): warm vignette + fine grain
+   Applies to the alternating sand bands on home + subpages.
+   ============================================================ */
+.gap, .plan, .personas, .cta-strip, .wwd.alt {
+  background: radial-gradient(120% 95% at 50% 18%, #FBF8F3 0%, #F1EADE 60%, #E7DECF 100%);
+  position: relative;
+}
+.gap::after, .plan::after, .personas::after, .cta-strip::after, .wwd.alt::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
