@@ -1283,7 +1283,7 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
    Applies to the alternating sand bands on home + subpages.
    ============================================================ */
 .gap, .plan, .personas, .cta-strip, .wwd.alt {
-  background: #F5F1EB;
+  background: #FAF7F2;
   position: relative;
 }
 .gap::after, .plan::after, .personas::after, .cta-strip::after, .wwd.alt::after {
