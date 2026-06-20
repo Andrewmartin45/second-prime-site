@@ -798,8 +798,19 @@ html.js .reveal.in .span-bar { width: var(--end); }
 .gp-mono { font-family: var(--font-serif); font-size: 36px; fill: #fff; text-anchor: middle; }
 .gp-nodelabel { font-family: var(--font-sans); font-size: 13px; fill: var(--teal-deep); letter-spacing: 0.16em; text-anchor: middle; font-weight: 700; }
 @media (prefers-reduced-motion: reduce) { .gp-link { animation: none; } }
-@media (max-width: 680px) { .gameplan-graph { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .gameplan-graph svg { min-width: 560px; } }
+.gameplan-mobile { display: none; }
+.gpm-node { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 4px 0 26px; }
+.gpm-circle { width: 104px; height: 104px; border-radius: 50%; background: var(--teal);
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 11px rgba(69,141,147,0.13); }
+.gpm-circle img { width: 58px; height: auto; display: block; }
+.gpm-nodelabel { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--teal-deep); font-weight: 700; }
+.gpm-pills { display: flex; flex-direction: column; gap: 10px; max-width: 420px; margin: 0 auto; }
+.gpm-pill { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--border);
+  border-radius: 16px; padding: 12px 16px; box-shadow: 0 4px 14px rgba(22,22,28,0.05); }
+.gpm-pill img { width: 38px; height: 38px; border-radius: 9px; object-fit: cover; flex-shrink: 0; }
+.gpm-pill span { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.2; }
+@media (max-width: 680px) { .gameplan-graph { display: none; } .gameplan-mobile { display: block; } }
 
 /* numbered teal dots + connector line on steps */
 .phase-steps { position: relative; }
@@ -1108,7 +1119,7 @@ html.js .reveal.in .fn-fade { opacity: 1; transition-delay: 1.1s; }
   html.js .fn-line { stroke-dashoffset: 0; transition: none; }
   html.js .fn-fade { opacity: 1; transition: none; }
 }
-@media (max-width: 640px) { .fn-svg { min-width: 600px; } }
+@media (max-width: 640px) { .fn-svg { min-width: 0; } .fn-chart { overflow-x: visible; } }
 
 /* ---- Peakspan chart key / legend ---- */
 .fn-key { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
