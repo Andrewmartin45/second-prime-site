@@ -1268,9 +1268,9 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .aa-icon:nth-child(8) { animation-delay: -28s; }
 @media (prefers-reduced-motion: reduce) { .aa-icon { animation: none; opacity: 0; } }
 @media (max-width: 760px) {
-  .assess-arc { display: block; width: 320px; height: 118px; }
-  .aa-icon { width: 40px; height: 40px; border-radius: 11px; box-shadow: 0 10px 20px -10px rgba(16,16,22,0.4); offset-path: path("M 20 108 Q 160 14 300 108"); }
-  .assess-stage { padding-top: 138px; }
+  .assess-stage { padding-top: 168px; overflow: hidden; }
+  .assess-arc { display: block; width: 680px; height: 150px; }
+  .aa-icon { width: 42px; height: 42px; border-radius: 12px; box-shadow: 0 10px 20px -10px rgba(16,16,22,0.4); offset-path: path("M 30 144 Q 340 24 650 144"); }
 }
 
 /* Case gallery: clean default image, detail reveals on hover/tap */
@@ -1448,13 +1448,50 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   .method-grid::-webkit-scrollbar { display: none; }
   .method-card { scroll-snap-align: center; }
 }
-.carousel-nav { display: none; }
+.method-carousel, .bp-carousel { position: relative; }
+.cr-arrow { display: none; }
 @media (max-width: 860px) {
-  .carousel-nav { display: flex; gap: 14px; justify-content: center; margin-top: 26px; }
+  .cr-arrow { display: flex; align-items: center; justify-content: center; position: absolute; z-index: 6;
+    width: 42px; height: 42px; border-radius: 50%; cursor: pointer;
+    background: rgba(255,255,255,0.92); color: #1F1F27; border: none;
+    box-shadow: 0 6px 18px rgba(16,16,22,0.28); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+    transition: transform .12s var(--ease), background .2s var(--ease); }
+  .cr-arrow svg { width: 18px; height: 18px; }
+  .cr-arrow:active { transform: scale(0.92); }
+  .method-carousel .cr-arrow { top: 30%; transform: translateY(-50%); }
+  .method-carousel .cr-arrow:active { transform: translateY(-50%) scale(0.92); }
+  .bp-carousel .cr-arrow { top: 40%; transform: translateY(-50%); }
+  .bp-carousel .cr-arrow:active { transform: translateY(-50%) scale(0.92); }
+  .cr-prev { left: 6px; }
+  .cr-next { right: 6px; }
 }
-.cr-arrow { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--border); background: var(--white); color: var(--ink); cursor: pointer;
-  transition: background .2s var(--ease), border-color .2s var(--ease), transform .12s var(--ease); }
-.cr-arrow svg { width: 19px; height: 19px; }
-.cr-arrow:active { transform: scale(0.94); }
-.pillars .cr-arrow { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.26); color: #fff; }
+
+/* Cue label swaps to "Tap" on touch devices */
+.cue-m { display: none; }
+@media (hover: none) { .cue-d { display: none; } .cue-m { display: inline; } }
+
+/* Hero: stronger scrim on mobile so the headline stays readable */
+@media (max-width: 760px) {
+  .hero::after { background: linear-gradient(180deg, rgba(8,8,12,0.55) 0%, rgba(8,8,12,0.30) 38%, rgba(8,8,12,0.80) 100%); }
+}
+
+/* Mobile: keep the hover/tap reveals inside the card */
+@media (max-width: 860px) {
+  .orbit-tile { width: 34px; height: 34px; margin: -17px; transform: rotate(var(--a)) translateY(-104px) rotate(calc(-1 * var(--a))); }
+  .oc-num { font-size: 30px; }
+  .oc-sub { font-size: 11px; max-width: 120px; }
+  .gp-pop { gap: 6px; padding: 12px; }
+  .cat-pill { width: auto; max-width: 90%; gap: 9px; padding: 7px 12px; font-size: 12.5px; }
+  .method-card .media .cat-pill img { width: 25px; height: 25px; }
+  .exec-pop { gap: 8px; padding: 12px; }
+  .task-card { width: auto; max-width: 92%; padding: 8px 11px; }
+  .tc-txt strong { font-size: 12.5px; }
+  .tc-txt span { font-size: 11px; }
+  .method-card .media .task-card > img { width: 30px; height: 30px; }
+}
+
+/* Pillar cards: tap-to-reveal mirror of the hover state */
+.bp-card.revealed { transform: translateY(-6px); border-color: rgba(255,255,255,0.16); }
+.bp-card.revealed::before { opacity: 1; }
+.bp-card.revealed .bp-i { opacity: 0; }
+.bp-card.revealed .bp-stat { opacity: 1; transform: translateY(0); }
