@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — Second Prime</title>
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="css/styles.css?v=mockup1" />
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="Second Prime"></a>
+      <nav class="nav-links">
+        <a href="what-we-do.html">What We Do</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-cta" href="index.html#footer-cta">Book a Consult</a>
+        <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="what-we-do.html">What We Do</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color: #65C8D0">Legal</span>
+      <h1>Terms of Use</h1>
+      <p class="lead">The terms that govern your use of this site and the Second Prime program.</p>
+    </div>
+  </section>
+
+  <section class="wwd">
+    <div class="container">
+      <div class="legal">
+        <p class="legal-note"><strong>Draft for review.</strong> This is placeholder copy for the mockup. Have it reviewed by counsel before going live. Last updated: [date].</p>
+
+        <h2>The service</h2>
+        <p>Second Prime is a health-optimization program: advanced testing, interpretation, and a personalized plan delivered with coaching. It is designed to complement, not replace, your relationship with a licensed physician.</p>
+
+        <h2>Medical disclaimer</h2>
+        <p>Second Prime does not practice medicine and does not replace your doctor. Our coaches and analysts are not your treating physicians. Clinical findings are routed to licensed medical partners where appropriate. Nothing on this site or in the program is a diagnosis or a prescription, and you should not delay or disregard medical advice based on it. Always consult a qualified physician about your health.</p>
+
+        <h2>Eligibility and conduct</h2>
+        <p>You must be at least 18 to use the program. You agree to provide accurate information and to use the site and materials only for their intended, lawful purpose.</p>
+
+        <h2>Limitation of liability</h2>
+        <p>To the fullest extent permitted by law, Second Prime is not liable for indirect, incidental, or consequential damages arising from your use of the site or program. The program depends on the accuracy of the information you provide and on your participation. [Confirm exact limits with counsel.]</p>
+
+        <h2>Intellectual property</h2>
+        <p>All content on this site, including text, design, protocols, and the Performance Blueprint framework, is owned by Second Prime and may not be copied or redistributed without written permission.</p>
+
+        <h2>Governing law</h2>
+        <p>These terms are governed by the laws of [state/country], without regard to conflict-of-law principles. [Confirm jurisdiction with counsel.]</p>
+
+        <h2>Contact</h2>
+        <p>Questions about these terms: <a href="mailto:hello@secondprime.com">hello@secondprime.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2026 Second Prime. All rights reserved.</span>
+        <span>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (burger && mobileMenu) { burger.addEventListener('click', () => { const o = mobileMenu.classList.toggle('open'); document.body.classList.toggle('menu-open', o); }); }
+  </script>
+</body>
+</html>

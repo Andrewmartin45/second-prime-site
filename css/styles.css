@@ -1513,3 +1513,68 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   .gc-reveal .gc-desc { color: var(--gray); margin: 12px 0 0; }
   .gc-more { color: var(--ink); margin-top: 14px; }
 }
+
+/* ============================================================
+   MOCKUP additions (review build) — cap badge, urgency,
+   lead capture, home blog preview, pricing tiers
+   ============================================================ */
+.cap-badge { display: inline-flex; align-items: center; gap: 9px; margin-top: 18px;
+  background: rgba(255,255,255,0.1); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.16); border-radius: 100px; padding: 9px 18px;
+  font: 600 12.5px/1 var(--font-sans); letter-spacing: 0.02em; color: rgba(255,255,255,0.9); }
+.cap-dot { width: 8px; height: 8px; border-radius: 50%; background: #65C8D0; flex-shrink: 0; animation: capPulse 2s ease-in-out infinite; }
+@keyframes capPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { .cap-dot { animation: none; } }
+
+.urgency { background: radial-gradient(120% 100% at 50% 0%, #1b1b24 0%, #101015 70%) #101015; color: #fff; }
+.urgency-head { max-width: 680px; margin: 0 auto 56px; }
+.urgency-head h2 { color: #fff; }
+.urgency-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 44px; }
+.urgency-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 30px 28px; }
+.urg-num { font-family: var(--font-serif); font-size: 22px; color: #65C8D0; display: block; margin-bottom: 14px; }
+.urgency-card h3 { font-family: var(--font-serif); font-weight: 400; font-size: 20px; color: #fff; line-height: 1.2; margin: 0 0 10px; }
+.urgency-card p { font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,0.66); margin: 0; }
+.urgency-cap { max-width: 720px; margin: 0 auto; text-align: center; background: rgba(101,200,208,0.09); border: 1px solid rgba(101,200,208,0.28); border-radius: var(--radius); padding: 24px 30px; }
+.urgency-cap p { margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(255,255,255,0.85); }
+.urgency-cap strong { color: #65C8D0; }
+@media (max-width: 760px) { .urgency-grid { grid-template-columns: 1fr; } }
+
+.lead-capture { background: #FAF7F2; }
+.lc-inner { display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center; }
+.lc-content h2 { font-family: var(--font-serif); font-weight: 400; font-size: 34px; line-height: 1.12; color: var(--ink); margin: 14px 0 16px; letter-spacing: -0.01em; }
+.lc-content .lead { margin-bottom: 22px; }
+.lc-bullets { list-style: none; padding: 0; margin: 0; }
+.lc-bullets li { position: relative; padding-left: 28px; margin-bottom: 13px; font-size: 15px; line-height: 1.5; color: #3a3a44; }
+.lc-bullets li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--teal); font-weight: 700; }
+.lc-form-wrap { background: #fff; padding: 36px; border-radius: 18px; box-shadow: 0 18px 50px -28px rgba(16,16,22,0.4); border: 1px solid var(--border); }
+.lc-form label { display: block; font: 600 13px/1 var(--font-sans); color: var(--ink); margin-bottom: 7px; }
+.lc-form input { width: 100%; padding: 13px 15px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 15px; font-family: inherit; margin-bottom: 16px; transition: border-color .2s; box-sizing: border-box; }
+.lc-form input:focus { outline: none; border-color: var(--teal); }
+.lc-form .btn { width: 100%; text-align: center; }
+.lc-fine { font-size: 12px; color: var(--gray); margin: 12px 0 0; text-align: center; line-height: 1.5; }
+@media (max-width: 820px) { .lc-inner { grid-template-columns: 1fr; gap: 32px; } .lc-form-wrap { padding: 28px; } }
+
+.hb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.hb-card { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: #fff; transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.hb-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -24px rgba(31,31,39,0.45); }
+.hb-cover { aspect-ratio: 16/10; background-size: cover; background-position: center 32%; position: relative; }
+.hb-cover.hb-soon { background: radial-gradient(120% 120% at 70% 10%, #2f6469, #1a1a22); }
+.hb-cat { position: absolute; bottom: 14px; left: 16px; font: 700 11px/1 var(--font-sans); letter-spacing: 0.1em; text-transform: uppercase; color: #65C8D0; }
+.hb-body { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.hb-body h3 { font-family: var(--font-serif); font-weight: 400; font-size: 20px; line-height: 1.25; color: var(--ink); margin: 0; }
+.hb-body p { font-size: 14px; line-height: 1.6; color: var(--gray); margin: 0; flex: 1; }
+.hb-link { font: 600 13.5px/1 var(--font-sans); color: var(--ink); }
+@media (max-width: 760px) { .hb-grid { grid-template-columns: 1fr; } }
+
+.faq-tiers { margin: 10px 0; padding-left: 20px; }
+.faq-tiers li { margin-bottom: 8px; line-height: 1.6; }
+
+/* MOCKUP: legal pages */
+.legal { max-width: 760px; margin: 0 auto; padding: 8px 0 40px; }
+.legal .legal-note { background: #FAF7F2; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; font-size: 14px; color: var(--gray); margin-bottom: 40px; }
+.legal h2 { font-family: var(--font-serif); font-weight: 400; font-size: 26px; color: var(--ink); margin: 38px 0 12px; }
+.legal h2:first-of-type { margin-top: 0; }
+.legal p, .legal li { font-size: 16px; line-height: 1.7; color: #3a3a44; }
+.legal ul { padding-left: 22px; margin: 10px 0 0; }
+.legal li { margin-bottom: 8px; }
+.legal a { color: var(--teal); }

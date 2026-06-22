@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Second Prime</title>
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="css/styles.css?v=mockup1" />
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html" aria-label="Second Prime"></a>
+      <nav class="nav-links">
+        <a href="what-we-do.html">What We Do</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-cta" href="index.html#footer-cta">Book a Consult</a>
+        <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="what-we-do.html">What We Do</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow" style="color: #65C8D0">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p class="lead">How Second Prime collects, uses, and protects your information, including your health data.</p>
+    </div>
+  </section>
+
+  <section class="wwd">
+    <div class="container">
+      <div class="legal">
+        <p class="legal-note"><strong>Draft for review.</strong> This is placeholder copy for the mockup. Before going live, have it reviewed by counsel familiar with health-data and privacy law in your jurisdiction. Last updated: [date].</p>
+
+        <h2>Who we are</h2>
+        <p>Second Prime ("we," "us," "our") provides done-for-you health optimization for founders and executives. This policy explains what we collect, why, and how we keep it secure. Questions: <a href="mailto:privacy@secondprime.com">privacy@secondprime.com</a>.</p>
+
+        <h2>What we collect</h2>
+        <ul>
+          <li><strong>Contact details</strong> you give us: name, email, phone, and anything you share when you book a consult or request a guide.</li>
+          <li><strong>Health information</strong> you provide or authorize us to collect as part of your program: lab results, biomarkers, intake forms, symptom and lifestyle data, and notes from your consultations.</li>
+          <li><strong>Usage data</strong> from this website: pages viewed and general analytics, collected through cookies and similar tools.</li>
+        </ul>
+
+        <h2>How we use it</h2>
+        <ul>
+          <li>To build, run, and adjust your personalized protocol.</li>
+          <li>To coordinate testing, scheduling, and shipments on your behalf.</li>
+          <li>To communicate with you about your program and, if you opt in, to send educational content. You can unsubscribe at any time.</li>
+        </ul>
+
+        <h2>How it's stored and who has access</h2>
+        <p>Your data is stored on secured, access-controlled systems. Access is limited to your Second Prime team and the licensed medical partners involved in your care. We do not sell your personal or health information.</p>
+
+        <h2>Health-data handling</h2>
+        <p>Where applicable, protected health information is handled in line with relevant health-privacy regulations (for example, HIPAA in the United States), including any agreements with our medical partners. [Confirm exact obligations with counsel.]</p>
+
+        <h2>Cookies and analytics</h2>
+        <p>We use cookies and analytics to understand how the site is used and to improve it. You can control cookies through your browser settings.</p>
+
+        <h2>Your choices</h2>
+        <p>You can request access to, correction of, or deletion of your personal information, subject to legal and clinical record-keeping requirements. Email <a href="mailto:privacy@secondprime.com">privacy@secondprime.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2026 Second Prime. All rights reserved.</span>
+        <span>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (burger && mobileMenu) { burger.addEventListener('click', () => { const o = mobileMenu.classList.toggle('open'); document.body.classList.toggle('menu-open', o); }); }
+  </script>
+</body>
+</html>
