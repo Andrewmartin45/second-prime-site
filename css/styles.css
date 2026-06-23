@@ -168,14 +168,14 @@ html.js .reveal.in { opacity: 1; transform: none; }
    HERO  (full-bleed dark image, headline bottom-left)
    ============================================================ */
 .hero {
-  position: relative; min-height: 100dvh; padding: 0; overflow: hidden;
+  position: relative; min-height: 78vh; padding: 0; overflow: hidden;
   display: flex; align-items: center; color: var(--white);
   background: #101016;
 }
 .hero::before {
-  content: ""; position: absolute; inset: -2.5%; z-index: 0;
-  background: url("../assets/hero.jpg?v=4") center 22% / cover no-repeat;
-  transform: scale(1.01);
+  content: ""; position: absolute; inset: -1.5%; z-index: 0;
+  background: url("../assets/hero.jpg?v=4") center 14% / cover no-repeat;
+  transform: scale(1.0);
 }
 html.js .hero::before {
   animation: heroKen 30s ease-in-out infinite alternate;
@@ -187,8 +187,8 @@ html.js .hero::before {
     linear-gradient(180deg, rgba(10,10,14,0.28) 0%, rgba(10,10,14,0.08) 40%, rgba(10,10,14,0.5) 100%);
 }
 @keyframes heroKen {
-  from { transform: scale(1.01) translate3d(0, 0, 0); }
-  to   { transform: scale(1.05) translate3d(-1%, 1.2%, 0); }
+  from { transform: scale(1.0) translate3d(0, 0, 0); }
+  to   { transform: scale(1.035) translate3d(-0.8%, 0.8%, 0); }
 }
 
 .hero-inner {
