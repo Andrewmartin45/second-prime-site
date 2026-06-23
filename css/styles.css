@@ -174,7 +174,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
 }
 .hero::before {
   content: ""; position: absolute; inset: -2.5%; z-index: 0;
-  background: url("../assets/hero.jpg?v=2") center / cover no-repeat;
+  background: url("../assets/hero.jpg?v=3") center / cover no-repeat;
   transform: scale(1.06);
 }
 html.js .hero::before {
