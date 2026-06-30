@@ -324,7 +324,7 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 .flyingblind {
   background: var(--near-black); border-radius: 24px;
   padding: 72px 72px 64px; max-width: 1120px; margin: 22px auto 0;
-  color: var(--white);
+  color: var(--white); text-align: center;
 }
 .fb-headline {
   font-family: var(--font-serif); font-weight: 400; font-size: clamp(32px, 4vw, 46px);
@@ -332,7 +332,7 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 }
 .fb-lead {
   font-family: var(--font-sans); font-size: clamp(16px, 1.6vw, 18px); line-height: 1.6;
-  color: #B7B7C2; margin: 22px 0 0; max-width: 560px;
+  color: #B7B7C2; margin: 22px auto 0; max-width: 600px;
 }
 /* Transition line between symptom grid and the dark panel */
 .so-turn {
@@ -354,13 +354,13 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
   font-family: var(--font-serif); font-weight: 400; font-size: 42px; line-height: 1;
   letter-spacing: -0.02em; color: var(--teal-bright);
 }
-.fb-contrast { display: flex; align-items: baseline; gap: 13px; }
+.fb-contrast { display: flex; align-items: baseline; justify-content: center; gap: 13px; }
 .fb-from { font-size: 27px; color: #6E6E7A; letter-spacing: -0.01em; }
 .fb-arrow-i { font-family: var(--font-sans); font-size: 21px; color: #54545F; }
 .fb-desc {
   font-family: var(--font-sans); font-size: 15.5px; line-height: 1.55; color: #B7B7C2; margin: 16px 0 0;
 }
-.fb-cta { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.fb-cta { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 24px; }
 .fb-tagline { font-family: var(--font-sans); font-size: 15px; color: #8C8C99; }
 @media (max-width: 760px) {
   .flyingblind { padding: 44px 28px 40px; border-radius: 18px; margin-top: 44px; }
