@@ -279,6 +279,47 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 .gap-us li { color: rgba(255,255,255,0.78); }
 .gap-us li::before { content: "\2713"; color: var(--teal-bright); font-weight: 700; }
 
+/* Something's off — symptom card grid (design import) */
+.so-head { max-width: 1120px; margin: 0 auto; }
+.so-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  max-width: 1120px; margin: 56px auto 0;
+}
+.so-card {
+  position: relative; background: var(--white);
+  border: 1px solid #EAE4D9; border-radius: 18px;
+  padding: 32px 30px 30px; overflow: hidden;
+  box-shadow: 0 1px 2px rgba(24,24,31,.03);
+  transition: box-shadow var(--dur-ui) var(--ease), border-color var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease);
+}
+.so-card:hover { box-shadow: 0 16px 40px rgba(24,24,31,.08); border-color: #DDD3C2; transform: translateY(-4px); }
+.so-num {
+  position: absolute; top: 20px; right: 26px;
+  font-family: var(--font-serif); font-weight: 400; font-size: 62px;
+  line-height: 1; letter-spacing: -.04em; color: #F1EBE0; pointer-events: none; z-index: 0;
+}
+.so-label {
+  display: block; font-family: var(--font-sans); font-weight: 600;
+  font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 58px; position: relative; z-index: 1;
+}
+.so-headline {
+  font-family: var(--font-serif); font-weight: 400; font-size: 27px;
+  line-height: 1.1; letter-spacing: -0.015em; color: var(--ink);
+  position: relative; z-index: 1;
+}
+.so-desc {
+  font-family: var(--font-sans); font-size: 15px; line-height: 1.55;
+  color: var(--gray); margin: 12px 0 0; position: relative; z-index: 1;
+}
+@media (max-width: 920px) { .so-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) {
+  .so-grid { grid-template-columns: 1fr; margin-top: 40px; gap: 14px; }
+  .so-num { font-size: 54px; }
+  .so-label { margin-bottom: 40px; }
+  .so-headline { font-size: 24px; }
+}
+
 /* ============================================================
    THE DIFFERENCE (data -> plan funnel)
    ============================================================ */
