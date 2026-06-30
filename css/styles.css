@@ -287,9 +287,9 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 }
 .so-card {
   position: relative; background: var(--white);
-  border: 1px solid #EAE4D9; border-radius: 18px;
+  border: 1px solid #E7E1D6; border-radius: 18px;
   padding: 32px 30px 30px; overflow: hidden;
-  box-shadow: 0 1px 2px rgba(24,24,31,.03);
+  box-shadow: 0 1px 2px rgba(24,24,31,.04), 0 12px 30px -22px rgba(24,24,31,.16);
   transition: box-shadow var(--dur-ui) var(--ease), border-color var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease);
 }
 .so-card:hover { box-shadow: 0 16px 40px rgba(24,24,31,.08); border-color: #DDD3C2; transform: translateY(-4px); }
@@ -329,10 +329,11 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 .fb-headline {
   font-family: var(--font-serif); font-weight: 400; font-size: clamp(32px, 4vw, 46px);
   line-height: 1.12; letter-spacing: -0.02em; color: var(--sand-light); margin: 0;
+  text-wrap: balance;
 }
 .fb-lead {
   font-family: var(--font-sans); font-size: clamp(16px, 1.6vw, 18px); line-height: 1.6;
-  color: #B7B7C2; margin: 22px auto 0; max-width: 600px;
+  color: #B7B7C2; margin: 22px auto 0; max-width: 600px; text-wrap: pretty;
 }
 /* Transition line between symptom grid and the dark panel */
 .so-turn {
@@ -1472,6 +1473,8 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.5;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
 }
+/* The Problem section sits on white, not sand */
+.gap { background: var(--white); }
 
 /* ============================================================
    Brand statement band — defines the name "Second Prime".
