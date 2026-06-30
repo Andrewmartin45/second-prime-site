@@ -320,6 +320,39 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
   .so-headline { font-size: 24px; }
 }
 
+/* Something's off — dark "flying blind" panel (replaces comparison chart) */
+.flyingblind {
+  background: var(--near-black); border-radius: 24px;
+  padding: 72px 72px 64px; max-width: 1120px; margin: 64px auto 0;
+  color: var(--white);
+}
+.fb-headline {
+  font-family: var(--font-serif); font-weight: 400; font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.12; letter-spacing: -0.02em; color: var(--sand-light); margin: 0;
+}
+.fb-lead {
+  font-family: var(--font-sans); font-size: clamp(16px, 1.6vw, 18.5px); line-height: 1.62;
+  color: #B7B7C2; margin: 24px 0 0; max-width: 700px;
+}
+.fb-stats {
+  margin-top: 54px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;
+  border-top: 1px solid #34343F; padding-top: 46px;
+}
+.fb-term {
+  font-family: var(--font-serif); font-weight: 400; font-size: 42px; line-height: 1;
+  letter-spacing: -0.02em; color: var(--teal-bright);
+}
+.fb-desc {
+  font-family: var(--font-sans); font-size: 15.5px; line-height: 1.55; color: #B7B7C2; margin: 16px 0 0;
+}
+.fb-cta { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.fb-tagline { font-family: var(--font-sans); font-size: 15px; color: #8C8C99; }
+@media (max-width: 760px) {
+  .flyingblind { padding: 44px 28px 40px; border-radius: 18px; margin-top: 44px; }
+  .fb-stats { grid-template-columns: 1fr; gap: 30px; margin-top: 40px; padding-top: 36px; }
+  .fb-term { font-size: 36px; }
+}
+
 /* ============================================================
    THE DIFFERENCE (data -> plan funnel)
    ============================================================ */
