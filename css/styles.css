@@ -342,6 +342,9 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
   font-family: var(--font-serif); font-weight: 400; font-size: 42px; line-height: 1;
   letter-spacing: -0.02em; color: var(--teal-bright);
 }
+.fb-contrast { display: flex; align-items: baseline; gap: 13px; }
+.fb-from { font-size: 27px; color: #6E6E7A; letter-spacing: -0.01em; }
+.fb-arrow-i { font-family: var(--font-sans); font-size: 21px; color: #54545F; }
 .fb-desc {
   font-family: var(--font-sans); font-size: 15.5px; line-height: 1.55; color: #B7B7C2; margin: 16px 0 0;
 }
