@@ -329,6 +329,51 @@ html.js .reveal.in .f-bar { width: var(--w); }
 .founder .btn-dark { background: var(--white); color: var(--ink); }
 
 /* ============================================================
+   TRUSTED-BY LOGO WALL (leaders we've worked with)
+   ============================================================ */
+.logowall {
+  background: var(--bg-light);
+  padding: 60px 0 64px;
+  border-top: 1px solid var(--border);
+}
+.lw-label {
+  text-align: center; font-size: 12px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gray); margin-bottom: 40px;
+}
+.lw-row {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 28px 56px;
+}
+.lw-logo {
+  height: 25px; width: auto; flex: 0 0 auto;
+  filter: brightness(0) opacity(0.42);
+  transition: filter var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease);
+}
+.lw-logo:hover { filter: brightness(0) opacity(0.82); transform: translateY(-2px); }
+.lw-wide   { height: 21px; }   /* amazon, adp wordmarks */
+.lw-tall   { height: 30px; }   /* mlb silhouette reads small */
+.lw-emblem { height: 35px; }   /* the hartford: stacked stag + wordmark */
+.lw-bw     { height: 19px; }   /* build bw: long horizontal lockup */
+.lw-word {
+  font-family: var(--font-sans); font-weight: 700; font-size: 19px;
+  letter-spacing: 0.005em; line-height: 1; color: var(--ink);
+  opacity: 0.42; cursor: default;
+}
+.lw-word:hover { opacity: 0.82; transform: translateY(-2px); }
+@media (max-width: 760px) {
+  .logowall { padding: 46px 0 48px; }
+  .lw-label { margin-bottom: 30px; }
+  .lw-row { gap: 22px 38px; }
+  .lw-logo { height: 21px; }
+  .lw-wide { height: 18px; }
+  .lw-tall { height: 25px; }
+  .lw-emblem { height: 30px; }
+  .lw-bw { height: 16px; }
+  .lw-word { font-size: 16px; }
+}
+
+/* ============================================================
    PERSONAS + RESULTS DELTAS
    ============================================================ */
 .personas { background: var(--bg-light); }
