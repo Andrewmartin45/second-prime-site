@@ -1488,6 +1488,7 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   font-size: 46px; line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 28px; }
 .bs-line em { font-style: italic; color: #65C8D0; }
 .bs-sub { max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.82); font-size: 18px; line-height: 1.62; }
+.bs-sub + .bs-sub { margin-top: 18px; }
 @media (max-width: 640px) { .brandstatement { padding: 72px 0; } .bs-line { font-size: 32px; } .bs-sub { font-size: 16px; } }
 
 /* ============================================================
