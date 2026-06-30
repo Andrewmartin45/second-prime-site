@@ -323,7 +323,7 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 /* Something's off — dark "flying blind" panel (replaces comparison chart) */
 .flyingblind {
   background: var(--near-black); border-radius: 24px;
-  padding: 72px 72px 64px; max-width: 1120px; margin: 64px auto 0;
+  padding: 72px 72px 64px; max-width: 1120px; margin: 22px auto 0;
   color: var(--white);
 }
 .fb-headline {
@@ -331,8 +331,20 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
   line-height: 1.12; letter-spacing: -0.02em; color: var(--sand-light); margin: 0;
 }
 .fb-lead {
-  font-family: var(--font-sans); font-size: clamp(16px, 1.6vw, 18.5px); line-height: 1.62;
-  color: #B7B7C2; margin: 24px 0 0; max-width: 700px;
+  font-family: var(--font-sans); font-size: clamp(16px, 1.6vw, 18px); line-height: 1.6;
+  color: #B7B7C2; margin: 22px 0 0; max-width: 560px;
+}
+/* Transition line between symptom grid and the dark panel */
+.so-turn {
+  position: relative; text-align: center; max-width: 640px; margin: 60px auto 0;
+  padding-bottom: 42px;
+  font-family: var(--font-serif); font-weight: 400; font-size: clamp(21px, 2.2vw, 27px);
+  line-height: 1.3; letter-spacing: -0.01em; color: var(--ink);
+}
+.so-turn em { font-style: italic; color: var(--teal); }
+.so-turn::after {
+  content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: 1px; height: 30px; background: linear-gradient(var(--border), rgba(229,227,224,0));
 }
 .fb-stats {
   margin-top: 54px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;
