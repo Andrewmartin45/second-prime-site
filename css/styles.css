@@ -341,12 +341,17 @@ html.js .reveal.in .f-bar { width: var(--w); }
   letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--gray); margin-bottom: 40px;
 }
-.lw-row {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-  gap: 28px 56px;
+/* Infinite auto-scroll marquee with progressive blur+fade edges */
+.lw-marquee { position: relative; overflow: hidden; }
+.lw-track {
+  display: flex; align-items: center; width: max-content;
+  animation: lwScroll 48s linear infinite;
 }
+.lw-track > * { margin-right: 60px; flex: 0 0 auto; }
+.lw-marquee:hover .lw-track { animation-play-state: paused; }
+@keyframes lwScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .lw-logo {
-  height: 25px; width: auto; flex: 0 0 auto;
+  height: 25px; width: auto;
   filter: brightness(0) opacity(0.42);
   transition: filter var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease);
 }
@@ -361,16 +366,44 @@ html.js .reveal.in .f-bar { width: var(--w); }
   opacity: 0.42; cursor: default;
 }
 .lw-word:hover { opacity: 0.82; transform: translateY(-2px); }
+/* Edge zones: sand fade + ramped backdrop blur (progressive-blur effect) */
+.lw-edge {
+  position: absolute; top: 0; bottom: 0; width: 130px; z-index: 2; pointer-events: none;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+}
+.lw-edge-l {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-light) 12%, rgba(247,244,240,0) 100%);
+  -webkit-mask: linear-gradient(to right, #000 0%, #000 24%, transparent 100%);
+          mask: linear-gradient(to right, #000 0%, #000 24%, transparent 100%);
+}
+.lw-edge-r {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-light) 12%, rgba(247,244,240,0) 100%);
+  -webkit-mask: linear-gradient(to left, #000 0%, #000 24%, transparent 100%);
+          mask: linear-gradient(to left, #000 0%, #000 24%, transparent 100%);
+}
 @media (max-width: 760px) {
   .logowall { padding: 46px 0 48px; }
   .lw-label { margin-bottom: 30px; }
-  .lw-row { gap: 22px 38px; }
+  .lw-track { animation-duration: 34s; }
+  .lw-track > * { margin-right: 40px; }
   .lw-logo { height: 21px; }
   .lw-wide { height: 18px; }
   .lw-tall { height: 25px; }
   .lw-emblem { height: 30px; }
   .lw-bw { height: 16px; }
   .lw-word { font-size: 16px; }
+  .lw-edge { width: 64px; }
+}
+/* Reduced motion: stop the scroll, fall back to a centered static wall */
+@media (prefers-reduced-motion: reduce) {
+  .lw-track {
+    animation: none; flex-wrap: wrap; justify-content: center;
+    width: 100%; gap: 28px 56px;
+  }
+  .lw-track > * { margin-right: 0; }
+  .lw-dup, .lw-edge { display: none; }
 }
 
 /* ============================================================
