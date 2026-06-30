@@ -286,17 +286,15 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
   max-width: 1120px; margin: 56px auto 0;
 }
 .so-card {
-  position: relative; background: var(--white);
-  border: 1px solid #E7E1D6; border-radius: 18px;
+  position: relative; background: var(--bg-light); border-radius: 18px;
   padding: 32px 30px 30px; overflow: hidden;
-  box-shadow: 0 1px 2px rgba(24,24,31,.04), 0 12px 30px -22px rgba(24,24,31,.16);
-  transition: box-shadow var(--dur-ui) var(--ease), border-color var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease);
+  transition: box-shadow var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease);
 }
-.so-card:hover { box-shadow: 0 16px 40px rgba(24,24,31,.08); border-color: #DDD3C2; transform: translateY(-4px); }
+.so-card:hover { box-shadow: 0 16px 38px -24px rgba(24,24,31,.22); transform: translateY(-4px); }
 .so-num {
   position: absolute; top: 20px; right: 26px;
   font-family: var(--font-serif); font-weight: 400; font-size: 62px;
-  line-height: 1; letter-spacing: -.04em; color: #F1EBE0; pointer-events: none; z-index: 0;
+  line-height: 1; letter-spacing: -.04em; color: #E7DCC4; pointer-events: none; z-index: 0;
 }
 .so-label {
   display: block; font-family: var(--font-sans); font-weight: 600;
