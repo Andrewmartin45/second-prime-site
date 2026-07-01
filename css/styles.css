@@ -1544,7 +1544,7 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .method-card .media .ap-chip img { width: 26px; height: 26px; border-radius: 7px; object-fit: cover; }
 .method-card:hover .ap-chip,
 .assess-media:focus-within .ap-chip { opacity: 1; transform: translateY(0) scale(1); }
-@media (hover: none) { .method-card:hover .assess-media > img { filter: none; transform: none; } .ap-chip { display: none; } }
+@media (hover: none) { .ap-chip { display: none; } }
 
 /* ============================================================
    Hover affordances: make interactive cards obviously interactive
