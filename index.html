@@ -764,29 +764,19 @@
 // Glass nav: theme matches the background of the section behind it
 // ============================================================
 const nav = document.getElementById('nav');
-// Sample the real background color behind the nav and flip its theme to match.
-// Works for any section color (white, sand, dark) and inset dark blocks, no list to maintain.
-function navBgAt(x, y) {
-  const el = document.elementFromPoint(x, y);
-  let node = el;
-  while (node && node.nodeType === 1) {
-    const c = getComputedStyle(node).backgroundColor;
-    const m = c && c.match(/[\d.]+/g);
-    if (m && (m.length < 4 || parseFloat(m[3]) > 0.25)) return [+m[0], +m[1], +m[2]];
-    node = node.parentElement;
-  }
-  return [255, 255, 255];
-}
-function navLuminance(rgb) { return (0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]) / 255; }
+// Flip the glass nav's theme to match the section behind it.
+// elementFromPoint finds what's actually under the bar (robust to sections whose
+// background is painted by a pseudo-element); closest() checks it against the dark set.
+const NAV_DARK = '.hero, .brandstatement, .pillars, .founder, .footer-cta, .footer';
 function updateNavTheme() {
   const r = nav.getBoundingClientRect();
   const y = r.top + r.height / 2;
-  const xs = [r.left + r.width * 0.2, r.left + r.width * 0.5, r.left + r.width * 0.8];
+  const xs = [r.left + r.width * 0.5, r.left + r.width * 0.2, r.left + r.width * 0.8];
   nav.style.pointerEvents = 'none';
-  let sum = 0;
-  for (const x of xs) sum += navLuminance(navBgAt(x, y));
+  let dark = false;
+  for (const x of xs) { const el = document.elementFromPoint(x, y); if (el && el.closest(NAV_DARK)) { dark = true; break; } }
   nav.style.pointerEvents = '';
-  nav.classList.toggle('light', sum / xs.length > 0.5);
+  nav.classList.toggle('light', !dark);
 }
 let navRaf = 0;
 const onNavScroll = () => { if (navRaf) return; navRaf = requestAnimationFrame(() => { navRaf = 0; updateNavTheme(); }); };
