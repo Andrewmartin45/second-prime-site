@@ -1479,7 +1479,11 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
    Deep-teal brand moment between the problem and the method.
    ============================================================ */
 .brandstatement { position: relative; overflow: hidden; text-align: center;
-  background: radial-gradient(120% 95% at 50% 12%, #1a1a22 0%, #101015 72%) #101015; color: #fff; padding: 104px 0; }
+  background:
+    radial-gradient(60% 50% at 50% 4%, rgba(101,200,208,0.16), transparent 62%),
+    radial-gradient(80% 60% at 50% 4%, rgba(69,141,147,0.20), transparent 60%),
+    radial-gradient(120% 95% at 50% 12%, #1a1a22 0%, #101015 72%) #101015;
+  color: #fff; padding: 104px 0; }
 .brandstatement::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.45;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"); }
 .brandstatement .container { position: relative; z-index: 2; max-width: 860px; }
@@ -1488,8 +1492,10 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .bs-line { font-family: var(--font-serif); font-weight: 400; color: #FDFBF8;
   font-size: 46px; line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 28px; }
 .bs-line em { font-style: italic; color: #65C8D0; }
-.bs-sub { max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.82); font-size: 18px; line-height: 1.62; }
+.bs-sub { max-width: 580px; margin: 0 auto; color: rgba(255,255,255,0.74); font-size: 18px; line-height: 1.64; }
 .bs-sub + .bs-sub { margin-top: 18px; }
+.bs-punch { font-family: var(--font-serif); font-weight: 400; font-size: clamp(27px, 3.4vw, 35px);
+  line-height: 1.15; letter-spacing: -0.015em; color: var(--sand-light); margin: 30px auto; }
 @media (max-width: 640px) { .brandstatement { padding: 72px 0; } .bs-line { font-size: 32px; } .bs-sub { font-size: 16px; } }
 
 /* ============================================================
