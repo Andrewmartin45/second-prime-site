@@ -174,9 +174,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
 }
 .hero::before {
   content: ""; position: absolute; inset: -1.5%; z-index: 0;
-  background: url("../assets/andrew-hero-b.jpg?v=1") center right / cover no-repeat;
-  background-image: -webkit-image-set(url("../assets/andrew-hero-b.webp?v=1") 1x, url("../assets/andrew-hero-b.jpg?v=1") 1x);
-  background-image: image-set(url("../assets/andrew-hero-b.webp?v=1") type("image/webp"), url("../assets/andrew-hero-b.jpg?v=1") type("image/jpeg"));
+  background: url("../assets/andrew-hero-b.jpg?v=2") center right / cover no-repeat;
+  background-image: -webkit-image-set(url("../assets/andrew-hero-b.webp?v=2") 1x, url("../assets/andrew-hero-b.jpg?v=2") 1x);
+  background-image: image-set(url("../assets/andrew-hero-b.webp?v=2") type("image/webp"), url("../assets/andrew-hero-b.jpg?v=2") type("image/jpeg"));
   background-position: center right; background-size: cover; background-repeat: no-repeat;
   transform: scale(1.0);
 }
