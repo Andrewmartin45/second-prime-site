@@ -326,14 +326,15 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 /* Something's off — dark "flying blind" panel (replaces comparison chart) */
 .flyingblind {
   position: relative; overflow: hidden;
-  background: var(--near-black); border-radius: 28px;
+  background: radial-gradient(120% 90% at 50% -10%, #235257 0%, #16383D 52%, #102D31 100%) #16383D;
+  border-radius: 28px;
   padding: 72px 72px 64px; max-width: 1120px; margin: 22px auto 0;
   color: var(--white); text-align: center;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 40px 90px -50px rgba(16,16,22,0.5);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), 0 40px 90px -50px rgba(22,56,61,0.55);
 }
 .flyingblind::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(90% 55% at 50% -8%, rgba(255,255,255,0.055), transparent 62%);
+  background: radial-gradient(90% 55% at 50% -8%, rgba(255,255,255,0.08), transparent 62%);
 }
 .fb-headline {
   font-family: var(--font-serif); font-weight: 400; font-size: clamp(32px, 4vw, 46px);
@@ -342,7 +343,7 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 }
 .fb-lead {
   font-family: var(--font-sans); font-size: clamp(16px, 1.6vw, 18px); line-height: 1.6;
-  color: #B7B7C2; margin: 22px auto 0; max-width: 600px; text-wrap: pretty;
+  color: rgba(225,242,243,0.78); margin: 22px auto 0; max-width: 600px; text-wrap: pretty;
 }
 /* Transition line between symptom grid and the dark panel */
 .so-turn {
@@ -358,29 +359,29 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 }
 .fb-stats { margin-top: 46px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .fb-stat {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.09);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
   border-radius: 20px; padding: 34px 26px 30px;
   transition: transform .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease);
 }
 .fb-stat:hover {
   transform: translateY(-4px);
-  background: rgba(255,255,255,0.075);
-  border-color: rgba(101,200,208,0.28);
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(101,200,208,0.45);
 }
 .fb-term {
   font-family: var(--font-serif); font-weight: 400; font-size: 42px; line-height: 1;
   letter-spacing: -0.02em; color: var(--teal-bright);
 }
 .fb-contrast { display: flex; align-items: baseline; justify-content: center; gap: 13px; }
-.fb-from { font-size: 27px; color: #6E6E7A; letter-spacing: -0.01em; }
-.fb-arrow-i { font-family: var(--font-sans); font-size: 21px; color: #54545F; }
+.fb-from { font-size: 27px; color: rgba(225,242,243,0.42); letter-spacing: -0.01em; }
+.fb-arrow-i { font-family: var(--font-sans); font-size: 21px; color: rgba(225,242,243,0.38); }
 .fb-desc {
-  font-family: var(--font-sans); font-size: 15.5px; line-height: 1.55; color: #B7B7C2; margin: 16px 0 0;
+  font-family: var(--font-sans); font-size: 15.5px; line-height: 1.55; color: rgba(225,242,243,0.72); margin: 16px 0 0;
 }
 .fb-cta { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 24px; }
-.fb-tagline { font-family: var(--font-sans); font-size: 15px; color: #8C8C99; }
+.fb-tagline { font-family: var(--font-sans); font-size: 15px; color: rgba(225,242,243,0.55); }
 @media (max-width: 760px) {
   .flyingblind { padding: 44px 22px 40px; border-radius: 22px; margin-top: 44px; }
   .fb-stats { grid-template-columns: 1fr; gap: 12px; margin-top: 36px; }
