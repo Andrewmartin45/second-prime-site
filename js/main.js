@@ -61,7 +61,8 @@ function revealCheck() {
     }
   });
 }
-window.addEventListener('scroll', revealCheck, { passive: true });
+const revealIO = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) revealCheck(); }, { rootMargin: '0px 0px -8% 0px' });
+revealEls.forEach((el) => revealIO.observe(el));
 window.addEventListener('resize', revealCheck, { passive: true });
 window.addEventListener('load', revealCheck);
 revealCheck();

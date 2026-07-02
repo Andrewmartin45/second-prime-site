@@ -124,11 +124,11 @@ html.js .reveal.in { opacity: 1; transform: none; }
   color: var(--white); border-radius: 14px;
   background: rgba(20,20,26,0.24);
   backdrop-filter: blur(30px) saturate(1.7); -webkit-backdrop-filter: blur(30px) saturate(1.7);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14), 0 18px 44px -22px rgba(0,0,0,0.55);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14), 0 18px 44px -22px rgba(16,16,22,0.55);
   transition: background var(--dur-ui) var(--ease), color var(--dur-ui) var(--ease), box-shadow var(--dur-ui) var(--ease);
 }
 .nav.scrolled, .nav.light { color: var(--ink); background: rgba(247,244,240,0.5);
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06), 0 18px 44px -26px rgba(43,92,96,0.24); }
+  box-shadow: inset 0 0 0 1px rgba(16,16,22,0.06), 0 18px 44px -26px rgba(43,92,96,0.24); }
 .nav-inner {
   width: 100%; padding: 0 14px 0 24px;
   height: 60px; display: flex; align-items: center; justify-content: space-between;
@@ -159,7 +159,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   display: none; position: fixed; top: 82px; left: 16px; right: 16px; z-index: 99;
   background: rgba(247,244,240,0.96);
   backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); color: var(--ink);
-  border-radius: 14px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.07), 0 18px 44px -22px rgba(0,0,0,0.25);
+  border-radius: 14px; box-shadow: inset 0 0 0 1px rgba(16,16,22,0.07), 0 18px 44px -22px rgba(16,16,22,0.25);
   padding: 8px 22px 16px;
 }
 .mobile-menu.open { display: block; }
@@ -583,7 +583,7 @@ html.js .reveal.in .f-bar { width: var(--w); }
   background: radial-gradient(72% 60% at 50% 40%, rgba(var(--glow), 0.5), rgba(var(--glow), 0.13) 50%, transparent 76%);
   transition: opacity .55s var(--ease); }
 .bp-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.16);
-  box-shadow: 0 44px 90px -44px rgba(0,0,0,0.85); }
+  box-shadow: 0 44px 90px -44px rgba(16,16,22,0.85); }
 .bp-card:hover::before { opacity: 1; }
 .bp-top { position: relative; z-index: 2; height: 70px; }
 .bp-i { width: 30px; height: 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25);
@@ -1434,7 +1434,7 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .gallery-card:hover img { transform: scale(1.05); }
 .gc-overlay { position: absolute; inset: 0;
   background: linear-gradient(to bottom, rgba(16,16,22,0) 14%, rgba(16,16,22,0.5) 50%, rgba(16,16,22,0.95) 100%); }
-.gc-body { position: absolute; inset: auto 0 0 0; padding: 28px 28px 30px; text-shadow: 0 1px 18px rgba(0,0,0,0.4); }
+.gc-body { position: absolute; inset: auto 0 0 0; padding: 28px 28px 30px; text-shadow: 0 1px 18px rgba(16,16,22,0.4); }
 .gc-tag { display: block; font-family: var(--font-sans); font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: rgba(255,255,255,0.88); margin-bottom: 12px; }
 .gc-title { font-family: var(--font-serif); font-weight: 400; font-size: 23px; line-height: 1.22; margin-bottom: 12px; }
@@ -1596,7 +1596,7 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .oc-sub { display: block; font-size: 12px; line-height: 1.35; color: rgba(255,255,255,0.74); margin: 9px auto 0; max-width: 150px; letter-spacing: 0.02em; }
 .orbit-ring { position: absolute; top: 50%; left: 50%; width: 0; height: 0; z-index: 2; animation: orbitspin 54s linear infinite; }
 .orbit-tile { position: absolute; top: 0; left: 0; width: 40px; height: 40px; margin: -20px; border-radius: 50%;
-  overflow: hidden; border: 2px solid rgba(255,255,255,0.85); box-shadow: 0 6px 16px rgba(0,0,0,0.34);
+  overflow: hidden; border: 2px solid rgba(255,255,255,0.85); box-shadow: 0 6px 16px rgba(16,16,22,0.34);
   transform: rotate(var(--a)) translateY(-132px) rotate(calc(-1 * var(--a)));
   opacity: 0; transition: opacity .45s var(--ease); }
 .method-card:hover .orbit-tile, .assess-media:focus-within .orbit-tile { opacity: 1; }
@@ -1614,7 +1614,7 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .exec-pop { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px; }
 .task-card { display: flex; align-items: center; gap: 11px; width: 300px; max-width: 86%; padding: 10px 13px;
   border-radius: 13px; background: rgba(16,16,22,0.55); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px);
-  border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 8px 22px rgba(16,16,22,0.3);
   opacity: 0; transform: translateY(12px) scale(0.97);
   transition: opacity .42s var(--ease) var(--d), transform .5s cubic-bezier(.2,.8,.2,1) var(--d); }
 .method-card:hover .task-card, .exec-media:focus-within .task-card { opacity: 1; transform: none; }
@@ -1644,7 +1644,7 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
 .gp-pop { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px; }
 .cat-pill { display: flex; align-items: center; gap: 11px; width: 282px; max-width: 84%; padding: 9px 14px;
   border-radius: 13px; background: rgba(16,16,22,0.55); backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px);
-  border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 8px 22px rgba(16,16,22,0.3);
   font: 600 13.5px/1 var(--font-sans); color: #fff; white-space: nowrap;
   opacity: 0; transform: translateY(11px) scale(0.97);
   transition: opacity .4s var(--ease) var(--d), transform .48s cubic-bezier(.2,.8,.2,1) var(--d); }
