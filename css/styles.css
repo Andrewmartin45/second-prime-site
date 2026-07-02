@@ -292,15 +292,15 @@ html.js .gap-them.in, html.js .gap-us.in { transform: none; }
 }
 .so-card {
   position: relative; border-radius: 18px;
-  background: linear-gradient(180deg, #FBF8F2 0%, #F4EEE5 100%);
-  border: 1px solid rgba(31,31,39,0.07);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 1px 2px rgba(31,31,39,0.03), 0 16px 34px -26px rgba(31,31,39,0.14);
+  background: #F9F6F0;
+  border: 1px solid rgba(31,31,39,0.06);
+  box-shadow: 0 1px 2px rgba(31,31,39,0.02), 0 10px 26px -24px rgba(31,31,39,0.1);
   padding: 32px 30px 30px; overflow: hidden;
   transition: box-shadow var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease), border-color var(--dur-ui) var(--ease);
 }
 .so-card:hover {
-  transform: translateY(-4px); border-color: rgba(69,141,147,0.35);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 20px 44px -26px rgba(31,31,39,0.2);
+  transform: translateY(-4px); border-color: rgba(69,141,147,0.32);
+  box-shadow: 0 16px 36px -26px rgba(31,31,39,0.16);
 }
 .so-num {
   position: absolute; top: 20px; right: 26px;
@@ -708,9 +708,9 @@ html.js .reveal.in .f-bar { width: var(--w); }
 @media (max-width: 1040px) { .assess-grid { grid-template-columns: 1fr 1fr; } }
 .assess-item {
   display: flex; gap: 16px; align-items: flex-start;
-  background: linear-gradient(180deg, #FBF8F2 0%, #F5EFE7 100%);
-  border: 1px solid rgba(31,31,39,0.06);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 1px 2px rgba(31,31,39,0.03);
+  background: #F9F6F0;
+  border: 1px solid rgba(31,31,39,0.055);
+  box-shadow: 0 1px 2px rgba(31,31,39,0.02);
   border-radius: 14px; padding: 18px 20px;
 }
 .assess-item:hover { border-color: rgba(69,141,147,0.32); }
