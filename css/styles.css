@@ -591,16 +591,17 @@ html.js .reveal.in .f-bar { width: var(--w); }
 /* ===== Three Things — living cards (heart / cell / DNA) ===== */
 .bp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .bp-card { position: relative; border-radius: 22px; overflow: hidden; min-height: 540px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
-  border: 1px solid rgba(255,255,255,0.08); padding: 30px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+  border: 1px solid rgba(255,255,255,0.12); padding: 30px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
   display: flex; flex-direction: column;
   transition: border-color .45s var(--ease), transform .45s var(--ease), box-shadow .45s var(--ease); }
 /* background tint blooms on hover — neutral border, no colored edge */
 .bp-card::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0;
   background: radial-gradient(72% 60% at 50% 40%, rgba(var(--glow), 0.5), rgba(var(--glow), 0.13) 50%, transparent 76%);
   transition: opacity .55s var(--ease); }
-.bp-card:hover { transform: translateY(-6px); border-color: rgba(255,255,255,0.16);
-  box-shadow: 0 44px 90px -44px rgba(16,16,22,0.85); }
+.bp-card:hover { transform: translateY(-6px); border-color: rgba(101,200,208,0.4);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 44px 90px -44px rgba(16,16,22,0.85); }
 .bp-card:hover::before { opacity: 1; }
 .bp-top { position: relative; z-index: 2; height: 70px; }
 .bp-i { width: 30px; height: 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.25);
