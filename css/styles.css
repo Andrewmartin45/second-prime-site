@@ -432,71 +432,55 @@ html.js .reveal.in .f-bar { width: var(--w); }
    ============================================================ */
 .logowall {
   background: var(--white);
-  padding: 60px 0 64px;
-  border-top: 1px solid var(--border);
+  padding: 64px 0 68px;
 }
 /* Crisp hairline seams so adjacent light sections don't blur together */
-.member-wall, .plan, .personas, .trusted, .cta-strip, .faq { border-top: 1px solid var(--border); }
+.member-wall, .plan, .personas, .trusted, .cta-strip, .faq, .gap { border-top: 1px solid var(--border); }
 .lw-label {
   text-align: center; font-size: 12px; font-weight: 700;
   letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--gray); margin-bottom: 40px;
 }
-/* Infinite auto-scroll marquee with progressive blur+fade edges */
-.lw-marquee { position: relative; overflow: hidden; }
+/* Infinite auto-scroll marquee; logos fade out at the edges via mask (no gradient panels) */
+.lw-marquee {
+  position: relative; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+}
 .lw-track {
   display: flex; align-items: center; width: max-content;
-  animation: lwScroll 48s linear infinite;
+  animation: lwScroll 52s linear infinite;
 }
-.lw-track > * { margin-right: 60px; flex: 0 0 auto; }
+.lw-track > * { margin-right: 92px; flex: 0 0 auto; }
 @media (hover: hover) { .lw-marquee:hover .lw-track { animation-play-state: paused; } }
 @keyframes lwScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .lw-logo {
-  height: 25px; width: auto;
+  height: 32px; width: auto;
   filter: brightness(0) opacity(0.42);
   transition: filter var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease);
 }
 .lw-logo:hover { filter: brightness(0) opacity(0.82); transform: translateY(-2px); }
-.lw-wide   { height: 21px; }   /* amazon, adp wordmarks */
-.lw-tall   { height: 30px; }   /* mlb silhouette reads small */
-.lw-emblem { height: 35px; }   /* the hartford: stacked stag + wordmark */
-.lw-bw     { height: 19px; }   /* build bw: long horizontal lockup */
+.lw-wide   { height: 27px; }   /* amazon, adp wordmarks */
+.lw-tall   { height: 39px; }   /* mlb silhouette reads small */
+.lw-emblem { height: 45px; }   /* the hartford: stacked stag + wordmark */
+.lw-bw     { height: 24px; }   /* build bw: long horizontal lockup */
 .lw-word {
-  font-family: var(--font-sans); font-weight: 700; font-size: 19px;
+  font-family: var(--font-sans); font-weight: 700; font-size: 24px;
   letter-spacing: 0.005em; line-height: 1; color: var(--ink);
   opacity: 0.42; cursor: default;
 }
 .lw-word:hover { opacity: 0.82; transform: translateY(-2px); }
-/* Edge zones: sand fade + ramped backdrop blur (progressive-blur effect) */
-.lw-edge {
-  position: absolute; top: 0; bottom: 0; width: 130px; z-index: 2; pointer-events: none;
-  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-}
-.lw-edge-l {
-  left: 0;
-  background: linear-gradient(to right, var(--bg-light) 12%, rgba(247,244,240,0) 100%);
-  -webkit-mask: linear-gradient(to right, #000 0%, #000 24%, transparent 100%);
-          mask: linear-gradient(to right, #000 0%, #000 24%, transparent 100%);
-}
-.lw-edge-r {
-  right: 0;
-  background: linear-gradient(to left, var(--bg-light) 12%, rgba(247,244,240,0) 100%);
-  -webkit-mask: linear-gradient(to left, #000 0%, #000 24%, transparent 100%);
-          mask: linear-gradient(to left, #000 0%, #000 24%, transparent 100%);
-}
 @media (max-width: 760px) {
   .logowall { padding: 46px 0 48px; }
   .lw-label { margin-bottom: 30px; }
-  .lw-track { animation-duration: 34s; }
-  .lw-track > * { margin-right: 40px; }
-  .lw-logo { height: 21px; }
-  .lw-wide { height: 18px; }
-  .lw-tall { height: 25px; }
-  .lw-emblem { height: 30px; }
-  .lw-bw { height: 16px; }
-  .lw-word { font-size: 16px; }
-  /* mobile: plain gradient fade, no backdrop-filter/mask (glitchy on mobile) */
-  .lw-edge { width: 56px; backdrop-filter: none; -webkit-backdrop-filter: none; -webkit-mask: none; mask: none; }
+  .lw-track { animation-duration: 36s; }
+  .lw-track > * { margin-right: 58px; }
+  .lw-logo { height: 25px; }
+  .lw-wide { height: 21px; }
+  .lw-tall { height: 30px; }
+  .lw-emblem { height: 35px; }
+  .lw-bw { height: 19px; }
+  .lw-word { font-size: 19px; }
 }
 /* Reduced motion: stop the scroll, fall back to a centered static wall */
 @media (prefers-reduced-motion: reduce) {
@@ -582,7 +566,7 @@ html.js .reveal.in .f-bar { width: var(--w); }
 /* ============================================================
    PILLARS (dark carousel with animated orb cards)
    ============================================================ */
-.pillars { background: linear-gradient(180deg, #050608 0%, var(--near-black) 40%, #1d1e23 100%); color: var(--white); overflow: hidden; }
+.pillars { background: linear-gradient(180deg, var(--near-black) 0%, var(--near-black) 40%, #22222B 100%); color: var(--white); overflow: hidden; }
 .pillars-head { max-width: 780px; margin: 0 auto 64px; }
 .pillars-head .lead { color: rgba(255,255,255,0.6); margin: 20px auto 32px; }
 .three-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -1522,14 +1506,14 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
 }
 /* The Problem section sits on white, not sand */
-.gap { background: var(--white); }
+.gap { background: var(--white); padding-bottom: 84px; }
 
 /* ============================================================
    Brand statement band — defines the name "Second Prime".
    Deep-teal brand moment between the problem and the method.
    ============================================================ */
 .brandstatement { position: relative; overflow: hidden; text-align: center;
-  background: radial-gradient(120% 95% at 50% 12%, #1a1a22 0%, #101015 72%) #101015; color: #fff; padding: 74px 0; }
+  background: radial-gradient(120% 95% at 50% 12%, #23232C 0%, var(--near-black) 72%) var(--near-black); color: #fff; padding: 74px 0; }
 .brandstatement::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.45;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"); }
 .brandstatement .container { position: relative; z-index: 2; max-width: 860px; }
