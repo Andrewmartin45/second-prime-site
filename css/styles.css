@@ -1169,6 +1169,8 @@ html.js .reveal.in .span-bar { width: var(--end); }
    ============================================================ */
 /* Stacked case-study hero: photo band on top (where one exists), text on solid dark below */
 .cs-hero { background: var(--near-black); color: var(--white); padding: 0; }
+/* photo variant: start the photo below the floating nav so heads are never covered */
+.cs-hero:not(.cs-hero--text) { padding-top: 92px; }
 .cs-hero-photo { width: 100%; height: 62vh; min-height: 380px; max-height: 720px; position: relative;
   background-size: cover; background-repeat: no-repeat; background-position: center 24%; }
 .cs-hero-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none;
@@ -1176,7 +1178,11 @@ html.js .reveal.in .span-bar { width: var(--end); }
 .cs-hero-body { position: relative; background: var(--near-black); }
 .cs-hero-body .container { padding-top: 18px; padding-bottom: 36px; }
 .cs-hero--text .cs-hero-body .container { padding-top: 128px; padding-bottom: 56px; }
-@media (max-width: 760px) { .cs-hero-photo { height: 46vh; min-height: 300px; } .cs-hero--text .cs-hero-body .container { padding-top: 104px; } }
+@media (max-width: 760px) {
+  .cs-hero:not(.cs-hero--text) { padding-top: 84px; }
+  .cs-hero-photo { height: 44vh; min-height: 300px; }
+  .cs-hero--text .cs-hero-body .container { padding-top: 104px; }
+}
 .cs-back { display: inline-block; color: rgba(255,255,255,0.7); font-size: 13px; margin-bottom: 12px; }
 .cs-back:hover { color: var(--white); }
 .cs-tag { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 10px; }
@@ -1213,7 +1219,11 @@ html.js .reveal.in .span-bar { width: var(--end); }
 .cs-hero-stats div { display: flex; flex-direction: column; }
 .cs-hero-stats strong { font-family: var(--font-serif); font-weight: 400; font-size: 26px; color: var(--teal-bright); line-height: 1; }
 .cs-hero-stats span { font-size: 12px; color: rgba(255,255,255,0.72); margin-top: 6px; letter-spacing: 0.04em; text-transform: uppercase; }
-@media (max-width: 640px) { .cs-hero-stats { gap: 28px; } .cs-hero-stats strong { font-size: 24px; } }
+@media (max-width: 640px) {
+  .cs-hero-stats { gap: 14px; flex-wrap: nowrap; justify-content: space-between; }
+  .cs-hero-stats strong { font-size: 19px; white-space: nowrap; }
+  .cs-hero-stats span { font-size: 9.5px; letter-spacing: 0.02em; white-space: nowrap; }
+}
 
 /* Assessment private pair below the marquee */
 .assess-private-wrap { max-width: 980px; margin: 56px auto 0; }
