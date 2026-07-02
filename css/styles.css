@@ -1696,18 +1696,18 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   .hero .trust-pill { margin-top: 14px; }
   .hero-cta-row .btn-lg { padding: 11px 22px; font-size: 13.5px; }
   .hero::before {
-    position: relative; inset: auto; order: -1; width: 100%; aspect-ratio: 2600 / 2294; height: auto; min-height: 0; flex: 0 0 auto;
+    position: relative; inset: auto; order: -1; width: 100%; aspect-ratio: 2300 / 2294; height: auto; min-height: 0; flex: 0 0 auto;
     transform: none !important; animation: none !important;
-    background-image: url("../assets/andrew-hero-mobile.jpg?v=2") !important;
-    background-image: -webkit-image-set(url("../assets/andrew-hero-mobile.webp?v=2") 1x) !important;
-    background-image: image-set(url("../assets/andrew-hero-mobile.webp?v=2") type("image/webp"), url("../assets/andrew-hero-mobile.jpg?v=2") type("image/jpeg")) !important;
+    background-image: url("../assets/andrew-hero-mobile.jpg?v=3") !important;
+    background-image: -webkit-image-set(url("../assets/andrew-hero-mobile.webp?v=3") 1x) !important;
+    background-image: image-set(url("../assets/andrew-hero-mobile.webp?v=3") type("image/webp"), url("../assets/andrew-hero-mobile.jpg?v=3") type("image/jpeg")) !important;
     background-position: center top !important; background-size: cover;
   }
   .hero::after {
-    position: absolute; top: 80px; left: 0; right: 0; bottom: auto; width: 100%; aspect-ratio: 2600 / 2294; height: auto;
+    position: absolute; top: 80px; left: 0; right: 0; bottom: auto; width: 100%; aspect-ratio: 2300 / 2294; height: auto;
     background: linear-gradient(180deg, rgba(16,16,22,0) 34%, rgba(16,16,22,0.3) 58%, rgba(16,16,22,0.78) 80%, var(--near-black) 97%);
   }
-  .hero-inner { flex: 1 1 auto; padding: 0 24px 28px; margin-top: -78px; }
+  .hero-inner { flex: 1 1 auto; padding: 0 24px 26px; margin-top: -94px; }
 }
 
 /* Mobile: keep the hover/tap reveals inside the card */
