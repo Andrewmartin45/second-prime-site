@@ -1684,7 +1684,7 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
   .hero-sub { font-size: 16px; margin: -2px 0 22px; }
   .hero-rule { margin-bottom: 14px; }
   .hero::before {
-    position: relative; inset: auto; order: -1; width: 100%; height: 36vh; min-height: 250px; flex: 0 0 auto;
+    position: relative; inset: auto; order: -1; width: 100%; height: 42vh; min-height: 300px; flex: 0 0 auto;
     transform: none !important; animation: none !important;
     background-image: url("../assets/andrew-hero-mobile.jpg?v=1") !important;
     background-image: -webkit-image-set(url("../assets/andrew-hero-mobile.webp?v=1") 1x) !important;
@@ -1692,8 +1692,8 @@ html.js .hero .trust-pill { opacity: 0; animation: heroRise 0.95s cubic-bezier(.
     background-position: center top !important; background-size: cover;
   }
   .hero::after {
-    position: absolute; top: 86px; left: 0; right: 0; bottom: auto; height: 36vh; min-height: 250px;
-    background: linear-gradient(180deg, rgba(16,16,22,0) 42%, rgba(16,16,22,0.45) 74%, var(--near-black) 100%);
+    position: absolute; top: 86px; left: 0; right: 0; bottom: auto; height: 42vh; min-height: 300px;
+    background: linear-gradient(180deg, rgba(16,16,22,0) 30%, rgba(16,16,22,0.22) 55%, rgba(16,16,22,0.6) 78%, var(--near-black) 100%);
   }
   .hero-inner { flex: 1 1 auto; padding: 22px 24px 40px; }
 }
